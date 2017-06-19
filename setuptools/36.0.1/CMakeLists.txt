@@ -13,7 +13,7 @@ endif()
 
 rez_set_archive(
     url setuptools/setuptools-${version}.tar.gz
-    https://pypi.python.org/packages/source/s/setuptools/setuptools-${version}.tar.gz
+    https://github.com/pypa/setuptools/archive/v${version}.tar.gz
 )
 
 set(src_path ${CMAKE_BINARY_DIR}/setuptools/src/setuptools)
