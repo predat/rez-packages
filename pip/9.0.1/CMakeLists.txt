@@ -13,7 +13,7 @@ endif()
 
 rez_set_archive(
     url pip/pip-${version}.tar.gz
-    https://github.com/pypa/pip/archive/9.0.1.tar.gz
+    https://github.com/pypa/pip/archive/${version}.tar.gz
 )
 
 set(src_path ${CMAKE_BINARY_DIR}/pip/src/pip)

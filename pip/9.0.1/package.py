@@ -12,7 +12,11 @@ variants = [
 
 requires = [
     'setuptools-36.0.1',
-    'python-2.7.11'
+    'python-2.7.12'
+]
+
+build_requires = [
+    "gcc-4.8.3"
 ]
 
 def commands():
