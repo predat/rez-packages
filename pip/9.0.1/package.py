@@ -7,7 +7,7 @@ tools = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "python-2.7"]
+    ["platform-linux", "arch-x86_64", "python-2.7", "os-CentOS-6.8"]
 ]
 
 requires = [
