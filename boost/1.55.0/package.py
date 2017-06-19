@@ -1,0 +1,27 @@
+name = "boost"
+
+version = "1.55.0"
+
+authors = [
+    "boost.org"
+]
+
+description = \
+    """
+    Peer-reviewed portable C++ source libraries.
+    """
+
+build_requires = [
+    "gcc-4.8.3"
+]
+
+variants = [
+    ["platform-linux", "arch-x86_64", "python-2.7", "os-CentOS-6.8"]
+]
+
+uuid = "repository.boost"
+
+def commands():
+    env.LD_LIBRARY_PATH.append("{root}/lib")
+    if building:
+        env.BOOST_INCLUDE_DIR = "{root}/include"
