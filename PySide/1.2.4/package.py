@@ -1,19 +1,21 @@
-name = "shiboken"
+name = "PySide"
 
 version = "1.2.4"
 
 authors = [
-    "pyside"
+    ""
 ]
 
 description = \
     """
-    Python bindings generator that uses API Extractor and outputs CPython code.
+    The PySide project provides LGPL-licensed Python bindings for the Qt.
     """
 
 requires = [
-    "qt-4.8.6",
-    "gcc-4.8.3"
+        "qt-4.8.6",
+        "pip",
+        "setuptools",
+        "shiboken"
 ]
 
 build_requires = [
@@ -24,9 +26,8 @@ variants = [
     ["platform-linux", "arch-x86_64", "os-CentOS-6.8", "python-2.7"]
 ]
 
-uuid = "repository.shiboken"
+uuid = "repository.PySide"
 
 def commands():
     env.LD_LIBRARY_PATH.append('{root}/lib')
-    env.SHIBOKEN_INCLUDE_DIR.append('{root}/include')
-
+    env.PYTHONPATH.append('{root}/lib/python2.7/site-packages')
