@@ -15,7 +15,8 @@ requires = [
         "qt-4.8.6",
         "pip",
         "setuptools",
-        "shiboken"
+        "shiboken",
+        "python-2.7"
 ]
 
 build_requires = [
