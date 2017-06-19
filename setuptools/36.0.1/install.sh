@@ -8,6 +8,7 @@ pypath=${destpath}/lib/python${pyver}/site-packages
 mkdir -p ${pypath} &> /dev/null
 
 cd ${srcpath}
+PYTHONPATH=$PYTHONPATH:${pypath} python bootstrap.py
 PYTHONPATH=$PYTHONPATH:${pypath} python setup.py install --prefix=${destpath} --old-and-unmanageable
 
 mkdir -p ${destpath}/python &> /dev/null
