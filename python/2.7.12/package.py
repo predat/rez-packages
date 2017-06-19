@@ -37,6 +37,7 @@ uuid = "repository.python"
 def commands():
     env.PATH.append("{root}/bin")
     env.PYTHONPATH.append("{root}/lib/python2.7")
+    env.LD_LIBRARY_PATH.append("{root}/lib")
 
     if building:
         env.PYTHON_INCLUDE_DIR = "{root}/include/python2.7"
