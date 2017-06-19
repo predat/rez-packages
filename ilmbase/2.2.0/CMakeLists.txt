@@ -25,7 +25,7 @@ ExternalProject_add(
     URL ${url_ilmbase}
     PREFIX ilmbase
     UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic --disable-debug --enable-shared=no
+    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic --disable-debug
     INSTALL_COMMAND "${install_cmd}"
     BUILD_IN_SOURCE 1
     BUILD_COMMAND make ${make_args}
