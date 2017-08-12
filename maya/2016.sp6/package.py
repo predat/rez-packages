@@ -22,7 +22,7 @@ variants = [
 uuid = "repository.maya2016.sp6"
 
 def commands():
-    source("/opt/rez/completion/complete.sh")
+    #source("/opt/rez/completion/complete.sh")
 
     # in order to avoid maya 2014-x64/prefs/shelves/shelf_Polygons.mel Syntax error
     env.LC_NUMERIC="C"
@@ -50,7 +50,7 @@ def commands():
 
     env.PATH.append("{root}/bin")
     env.PATH.append("/prod/softprod/apps/maya/2016.sp6/linux/bin/")
-    env.PATH.append("/opt/rez/bin/rez")
+    #env.PATH.append("/opt/rez/bin/rez")
     env.PYTHONPATH.append("{root}/lib/python2.7")
 
 
@@ -59,3 +59,4 @@ def commands():
 
         # only used to see libpythonX.X.a file
         env.LD_LIBRARY_PATH.append("{root}/lib")
+        env.MAYA_LOCATION("/prod/softprod/apps/maya/2016.sp6/linux")
