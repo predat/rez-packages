@@ -25,7 +25,7 @@ ExternalProject_add(
     URL ${url_openexr}
     PREFIX openexr
     UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic --disable-ilmbasetest --with-ilmbase-prefix=$ENV{REZ_ILMBASE_ROOT}
+    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic --disable-ilmbasetest --with-ilmbase-prefix=$ENV{REZ_ILMBASE_ROOT} --enable-namespaceversioning=no
     INSTALL_COMMAND "${install_cmd}"
     BUILD_IN_SOURCE 1
     BUILD_COMMAND make ${make_args}
