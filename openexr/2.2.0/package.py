@@ -16,11 +16,10 @@ requires = [
 ]
 
 build_requires = [
-    "gcc-4.8.3"
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8"]
+    ["platform-linux", "arch-x86_64", "os-CentOS-7.3.1611"]
 ]
 
 tools = [
