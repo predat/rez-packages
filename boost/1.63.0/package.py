@@ -12,12 +12,12 @@ description = \
     """
 
 build_requires = [
-    "gcc-4.8.3",
     "python-2.7"
 ]
 
+
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8", "python-2.7"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 uuid = "repository.boost"
