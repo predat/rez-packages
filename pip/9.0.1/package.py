@@ -7,17 +7,15 @@ tools = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "python-2.7", "os-CentOS-6.8"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 requires = [
-    'setuptools-36.0.1',
-    'python-2.7.12'
+    'setuptools',
+    'python-2.7'
 ]
 
-build_requires = [
-    "gcc-4.8.3"
-]
+build_requires = []
 
 def commands():
     env.PATH.append("{root}/bin")

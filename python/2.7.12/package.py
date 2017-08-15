@@ -16,7 +16,7 @@ build_requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 tools = [
@@ -34,13 +34,12 @@ tools = [
 
 uuid = "repository.python"
 
+
 def commands():
-    env.PATH.append("{root}/bin")
-    env.PYTHONPATH.append("{root}/lib/python2.7")
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
+    env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib")
 
     if building:
         env.PYTHON_INCLUDE_DIR = "{root}/include/python2.7"
-
-        # only used to see libpythonX.X.a file
-        env.LD_LIBRARY_PATH.append("{root}/lib")
+        env.PYTHON_LIBRARIES = "{root}/lib/python2.7/config/libpython2.7.a"

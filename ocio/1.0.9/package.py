@@ -9,21 +9,21 @@ description = \
     """
     """
 
-build_requires = [
-    "python-2.7",
-    "glew-1",
-    "ilmbase-2.2.0",
-    "openexr-2.2.0",
-    "oiio",
-    "nuke"
-]
+#build_requires = [
+#    "python-2.7",
+#    "glew-1",
+#    "ilmbase-2.2.0",
+#    "openexr-2.2.0",
+#    "oiio",
+#]
 
 requires = [
-    "openexr-2.2",
-    "glew-1",
-    "boost-1.63",
-    "ilmbase-2.2.0",
-    "openexr-2.2.0"
+     "python"
+#    "oiio",
+#    "glew-1",
+#    "boost-1.63",
+#    "ilmbase-2.2.0",
+#    "openexr-2.2.0",
 ]
 
 variants = [
@@ -33,22 +33,19 @@ variants = [
 tools = [
     "ociobakelut",
     "ociocheck",
-    "ocioconvert",
-    "ociodisplay",
-    "ociolutimage"
+    #"ocioconvert",
+    #"ociodisplay",
+    #"ociolutimage"
 ]
 
 
 uuid = "repository.ocio"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     env.PATH.append("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib")
-    env.PYTHONPATH.append("{root}/lib/python/site-packages")
+    env.PYTHONPATH.append("{root}/lib/python2.7/site-packages")
 
     if building:
         env.OCIO_INCLUDE_DIR = "{root}/include"
-
-    if "nuke" in resolve:
-        info("Loading OCIO Nuke plugins")
-        env.NUKE_PATH.append("{root}/lib/nuke")

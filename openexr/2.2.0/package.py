@@ -19,7 +19,7 @@ build_requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-7.3.1611"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 tools = [
@@ -35,6 +35,7 @@ tools = [
 uuid = "repository.openexr"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     env.PATH.append("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib")
 

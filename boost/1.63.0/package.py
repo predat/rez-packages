@@ -23,6 +23,7 @@ variants = [
 uuid = "repository.boost"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     env.LD_LIBRARY_PATH.append("{root}/lib")
 
     # cmake FindPackage env vars

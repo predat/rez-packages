@@ -12,12 +12,26 @@ description = \
     """
 
 variants = [
-    ["platform-linux", "arch-x86_64","os-CentOS-7.3.1611"],
+    ["platform-linux", "arch-x86_64"],
 ]
 
 tools = [
+    "addr2line",
     "ar",
-    "ld"
+    "as",
+    "c++filt",
+    "elfedit",
+    "gprof",
+    "ld",
+    "ld.bfd",
+    "nm",
+    "objcopy",
+    "objdump",
+    "ranlib",
+    "readelf",
+    "size",
+    "strings",
+    "strip"
 ]
 
 uuid = "repository.binutils"

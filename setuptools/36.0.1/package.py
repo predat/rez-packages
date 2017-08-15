@@ -4,16 +4,12 @@ name = 'setuptools'
 
 version = '36.0.1'
 
-tools = [
-    'easy_install'
-]
+tools = ['easy_install']
 
-build_requires = [
-    "gcc-4.8.3"
-]
+requires = ["python-2.7"]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "python-2.7", "os-CentOS-6.8"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 def commands():

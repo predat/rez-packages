@@ -12,19 +12,25 @@ description = \
     """
 
 build_requires = [
-    "python-2.7",
-    "glew-1",
-    "ilmbase-2.2.0",
-    "openexr-2.2.0",
-    "nuke"
+#    "python-2.7",
+#    "glew-1",
+#    "boost-1.63",
+#    "ilmbase-2.2.0",
+#    "openexr-2.2.0",
 ]
 
 requires = [
-    "openexr-2.2",
-    "glew-1",
-    "boost-1.63",
-    "ilmbase-2.2.0",
-    "openexr-2.2.0"
+    "ocio",
+    "ilmbase",
+    "openexr",
+    "qt",
+    "boost",
+    "ffmpeg-2.8",
+    "python"
+    #"glew-1",
+    #"boost-1.63",
+    #"ilmbase-2.2.0",
+    #"openexr-2.2.0"
 ]
 
 variants = [
@@ -45,11 +51,10 @@ tools = [
 uuid = "repository.oiio"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     env.PATH.append("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib")
-    env.OIIO_INCLUDE_DIR = "{root}/include"
-    env.PYTHONPATH.append("{root}/lib/python/site-packages")
+    env.PYTHONPATH.append("{root}/lib/python2.7/site-packages")
 
-    if "nuke" in resolve:
-        info("Loading OIIO Nuke plugins")
-        env.NUKE_PATH.append("{root}/lib/nuke")
+    if building:
+        env.OIIO_INCLUDE_DIR = "{root}/include"

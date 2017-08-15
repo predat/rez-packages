@@ -12,23 +12,28 @@ description = \
     """
 
 requires = [
-        "qt-4.8.6",
-        "pip",
-        "setuptools",
+        "qt",
+        #"pip",
+        #"setuptools",
         "shiboken",
         "python-2.7"
 ]
 
 build_requires = [
-    "gcc-4.8.3"
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8", "python-2.7"]
+    ["platform-linux", "arch-x86_64"]
+]
+
+tools = [
+    "shiboken"
 ]
 
 uuid = "repository.PySide"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
+    env.PATH.append("{root}/bin")
     env.LD_LIBRARY_PATH.append('{root}/lib')
     env.PYTHONPATH.append('{root}/lib/python2.7/site-packages')

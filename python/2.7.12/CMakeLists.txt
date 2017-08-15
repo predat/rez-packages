@@ -49,3 +49,9 @@ ExternalProject_add(
     BUILD_IN_SOURCE 1
     BUILD_COMMAND make -j ${ncpus}
 )
+
+rez_install_files(
+    cmake/python.cmake
+    DESTINATION .
+)
+

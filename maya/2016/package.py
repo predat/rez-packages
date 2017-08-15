@@ -1,32 +1,19 @@
 name = "maya"
-
-version = "2016"
-
-authors = [
-    "Autodesk"
-]
-
-description = \
-    """
-    Autodesk maya 2016
-    """
-
-build_requires = [
-]
-
-variants = [
-    ["platform-linux", "arch-x86_64"]
-]
-
+version = "2016.0.0"
+authors = ["Autodesk"]
+description = "Autodesk maya 2016"
+build_requires = []
+variants = [["platform-linux", "arch-x86_64"]]
 
 uuid = "repository.maya"
+
 
 def commands():
     #source("/opt/rez/completion/complete.sh")
 
     # in order to avoid maya 2014-x64/prefs/shelves/shelf_Polygons.mel Syntax error
     env.LC_NUMERIC="C"
-    env.AUTODESK_ADLM_THINCLIENT_ENV="/prod/softprod/apps/maya/common/AdlmThinClientCustomEnv.xml"
+    env.AUTODESK_ADLM_THINCLIENT_ENV="/prod/apps/{this.name}/common/AdlmThinClientCustomEnv.xml"
     env.MAYA_LICENSE="unlimited"
     env.MAYA_LICENSE_METHOD="network"
     # Disable Autodesk Customer Involvement Program (CIP)
@@ -49,9 +36,13 @@ def commands():
     env.MAYA_FORCE_SHOW_ACTIVATE="1"
 
     #env.PATH.append("{root}/bin")
-    env.PATH.append("/prod/softprod/apps/maya/2016/linux/bin/")
-    #env.PATH.append("/opt/rez/bin/rez")
-    #env.PYTHONPATH.append("{root}/lib/python2.7")
+    env.PATH.append("/prod/apps/{this.name}/{version}/{system.platform}/bin/")
+
+    env.PYTHONPATH.append(
+        env.PP_SOFTWARE_APP.value() + "/{this.name}/{version}/{system.platform}/lib/python2.7/site-packages")
+
+    env.LD_LIBRARY_PATH.append("/prod/apps/{this.name}/{version}/{system.platform}/lib")
+
 
 
     if building:

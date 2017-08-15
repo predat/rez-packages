@@ -12,21 +12,23 @@ description = \
     """
 
 requires = [
-    "qt-4.8.6",
-    "gcc-4.8.3"
+    "qt",
+    "python-2.7"
 ]
 
 build_requires = [
-    "gcc-4.8.3"
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8", "python-2.7"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 uuid = "repository.shiboken"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     env.LD_LIBRARY_PATH.append('{root}/lib')
-    env.SHIBOKEN_INCLUDE_DIR.append('{root}/include')
+    env.PYTHONPATH.append('{root}/lib64/python2.7/site-packages')
 
+    if building:
+        env.SHIBOKEN_INCLUDE_DIR.append('{root}/include')

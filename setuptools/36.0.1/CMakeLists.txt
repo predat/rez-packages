@@ -11,10 +11,11 @@ if(NOT ${REZ_BUILD_INSTALL})
     message(FATAL_ERROR "Must install this package with -i flag")
 endif()
 
-rez_set_archive(
-    url setuptools/setuptools-${version}.tar.gz
-    https://github.com/pypa/setuptools/archive/v${version}.tar.gz
-)
+#rez_set_archive(
+#    url https://github.com/pypa/setuptools/archive/v${version}.tar.gz
+#)
+set(url_setuptools https://github.com/pypa/setuptools.git)
+set(tag_setuptools ${version})
 
 set(src_path ${CMAKE_BINARY_DIR}/setuptools/src/setuptools)
 
@@ -24,7 +25,9 @@ endif()
 
 ExternalProject_add(
     setuptools
-    URL ${url}
+    #URL ${url}
+    GIT_REPOSITORY ${url_setuptools}
+    GIT_TAG v${tag_setuptools}
     PREFIX setuptools
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""

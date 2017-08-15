@@ -22,11 +22,12 @@ variants = [
 uuid = "repository.maya"
 
 def commands():
+    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     #source("/opt/rez/completion/complete.sh")
 
     # in order to avoid maya 2014-x64/prefs/shelves/shelf_Polygons.mel Syntax error
     env.LC_NUMERIC="C"
-    env.AUTODESK_ADLM_THINCLIENT_ENV="/prod/softprod/apps/maya/common/AdlmThinClientCustomEnv.xml"
+    env.AUTODESK_ADLM_THINCLIENT_ENV="/prod/apps/maya/common/AdlmThinClientCustomEnv.xml"
     env.MAYA_LICENSE="unlimited"
     env.MAYA_LICENSE_METHOD="network"
     # Disable Autodesk Customer Involvement Program (CIP)
@@ -48,11 +49,11 @@ def commands():
     # (metacity window manager).
     env.MAYA_FORCE_SHOW_ACTIVATE="1"
 
-    env.PATH.append("{root}/bin")
-    env.PATH.append("/prod/softprod/apps/maya/2016.ext2.sp2/linux/bin/")
-    #env.PATH.append("/opt/rez/bin/rez")
-    #env.PYTHONPATH.append("{root}/lib/python2.7")
+    env.PATH.append("/prod/apps/maya/2016.ext2.sp2/linux/bin/")
+    env.PYTHONPATH.append(
+        env.PP_SOFTWARE_APP.value() + "/{this.name}/{version}/{system.platform}/lib/python2.7/site-packages")
 
+    env.LD_LIBRARY_PATH.append("/prod/apps/maya/2016.ext2.sp2/linux/lib")
 
     if building:
         #env.PYTHON_INCLUDE_DIR = "{root}/include/python2.7"

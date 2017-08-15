@@ -11,10 +11,13 @@ if(NOT ${REZ_BUILD_INSTALL})
     message(FATAL_ERROR "Must install this package with -i flag")
 endif()
 
-rez_set_archive(
-    url pip/pip-${version}.tar.gz
-    https://github.com/pypa/pip/archive/${version}.tar.gz
-)
+#rez_set_archive(
+#    url pip/pip-${version}.tar.gz
+#    https://github.com/pypa/pip/archive/${version}.tar.gz
+#)
+
+set(url_pip https://github.com/pypa/pip.git)
+set(tag_pip ${version})
 
 set(src_path ${CMAKE_BINARY_DIR}/pip/src/pip)
 
@@ -24,7 +27,9 @@ endif()
 
 ExternalProject_add(
     pip
-    URL ${url}
+    #URL ${url}
+    GIT_REPOSITORY ${url_pip}
+    GIT_TAG ${tag_pip}
     PREFIX pip
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""
