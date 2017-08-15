@@ -5,12 +5,13 @@ include(RezRepository)
 include(ExternalProject)
 
 
-set(openexr_version $ENV{REZ_BUILD_PROJECT_VERSION})
+set(ffmpeg_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-rez_set_archive(
-    url_ffmpeg ffmpeg/ffmpeg-${openexr_version}.tar.bz2
-    http://ffmpeg.org/releases/ffmpeg-3.3.3.tar.bz2
-)
+#rez_set_archive(
+#    url_ffmpeg ffmpeg/ffmpeg-${openexr_version}.tar.bz2
+#    http://ffmpeg.org/releases/ffmpeg-3.3.3.tar.bz2
+#)
+set(url_ffmpeg http://ffmpeg.org/releases/ffmpeg-${ffmpeg_version}.tar.bz2)
 
 set(make_args -j$ENV{REZ_BUILD_THREAD_COUNT} VERBOSE=1)
 
