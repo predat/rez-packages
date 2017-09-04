@@ -51,9 +51,10 @@ def commands():
 
     env.PP_PS1_ORIG = "$PS1"
 
-    env.PP_SOFTWARE_APP = env.PP_ROOT_DIR.value() + '/apps'
-    env.PP_SOFTWARE_LIB = env.PP_ROOT_DIR.value() + '/libs'
-    env.PP_SOFTWARE_TOOLS= env.PP_ROOT_DIR.value() + '/tools'
+    env.PP_SOFTWARE = env.PP_ROOT_DIR.value() + '/softprod'
+    env.PP_SOFTWARE_APP = env.PP_SOFTWARE.value() + '/apps'
+    env.PP_SOFTWARE_LIB = env.PP_SOFTWARE.value() + '/libs'
+    env.PP_SOFTWARE_TOOLS= env.PP_SOFTWARE.value() + '/tools'
 
     # studio
     env.PP_STUDIO_PATH = env.PP_ROOT_DIR.value() + "/studio"
