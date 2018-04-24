@@ -11,8 +11,6 @@ authors = ["Foundry"]
 
 description = "Nuke 11.1v3"
 
-requires = ["fixstudio"]
-
 variants = [["platform-linux", "arch-x86_64"]]
 
 tools = ['nuke']
