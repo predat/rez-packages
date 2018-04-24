@@ -4,8 +4,12 @@ include(RezBuild)
 include(ExternalProject)
 
 
-set(url_maxwell_studio https://software.nextlimit.com/authdl/_dYssh5IawkJ6YaUqemLvpXaVYBUvV0hgM/maxwell_studio_${MAXWELL_VERSION}_linux64.tar.gz)
-set(url_maxwell_render https://software.nextlimit.com/authdl/_dSHFMAeW0FSS1oS7I6sRojQoBmTM1CA02/maxwell_render_${MAXWELL_VERSION}_linux64.tar.gz)
+# set(url_maxwell_studio https://software.nextlimit.com/authdl/_dYssh5IawkJ6YaUqemLvpXaVYBUvV0hgM/maxwell_studio_${MAXWELL_VERSION}_linux64.tar.gz)
+# set(url_maxwell_render https://software.nextlimit.com/authdl/_dSHFMAeW0FSS1oS7I6sRojQoBmTM1CA02/maxwell_render_${MAXWELL_VERSION}_linux64.tar.gz)
+set(url_maxwell_studio
+    /prod/prod2/Projets/RESSOURCES/_LIB/INSTALLS/clean/maxwell/Maxwell4/studio/4.2.0.3/maxwell_studio_${MAXWELL_VERSION}_linux64.tar.gz)
+set(url_maxwell_render
+    /prod/prod2/Projets/RESSOURCES/_LIB/INSTALLS/clean/maxwell/Maxwell4/studio/4.2.0.3/maxwell_render_${MAXWELL_VERSION}_linux64.tar.gz)
 
 set(install_cmd ${CMAKE_CURRENT_SOURCE_DIR}/install.sh
     ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_INSTALL_PREFIX} ${MAXWELL_VERSION})
