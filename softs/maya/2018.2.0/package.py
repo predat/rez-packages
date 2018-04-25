@@ -10,8 +10,6 @@ authors = ["Autodesk"]
 
 description = "Autodesk maya 2018 Update 2"
 
-requires = ["fixstudio"]
-
 variants = [
     ["platform-linux", "arch-x86_64"]
 ]
