@@ -15,8 +15,13 @@ variants = [
     ["platform-linux", "arch-x86_64", "maya-2018"]
 ]
 
+plugin_for = ["maya"]
+
 tools = [
-    'kick'
+    'kick',
+    'oslc',
+    'oslinfo',
+    'maketx'
 ]
 
 build_command = "bash {root}/build.sh {install}"
