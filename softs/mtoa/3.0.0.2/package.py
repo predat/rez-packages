@@ -11,6 +11,8 @@ authors = ["SolidAngle"]
 description = ""
 
 variants = [
+    ["platform-linux", "arch-x86_64", "maya-2016"],
+    ["platform-linux", "arch-x86_64", "maya-2016.5"],
     ["platform-linux", "arch-x86_64", "maya-2017"],
     ["platform-linux", "arch-x86_64", "maya-2018"]
 ]

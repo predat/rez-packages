@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-if [[ "${MAYA_VERSION}" == *"ext2"* ]] ; then
+if [[ "${MAYA_VERSION}" == *"2016.5"* ]] ; then
     MTOA_MAYA_VERSION="20165"
 else
     MTOA_MAYA_VERSION=${REZ_MAYA_MAJOR_VERSION}
