@@ -67,6 +67,12 @@ rez_install_files(
 )
 
 rez_install_files(
+    config/
+    RELATIVE config/MayaNoColorManagement.xml
+    DESTINATION .
+    )
+
+rez_install_files(
     ${CMAKE_CURRENT_BINARY_DIR}/License.env
     RELATIVE build/platform-linux/arch-x86_64
     DESTINATION maya/bin
@@ -81,7 +87,7 @@ rez_install_files(
 install(PROGRAMS
     ${CMAKE_CURRENT_BINARY_DIR}/bin/maya
     ${CMAKE_CURRENT_BINARY_DIR}/bin/register_maya
-    DESTINATION bin
+    DESTINATION maya/bin
 )
 
 rez_install_files(
