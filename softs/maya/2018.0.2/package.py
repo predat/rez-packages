@@ -16,7 +16,7 @@ variants = [
 
 tools = [
     'maya',
-    'maya' + version,
+    'maya2018',
     'Render',
     'mayapy',
     "register_maya"

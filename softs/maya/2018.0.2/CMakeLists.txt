@@ -20,7 +20,7 @@ else()
 endif()
 
 
-set(syncfg_file Maya${MAYA_MAJOR_VERSION}.${MAYA_MAJOR_VERSION}.${MAYA_MINOR_VERSION}.64.syncfg)
+set(syncfg_file Maya${MAYA_MAJOR_VERSION}.${MAYA_MAJOR_VERSION}.${MAYA_PATCH_VERSION}.64.syncfg)
 set(MAYA_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/maya/bin/maya.bin)
 set(MAYA_WRAPPER ${CMAKE_INSTALL_PREFIX}/maya/bin/maya${MAYA_MAJOR_VERSION})
 
@@ -32,9 +32,8 @@ configure_file(config/bin/maya.in bin/maya @ONLY)
 configure_file(config/bin/register_maya.in bin/register_maya @ONLY)
 
 
-#set(url_maya ${CMAKE_CURRENT_SOURCE_DIR}/archives/Autodesk_Maya_${MAYA_MAJOR_VERSION}_EXT${MAYA_MINOR_VERSION}_SP${MAYA_PATCH_VERSION}_EN_Linux${arch_maya}.tgz)
 set(url_maya
-    ${CMAKE_CURRENT_SOURCE_DIR}/archives/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_MINOR_VERSION}_Update_Linux${arch_maya}.tgz)
+     ${CMAKE_CURRENT_SOURCE_DIR}/archives/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
 
 
 set(build_cmd ${CMAKE_CURRENT_SOURCE_DIR}/extract.sh  ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${MAYA_MAJOR_VERSION} )
@@ -67,10 +66,10 @@ rez_install_files(
 )
 
 rez_install_files(
-    config/
-    RELATIVE config/MayaNoColorManagement.xml
+    config/MayaNoColorManagement.xml
+    RELATIVE config
     DESTINATION .
-    )
+)
 
 rez_install_files(
     ${CMAKE_CURRENT_BINARY_DIR}/License.env
