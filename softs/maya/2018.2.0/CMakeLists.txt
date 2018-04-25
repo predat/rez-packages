@@ -62,13 +62,13 @@ ExternalProject_add(
 rez_install_files(
     ${CMAKE_CURRENT_BINARY_DIR}/AdlmThinClientCustomEnv.xml
     ${CMAKE_CURRENT_BINARY_DIR}/${syncfg_file}
-    RELATIVE build/platform-linux
+    RELATIVE build/platform-linux/arch-x86_64
     DESTINATION .
 )
 
 rez_install_files(
     ${CMAKE_CURRENT_BINARY_DIR}/License.env
-    RELATIVE build/platform-linux
+    RELATIVE build/platform-linux/arch-x86_64
     DESTINATION maya/bin
 )
 
