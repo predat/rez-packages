@@ -4,7 +4,7 @@ from rez.utils.lint_helper import env, building
 
 name = "maya"
 
-version = "2018.0.2"  # Version: 20#.EXT.SP
+version = "2018.2.0"  # Version: 20#.EXT.SP
 
 authors = ["Autodesk"]
 
