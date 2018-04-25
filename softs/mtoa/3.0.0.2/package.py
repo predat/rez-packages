@@ -32,7 +32,5 @@ uuid = "repository.mtoa"
 def commands():
 
     env.PATH.append("{root}/bin")
-    env.PYTHONPATH.append("{root}/maya/lib/python2.7/site-packages")
-
     env.MAYA_MODULE_PATH = "{root}"
     env.MAYA_RENDER_DESC_PATH = "{root}"
