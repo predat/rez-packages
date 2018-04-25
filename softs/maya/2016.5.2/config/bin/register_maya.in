@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+if [ "$#" -ne 5 ]; then
+  echo "Illegal number of parameters"
+  echo "${0} <install|uninstall> <desktop|network> <serial_number> <key_alias>"
+  exit 1
+
+  fi
+if [ "$1" == "install" ]; then
+  ACTION="-i"
+else
+  ACTION="-u"
+fi
+
+if [ "$2" == "network" ]; then
+  LICENSE_TYPE="N"
+else
+  LICENSE_TYPE="S"
+fi
+
+MAYA_VERSION=@MAYA_MAJOR_VERSION@
+
+PRODUCT_KEY=$3
+
+SERIAL=$4
+
+KEY_ALIAS=$5
+
+VERSION_STR=@MAYA_MAJOR_VERSION@.0.0.F
+
+PIT_LOCATION=@CMAKE_INSTALL_PREFIX@/Adlm/var/Maya@MAYA_VERSION@/MayaConfig.pit
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:@CMAKE_INSTALL_PREFIX@/Adlm/opt/@ADLM_RELEASE@/lib64
+export AUTODESK_ADLM_THINCLIENT_ENV=@CMAKE_INSTALL_PREFIX@/AdlmThinClientCustomEnv.xml
+export HOSTNAME=`uname -n`
+@CMAKE_INSTALL_PREFIX@/maya/bin/adlmreg $ACTION $LICENSE_TYPE $PRODUCT_KEY $PRODUCT_KEY $VERSION_STR $SERIAL $PIT_LOCATION $KEY_ALIAS
+touch @CMAKE_INSTALL_PREFIX@/Adlm/var/opt/Autodesk/Adlm/.config/`uname -n`/Maya-$MAYA_VERSION.installed.$KEY_ALIAS
+
+exit 0
