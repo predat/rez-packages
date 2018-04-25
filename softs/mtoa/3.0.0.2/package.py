@@ -34,3 +34,5 @@ def commands():
     env.PATH.append("{root}/bin")
     env.MAYA_MODULE_PATH = "{root}"
     env.MAYA_RENDER_DESC_PATH = "{root}"
+
+    env.solidangle_LICENSE = "5053@licarnold.prs.vfx.int"
