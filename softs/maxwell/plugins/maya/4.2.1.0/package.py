@@ -28,7 +28,8 @@ plugin_for = ["maya"]
 requires = ["maxwell-4.2"]
 
 variants = [
-    # ["platform-linux", "arch-x86_64", "maya-2016"],
+    ["platform-linux", "arch-x86_64", "maya-2016"],
+    ["platform-linux", "arch-x86_64", "maya-2016.5"],
     ["platform-linux", "arch-x86_64", "maya-2017"],
     ["platform-linux", "arch-x86_64", "maya-2018"]
 ]
