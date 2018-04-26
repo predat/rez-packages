@@ -14,18 +14,6 @@
             <STRING>@CMAKE_INSTALL_PREFIX@/Adlm/var/@ADLM_RELEASE@</STRING>
         </KEY>
 
-        <!--
-        <KEY ID="ADLM_PIT_FILE_LOCATION">
-            <STRING>@CMAKE_INSTALL_PREFIX@/Adlm/var/opt/Autodesk/Adlm/.config</STRING>
-        </KEY>
-        <KEY ID="ADLM_CASCADE_FILE_LOCATION">
-            <STRING>@CMAKE_INSTALL_PREFIX@/Adlm/var/opt/Autodesk/Adlm/.config</STRING>
-        </KEY>
-        <KEY ID="ADLM_LICENSE_FILE_LOCATION">
-            <STRING>@CMAKE_INSTALL_PREFIX@</STRING>
-        </KEY>
-        -->
-
         <KEY ID="ADLM_PIT_FILE_LOCATION">
             <STRING>$MAYA_LOCATION/../Adlm/var/opt/Autodesk/Adlm/.config</STRING>
         </KEY>

@@ -87,6 +87,7 @@ rez_install_files(
 
 
 rez_install_files(
-    MayaNoColorManagement.xml
+    config/MayaNoColorManagement.xml
+    RELATIVE config
     DESTINATION .
 )
