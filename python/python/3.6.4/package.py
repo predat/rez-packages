@@ -33,7 +33,7 @@ tools = [
     "python3-config",
 ]
 
-uuid = "repository.python3"
+uuid = "repository.python"
 
 
 def commands():
