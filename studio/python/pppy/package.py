@@ -20,7 +20,7 @@ version = '1.0.0'
 
 build_requires = []
 
-requires = ['tk_core', 'requests', 'pyseq', 'lxml']
+requires = ['pip', 'tk_core', 'requests', 'pyseq', 'lxml']
 
 variants = []
 
