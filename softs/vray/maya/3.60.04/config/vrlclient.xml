@@ -1,0 +1,10 @@
+<VRLClient>
+    <LicServer>
+        <Host>licvray.prs.vfx.int</Host>
+        <Port>30304</Port>
+        <Proxy></Proxy>
+        <ProxyPort>0</ProxyPort>
+        <User></User>
+        <Pass></Pass>
+    </LicServer>
+</VRLClient>
