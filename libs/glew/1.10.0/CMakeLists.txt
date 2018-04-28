@@ -29,3 +29,10 @@ ExternalProject_add(
     BUILD_IN_SOURCE 1
     BUILD_COMMAND make -j ${ncpus} GLEW_DEST=${CMAKE_INSTALL_PREFIX}
 )
+
+
+install(
+    FILES cmake/glew.cmake
+    DESTINATION cmake
+)
+
