@@ -22,7 +22,9 @@ build_requires = []
 
 requires = ['pip', 'tk_core', 'requests', 'pyseq', 'lxml']
 
-variants = []
+variants = [
+    ["platform-linux", "arch-x86_64", "python2.7"]
+]
 
 uuid = 'repository.pppy'
 
