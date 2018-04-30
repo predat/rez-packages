@@ -27,3 +27,4 @@ uuid = "repository.rv"
 def commands():
 
     env.PATH.append("{root}/bin")
+    env.OCIO = "/prod/project/LIBRARY_14_081/0_setup/color/config.ocio"
