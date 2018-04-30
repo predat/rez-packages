@@ -34,7 +34,8 @@ uuid = "repository.mtoa"
 def commands():
 
     env.PATH.append("{root}/bin")
+    env.LD_LIBRARY_PATH.append("{root}/bin")
     env.MAYA_MODULE_PATH.append("{root}")
     env.MAYA_RENDER_DESC_PATH.append("{root}")
-
+    env.MTOA_EXTENSIONS_PATH.append("{root}/extensions")
     env.solidangle_LICENSE = "5053@licarnold.prs.vfx.int"
