@@ -26,6 +26,7 @@ variants = [
 
 build_requires = [
     "jpeg",
+    "zlib"
 ]
 
 uuid = 'repository.tiff'
