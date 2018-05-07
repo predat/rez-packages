@@ -48,6 +48,7 @@ ExternalProject_add(
     x264
     DEPENDS nasm
     GIT_REPOSITORY ${url_x264}
+    GIT_TAG 2451a7282463f68e532f2eee090a70ab139bb3e7
     PREFIX x264
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ${conf_wrapper} ./configure --prefix=${DEP_ROOT} --enable-pic --enable-static
