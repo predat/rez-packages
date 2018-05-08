@@ -1,5 +1,5 @@
 name = "ffmpeg"
-version = "3.3.3"
+version = "3.4.2"
 authors = ["Fabrice Bellard"]
 description = \
     """
