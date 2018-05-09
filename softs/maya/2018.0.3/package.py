@@ -37,7 +37,7 @@ def commands():
     env.PYTHONPATH.append("{root}/maya/lib/python2.7/site-packages")
 
     env.AUTODESK_ADLM_THINCLIENT_ENV.set("{root}/AdlmThinClientCustomEnv.xml")
-    env.MAYA_COLOR_MANAGEMENT_POLICY_LOCK = 1
+    # env.MAYA_COLOR_MANAGEMENT_POLICY_LOCK = 1
     env.MAYA_COLOR_MANAGEMENT_POLICY_FILE = "{root}/MayaNoColorManagement.xml"
 
     if building:
