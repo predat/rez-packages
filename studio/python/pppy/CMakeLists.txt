@@ -24,7 +24,7 @@ endif()
 ExternalProject_add(
     $ENV{REZ_BUILD_PROJECT_NAME}
     GIT_REPOSITORY git@git.prs.vfx.int:pipeline3.0/python/pppy.git
-    GIT_TAG v$ENV{REZ_BUILD_PROJECT_VERSION}
+    GIT_TAG $ENV{REZ_BUILD_PROJECT_VERSION}
     PREFIX $ENV{REZ_BUILD_PROJECT_NAME}
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""
@@ -32,8 +32,8 @@ ExternalProject_add(
     BUILD_IN_SOURCE 1
     BUILD_COMMAND
         COMMAND pip install ${pipargs} --no-deps
-        --install-option=--install-scripts=${CMAKE_INSTALL_PREFIX}
-        --install-option=--install-lib=${CMAKE_INSTALL_PREFIX}
-        --install-option=--install-headers=${CMAKE_INSTALL_PREFIX}
+        --install-option=--install-scripts=${CMAKE_INSTALL_PREFIX}/bin
+        --install-option=--install-lib=${CMAKE_INSTALL_PREFIX}/python
+        --install-option=--install-headers=${CMAKE_INSTALL_PREFIX}/python
         --install-option=--install-data=${CMAKE_INSTALL_PREFIX} .
 )

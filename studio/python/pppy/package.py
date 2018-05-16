@@ -33,4 +33,5 @@ uuid = 'repository.pppy'
 
 
 def commands():
-    env.PYTHONPATH.append("{root}")
+    env.PATH.append("{root}/bin")
+    env.PYTHONPATH.append("{root}/python")
