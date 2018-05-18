@@ -1,0 +1,9 @@
+CreateDesktopShortcut: No
+CreateQuickLaunchShortcut: No
+InstallDir: /tmp/titi
+InstallMode: Silent
+InstallType: Typical
+LaunchApplication: No
+ProgramFolderName: Maxwell Render 4
+SelectedComponents: Default Component
+ViewReadme: No

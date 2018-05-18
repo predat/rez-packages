@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+maya@MAYA_MAJOR_VERSION@.@MAYA_MINOR_VERSION@ "$@"

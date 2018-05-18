@@ -1,0 +1,6 @@
+find_package(PkgConfig)
+set( ENV{PKG_CONFIG_PATH} $ENV{PKG_CONFIG_PATH}:$ENV{REZ_PYSIDE_ROOT}/lib/pkgconfig)
+pkg_check_modules (PYSIDE REQUIRED pyside)
+set(pyside_INCLUDE_DIRS   	${PYSIDE_INCLUDE_DIRS})
+set(pyside_LIBRARY_DIRS   	${PYSIDE_LIBRARY_DIRS})
+set(pyside_LIBRARIES ${PYSIDE_LIBRARIES})
