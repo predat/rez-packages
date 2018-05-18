@@ -24,6 +24,7 @@ def commands():
 
     env.PATH.prepend("{root}/nuke")
     env.foundry_LICENSE = "4101@licfoundry.prs.vfx.int"
+    env.FN_DISABLE_LICENSE_DIALOG = 1  # suppress temporary license dialog
 
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
