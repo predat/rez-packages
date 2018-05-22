@@ -20,7 +20,7 @@ version = '1.0.0'
 
 build_requires = []
 
-requires = ['pip', 'tk_core', 'requests', 'pyseq', 'lxml']
+requires = ['pip', 'tk_core', 'requests', 'pyseq', 'lxml', 'PyYAML', 'fixstudio']
 
 variants = [
     ["platform-linux", "arch-x86_64", "python-2.7"]
