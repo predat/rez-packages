@@ -28,6 +28,17 @@ variants = [
 
 uuid = 'repository.pppy'
 
+tools = [
+    'pp-clean-project',
+    'pp-create-delivery',
+    'pp-create-discreet-project',
+    'pp-create-or-update-qt',
+    'pp-create-project',
+    'pp-create-sgtk-project',
+    'pp-launch-action',
+    'pp-launch-app-bin',
+]
+
 # with scope("config"):
 #     release_packages_path = "/prod/softprod/rez-packages/int"
 
