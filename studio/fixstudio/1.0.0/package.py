@@ -26,6 +26,8 @@ def commands():
 
     from rez.system import system
 
+    env.PP_SITE = 'paris'
+
     env.PP_OS = system.platform
 
     if env.PP_OS == "linux":
