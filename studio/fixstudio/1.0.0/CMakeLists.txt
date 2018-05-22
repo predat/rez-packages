@@ -8,11 +8,24 @@ include(RezBuild)
 #  DESTINATION .
 #)
 
-FILE(GLOB_RECURSE scripts "install_deps/scripts/*.sh")
+FILE(GLOB_RECURSE bin "install_deps/bin/*.sh")
 rez_install_files(
-  ${scripts}
-  RELATIVE install_deps/scripts
-  DESTINATION scripts
+  ${bin}
+  RELATIVE install_deps/bin
+  DESTINATION bin
   EXECUTABLE
 )
 
+FILE(GLOB_RECURSE etc "install_deps/etc/*")
+rez_install_files(
+  ${etc}
+  RELATIVE install_deps/etc
+  DESTINATION etc
+)
+
+FILE(GLOB_RECURSE share "install_deps/share/*")
+rez_install_files(
+  ${share}
+  RELATIVE install_deps/share
+  DESTINATION share
+)

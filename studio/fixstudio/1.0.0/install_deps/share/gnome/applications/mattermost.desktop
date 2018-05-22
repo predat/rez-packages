@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mattermost
+Comment=Mattermost Desktop
+Type=Application
+Icon=mattermost-desktop.png
+Terminal=false
+Exec=pp-launch-mattermost
+Categories=Benuts

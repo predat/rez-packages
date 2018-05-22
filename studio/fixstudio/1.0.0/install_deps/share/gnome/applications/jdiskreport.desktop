@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=JDiskReport
+Comment=Filesystem scan
+Exec=pp-launch-jdiskreport
+Terminal=false
+Icon=jdiskreport.png
+Categories=Graphics;Fix;
+

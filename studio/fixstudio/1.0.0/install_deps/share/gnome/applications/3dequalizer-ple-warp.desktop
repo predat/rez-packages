@@ -1,0 +1,7 @@
+[Desktop Entry]
+	Name=3DEqualizer 4 PLE Warp
+	Comment=3DEqualizer 4 Personal Learning Edition Warp
+	Exec=pp-launch-3dequalizer-ple-warp %U
+	Icon=3dequalizer4
+	Type=Application
+	Categories=Fix;Graphics;

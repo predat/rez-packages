@@ -1,0 +1,9 @@
+If a ".desktop" file is added or updated, launch the following command to
+update the application database:
+
+cd gnome/applications ; umask 002 ; update-desktop-database .
+
+More information at https://help.gnome.org/admin/system-admin-guide/stable/mime-types-custom-user.html.en
+
+To override the default registered application, create a file "mimeapps.list"
+in this folder and follow the instructions at https://help.gnome.org/admin/system-admin-guide/stable/mime-types-application-user.html.en

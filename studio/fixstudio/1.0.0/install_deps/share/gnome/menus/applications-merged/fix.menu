@@ -1,0 +1,16 @@
+<!DOCTYPE Menu PUBLIC "-//freedesktop//DTD Menu 1.0//EN"
+ "http://www.freedesktop.org/standards/menu-spec/1.0/menu.dtd">
+
+<Menu>
+  <Name>Fix Studio</Name>
+  <Menu>
+    <Name>Fix Studio</Name>
+    <Directory>Fix.directory</Directory>
+	<DirectoryDir>/prod/studio/menu/usr_shares/desktop-directories</DirectoryDir>
+    <Include>
+      <And>
+        <Category>Fix</Category>
+      </And>
+    </Include>
+  </Menu>
+</Menu>

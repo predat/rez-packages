@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Hiero Player
+Comment=Hiero Player Prod Version
+Type=Application
+Icon=hieroplayer
+Terminal=false
+Exec=pp-launch-hieroplayer
+MimeType=
+Categories=Fix;Graphics
+

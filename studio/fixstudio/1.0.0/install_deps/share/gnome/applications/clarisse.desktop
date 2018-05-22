@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Clarisse
+GenericName=Clarisse
+Comment=Clarisse
+Terminal=false
+Exec=xterm -T pp-launch-clarisse -e "pp-launch-clarisse || { echo '===== Command failed with status: $? =====' ; cat ; }"
+Icon=clarisse.png
+Categories=Graphics;Benuts;
+
+

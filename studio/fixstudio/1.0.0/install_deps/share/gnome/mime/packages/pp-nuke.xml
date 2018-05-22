@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-nuke">
+         <comment xml:lang="en">Nuke setup</comment>
+         <magic priority="50">
+             <match type="string" value="Bgeo" offset="0"/>
+         </magic>
+         <glob pattern="*.nk"/>
+  </mime-type>
+</mime-info>

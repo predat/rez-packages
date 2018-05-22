@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Maya 2016 Gay Jardin
+GenericName=Maya 2016 sourcing Gay Jardin
+Comment=Maya
+Terminal=false
+Exec=xterm -T pp-launch-maya-gay-jardin -e "export PP_OVERRIDE_MAYA_VERSION=2016.sp5 && export PP_OVERRIDE_MENTAL_RAY_MAYA_PLUGIN_VERSION=2016.0-2360 && pp-launch-maya-gay-jardin || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+Icon=mayaico_2016
+Categories=Graphics;Fix;Maya

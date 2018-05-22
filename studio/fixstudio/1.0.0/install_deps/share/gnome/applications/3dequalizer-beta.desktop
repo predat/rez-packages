@@ -1,0 +1,7 @@
+[Desktop Entry]
+	Name=3DEqualizer 4R5B3
+	Comment=3DEqualizer 4R5B3
+	Exec=pp-launch-3dequalizer-beta %U
+	Icon=3dequalizer4
+	Type=Application
+	Categories=Fix;Graphics;

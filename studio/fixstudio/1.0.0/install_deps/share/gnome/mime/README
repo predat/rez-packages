@@ -1,0 +1,6 @@
+If a new MIME type is added to gnome/mime/packages, update the MIME database:
+
+cd gnome/mime ; umask 002 ; update-mime-database . ; chmod g+w application
+
+More information at https://developer.gnome.org/integration-guide/stable/mime.html.en
+and https://help.gnome.org/admin/system-admin-guide/stable/mime-types-custom-user.html.en

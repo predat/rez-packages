@@ -1,0 +1,7 @@
+[Desktop Entry]
+	Name=Speedtree
+	Comment=Speedtree
+	Exec=pp-launch-speedtree %U
+	Icon=speedtree
+	Type=Application
+	Categories=Fix;Graphics;

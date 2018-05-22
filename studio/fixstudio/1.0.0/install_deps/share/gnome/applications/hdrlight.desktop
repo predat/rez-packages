@@ -1,0 +1,8 @@
+[Desktop Entry]
+	Name=HDR Light Studio
+	Comment=HDR Light Studio
+	Exec=pp-launch-hdr-light-studio
+	Icon=hdrlight.png
+	Type=Application
+	MimeType=application/x-HDRLS
+	Categories=Fix;Benuts;Graphics;

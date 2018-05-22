@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Shotgun
+Comment=Shotgun helps studios run like well-oiled production machines.
+Type=Application
+Icon=shotgun.png
+Terminal=false
+Exec=google-chrome http://wizz.shotgunstudio.com
+MimeType=
+Categories=Fix;
+

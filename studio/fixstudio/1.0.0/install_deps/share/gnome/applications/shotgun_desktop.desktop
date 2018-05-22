@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Shotgun Desktop
+Comment=Shotgun Desktop App
+Exec=pp-launch-shotgun_desktop
+Terminal=false
+Icon=shotgun.png
+Categories=Graphics;Fix;Tools;
+#X-GNOME-Autostart-enabled=true

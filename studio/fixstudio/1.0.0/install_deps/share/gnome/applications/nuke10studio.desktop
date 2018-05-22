@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Nuke Studio Prod Version (10.0)
+Comment=Nuke Studio Prod Version
+Type=Application
+Icon=nukestudio10.png
+Terminal=false
+Exec=xterm -T pp-launch-nuke-studio -e bash -c "pp-launch-nuke-studio || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+MimeType=
+Categories=Fix;Graphics;Nuke

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Maya 2016 Extension 2 SgTk
+GenericName=Maya 2016 Extension 2 sourcing SgTk
+Comment=Maya
+Terminal=false
+Exec=xterm -T pp-launch-maya-sgtk -e "export PP_OVERRIDE_MAYA_VERSION=2016.ext2 && export PP_OVERRIDE_MENTAL_RAY_MAYA_PLUGIN_VERSION=2016.5.0-1224 && pp-launch-maya-sgtk || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+Icon=mayaico_2016
+Categories=Graphics;Fix;Maya

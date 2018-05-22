@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=7.3.0.3832
+Type=Application
+Name=Google Earth
+Comment=Google Earth Pro
+Exec=pp-launch-google-earth
+Terminal=false
+MimeType=application/x-ntp;
+Icon=google-earth.png
+Categories=Graphics;Fix;
+

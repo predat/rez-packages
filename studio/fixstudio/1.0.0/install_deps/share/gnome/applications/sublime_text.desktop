@@ -1,0 +1,24 @@
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Sublime Text
+GenericName=Text Editor
+Comment=Sophisticated text editor for code, markup and prose
+Exec=pp-launch-sublime-text %F %U
+Terminal=false
+MimeType=text/plain;
+Icon=sublime_text.png
+Categories=TextEditor;Development;Fix;Tools;
+StartupNotify=true
+Actions=Window;Document;
+
+[Desktop Action Window]
+Name=New Window
+Exec=pp-launch-sublime-text -n
+OnlyShowIn=Unity;
+
+[Desktop Action Document]
+Name=New File
+Exec=pp-launch-sublime-text --command new_file
+OnlyShowIn=Unity;Tools

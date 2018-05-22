@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NukeX 8.0v4
+Comment=NukeX 8.0v4
+Type=Application
+Icon=nukex8.png
+Terminal=false
+Exec=xterm -T pp-launch-nukex -e bash -c "export PP_OVERRIDE_NUKE_VERSION=8.0v4 && pp-launch-nukex || { echo '===== Command failed with status: $? =====' ; cat ; }"
+MimeType=
+Categories=Graphics
+

@@ -1,0 +1,99 @@
+<project>
+
+  	<directory name="1_PROD">
+  		<directory name="CAHIER_PROD"></directory>
+  		<directory name="DOCS"></directory>
+  		<directory name="PLANNING"></directory>
+  		<directory name="STORYBOARD"></directory>
+	</directory>
+
+  	<directory name="2_ENTREE">
+
+		<directory name="ELEMENTS">
+			<directory name="DESIGN"></directory>
+	  		<directory name="PACKSHOT"></directory>
+	  		<directory name="REFS_AGENCE"></directory>
+	  		<directory name="REFS_TOURNAGE"></directory>
+	  		<directory name="TYPO"></directory>
+		</directory>
+
+  		<directory name="MONTAGE"></directory>
+  		<directory name="SON"></directory>
+
+  		<directory name="TC">
+  			<directory name="CONFO">
+  				<directory name="BAB_UTILE"></directory>
+  			</directory>
+	  		<directory name="COPIE_TRAVAIL"></directory>
+	  		<directory name="EDL"></directory>
+	  		<directory name="TC_DEF"></directory>
+	  		<directory name="TC_DROIT"></directory>
+  		</directory>
+
+	</directory>
+
+	<directory name="3_TRAVAIL">
+
+		<directory name="2D">
+			<directory name="DESIGN"></directory>
+	  		<directory name="MATTE_PAINTING"></directory>
+	  		<directory name="MOTION_GRAPHIC"></directory>
+	  		<directory name="TEXTURES">
+	  			<directory name="ASSETS"></directory>
+	  		</directory>
+		</directory>
+
+  		<directory name="3D">
+  			<directory name="BDD">
+  				<directory name="CHAR"></directory>
+  				<directory name="DECO"></directory>
+  				<directory name="PROPS"></directory>
+  			</directory>
+	  		<directory name="SEQ"></directory>
+	  		<directory name="SETTINGS"></directory>
+	  		<directory name="TRACK"></directory>
+	  		<directory name="WIP"></directory>
+  		</directory>
+
+		<directory name="COMPO">
+			<directory name="SHARE"></directory>
+		</directory>
+
+		<directory name="MONTAGES_REFERENCE"></directory>
+
+	</directory>
+
+	<directory name="4_RENDER">
+		<directory name="BLAST">
+			<directory name="BLAST_ANIM"></directory>
+			<directory name="BLAST_SFX"></directory>
+		</directory>
+		<directory name="RENDER_2D"></directory>
+		<directory name="RENDER_3D">
+			<directory name="LIGHTING"></directory>
+			<directory name="SFX"></directory>
+		</directory>
+		<directory name="RENDER_COMPO"></directory>
+	</directory>
+
+	<directory name="5_FLAME">
+		<directory name="FROM_FLAME">
+			<directory name="PUBLISH_FLAME"></directory>
+		</directory>
+		<directory name="WIP"></directory>
+		<directory name="TO_FLAME"></directory>
+	</directory>
+
+	<directory name="6_SORTIE">
+		<directory name="FILM_DEF"></directory>
+		<directory name="PLANS"></directory>
+		<directory name="PRESENTATION"></directory>
+	</directory>
+
+	<directory name="7_DEBACKUP">
+	</directory>
+
+	<directory name="8_MAKINGOF">
+	</directory>
+
+</project>

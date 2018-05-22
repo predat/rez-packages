@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Windows 7
+Comment=Starts the VirtualBox machine Win7
+Type=Application
+Icon=virtualbox-vbox.png
+Terminal=false
+Exec=pp-launch-vbox-windows
+MimeType=
+Categories=Fix;Graphics

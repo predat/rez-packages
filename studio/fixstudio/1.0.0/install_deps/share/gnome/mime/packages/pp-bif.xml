@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mime-info xmlns="http://www.freedesktop.org/standards/shared-mime-info">
+  <mime-type type="application/x-bif">
+         <comment xml:lang="en">Bifrost Particle</comment>
+         <magic priority="50">
+             <match type="string" value="AeroObject" offset="16"/>
+         </magic>
+         <glob pattern="*.bif"/>
+  </mime-type>
+</mime-info>

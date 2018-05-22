@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Realflow Prod Version
+Comment=Realflow Prod Version
+Type=Application
+Terminal=false
+Icon=realflow
+Exec=pp-launch-realflow
+Categories=Graphics;Fix;Benuts;
+

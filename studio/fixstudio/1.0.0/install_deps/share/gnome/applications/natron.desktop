@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Natron
+Comment=Node-graph based compositing software
+Exec=pp-launch-natron
+Terminal=false
+MimeType=application/x-ntp;
+Icon=natronIcon256_linux
+Categories=Graphics;Fix;
+

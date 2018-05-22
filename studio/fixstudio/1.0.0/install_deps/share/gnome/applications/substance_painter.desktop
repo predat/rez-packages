@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Substance Painter 2017
+Comment=Substance Painter 2017 App
+Exec=pp-launch-substance_painter %U
+Terminal=false
+Icon=substance_painter
+Categories=Graphics;Fix;Substance

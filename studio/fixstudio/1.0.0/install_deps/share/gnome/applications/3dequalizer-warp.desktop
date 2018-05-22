@@ -1,0 +1,7 @@
+[Desktop Entry]
+	Name=3DEqualizer 4 Warp
+	Comment=3DEqualizer 4 Warp
+	Exec=pp-launch-3dequalizer-warp %U
+	Icon=3dequalizer4
+	Type=Application
+	Categories=Fix;Graphics;

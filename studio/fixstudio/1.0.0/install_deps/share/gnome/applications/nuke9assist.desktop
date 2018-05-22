@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nuke Assist 9.0v7
+Comment=Nuke Assist 9.0v7
+Type=Application
+Icon=nuke9.png
+Terminal=false
+Exec=xterm -T pp-launch-nuke-assist -e bash -c "export PP_OVERRIDE_NUKE_VERSION=9.0v7 && pp-launch-nuke-assist || { echo '===== Command failed with status: $? =====' ; cat ; }"
+MimeType=
+Categories=Graphics
+

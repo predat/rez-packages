@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Maya 2014
+GenericName=Maya 2014 NO PIPE
+Comment=Maya
+Terminal=false
+Exec=xterm -T pp-launch-maya -e "export PP_OVERRIDE_MAYA_VERSION=2014.sp4 && export PP_OVERRIDE_MENTAL_RAY_MAYA_PLUGIN_VERSION=2014.0-418 && pp-launch-maya || { echo '===== Command failed with status: $? =====' ; cat ; }"
+Icon=mayaico_2014.png
+Categories=Graphics;

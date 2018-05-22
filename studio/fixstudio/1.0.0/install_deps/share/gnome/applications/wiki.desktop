@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wiki
+Comment=Wiki
+Type=Application
+Icon=wiki.png
+Terminal=false
+Exec=google-chrome http://wiki
+MimeType=
+Categories=Tools;
+

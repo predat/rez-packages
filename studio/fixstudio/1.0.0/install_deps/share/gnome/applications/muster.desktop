@@ -1,0 +1,15 @@
+
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Muster
+GenericName=Muster Console
+Comment=Muster Console
+Exec=bash -c 'pp-launch-muster-console -server muster.prs.vfx.int -user "${USER}"' %U
+Terminal=false
+
+Icon=musterConsole.png
+Categories=Graphics;Benuts;Fix;
+
+
+Name[en_US]=Muster Console

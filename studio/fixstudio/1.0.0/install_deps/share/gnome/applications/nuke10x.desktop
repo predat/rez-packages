@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=NukeX Prod Version (10.0)
+Comment=NukeX Prod Version
+Type=Application
+Icon=nukex10.png
+Terminal=false
+Exec=xterm -T pp-launch-nukex -e bash -c "pp-launch-nukex || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+MimeType=application/x-nuke
+Categories=Fix;Graphics;Nuke

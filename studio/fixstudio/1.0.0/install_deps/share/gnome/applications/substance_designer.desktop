@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Substance Designer 2017
+Comment=Substance Designer 2017 App
+Exec=pp-launch-substance_designer %U
+Terminal=false
+Icon=substance_designer
+Categories=Graphics;Fix;Substance

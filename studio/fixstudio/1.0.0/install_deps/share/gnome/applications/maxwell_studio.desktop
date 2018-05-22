@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Maxwell Studio
+Comment=Maxwell studio versioned
+Type=Application
+Terminal=false
+Icon=maxwell_studio.png
+Exec=pp-launch-maxwell-studio %U
+MimeType=
+Categories=Fix;Maxwell;Graphics

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=XnViewMP
+Comment=XnViewMP
+Type=Application
+Icon=xnview.png
+Terminal=false
+Exec=pp-launch-xnview %U
+MimeType=
+Categories=Fix;Benuts;Graphics

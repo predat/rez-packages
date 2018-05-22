@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Wacom - Attach to screen 0
+Comment=Attach wacom to screen 0
+Type=Application
+Icon=wacom.png
+Terminal=false
+Exec=pp-launch-mattermost
+Categories=Tools;

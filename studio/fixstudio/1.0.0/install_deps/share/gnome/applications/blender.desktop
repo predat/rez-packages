@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Blender
+GenericName=Blender
+Comment=Blender
+Terminal=false
+Exec=xterm -T pp-launch-blender -e "pp-launch-blender || { echo '===== Command failed with status: $? =====' ; cat ; }"
+Icon=blender.png
+Categories=Graphics;Benuts;Fix;
+
+

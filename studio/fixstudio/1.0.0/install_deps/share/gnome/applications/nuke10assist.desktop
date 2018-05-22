@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Nuke Assist Prod Version (10.0)
+Comment=Nuke Assist Prod Version
+Type=Application
+Icon=nuke10.png
+Terminal=false
+Exec=xterm -T pp-launch-nuke-assist -e bash -c "pp-launch-nuke-assist || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+MimeType=
+Categories=Fix;Graphics;Nuke

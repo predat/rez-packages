@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Nuke 7
+Comment=Nuke 7
+Type=Application
+Icon=nuke7.png
+Terminal=false
+Exec=xterm -T pp-launch-nuke -e bash -c "export PP_OVERRIDE_NUKE_VERSION=7.0v8 && pp-launch-nuke || { echo '===== Command failed with status: $? =====' ; bash ; }"
+MimeType=
+Categories=Graphics
+

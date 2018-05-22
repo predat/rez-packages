@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Nuke Studio 9.0v7
+Comment=Nuke Studio 9.0v7
+Type=Application
+Icon=nukestudio9.png
+Terminal=false
+Exec=xterm -T pp-launch-nuke-studio -e bash -c "export PP_OVERRIDE_NUKE_VERSION=9.0v7 && pp-launch-nuke-studio || { echo '===== Command failed with status: $? =====' ; cat ; }"
+MimeType=
+Categories=Graphics

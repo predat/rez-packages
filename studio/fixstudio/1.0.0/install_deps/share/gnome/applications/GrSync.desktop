@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=GrSync
+Comment=GrSync
+Type=Application
+Icon=grsync.png
+Terminal=false
+Exec=pp-launch-grsync
+MimeType=
+Categories=Benuts

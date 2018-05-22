@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0.0
+Type=Application
+Name=IFFFS Launcher
+Comment=
+Exec=xterm -e pp-launch-flare-pipeline
+Terminal=false
+MimeType=application/x-ntp;
+Icon=flame.png
+Categories=Graphics;Fix;
+

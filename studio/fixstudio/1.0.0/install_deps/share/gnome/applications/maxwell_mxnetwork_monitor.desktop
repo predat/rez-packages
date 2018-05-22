@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Maxwell Monitor
+Comment=Maxwell Monitor versioned
+Type=Application
+Terminal=false
+Icon=maxwell_monitor.png
+Exec=pp-launch-maxwell-mxnetwork -monitor
+MimeType=
+Categories=Fix;Maxwell;Graphics
+

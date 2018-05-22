@@ -1,0 +1,10 @@
+
+[Desktop Entry]
+Name=pp Protocol
+Comment=pp Protocol
+Type=Application
+Icon=fix.png
+Terminal=false
+Exec=pp-protocol %U
+MimeType=x-scheme-handler/pp
+Categories=AudioVideo;Fix;Benuts;

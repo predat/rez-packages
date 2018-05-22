@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Houdini Version 15.5.523
+GenericName=Houdini Version 15.5.523
+Comment=Houdini Version 15.5.523
+Terminal=false
+Exec=xterm -T pp-launch-houdini -e "export PP_OVERRIDE_HOUDINI_VERSION=15.5.523 && pp-launch-houdini -foreground || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+Icon=houdini.png
+Categories=Graphics;Benuts;Fix;Houdini

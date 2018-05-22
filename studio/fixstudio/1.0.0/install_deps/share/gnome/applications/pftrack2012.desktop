@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=PFTrack 2012
+Comment=PFTrack 2012
+Type=Application
+Terminal=0
+Icon=pftrack.png
+Exec=bash -c "PP_OVERRIDE_PFTRACK_VERSION=2012.4.4 pp-launch-pftrack"
+MimeType=application/x-pftrack;
+Categories=Graphics;
+

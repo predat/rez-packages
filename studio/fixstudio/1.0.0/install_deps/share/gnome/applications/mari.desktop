@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Mari
+Comment=Mari
+Type=Application
+Terminal=0
+Icon=mari.png
+Exec=pp-launch-mari %U
+Categories=Graphics;Fix;Benuts;

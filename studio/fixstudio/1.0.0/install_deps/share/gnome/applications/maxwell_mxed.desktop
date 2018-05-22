@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Maxwell Material Editor
+Comment=Maxwell Material Editor versioned
+Type=Application
+Terminal=false
+Icon=maxwell_mxed.png
+Exec=pp-launch-maxwell-mxed %U
+MimeType=
+Categories=Fix;Maxwell;Graphics
+

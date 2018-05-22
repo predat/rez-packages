@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=DoubleCmd
+Comment=File Browser
+Type=Application
+Icon=doublecmd.png
+Terminal=false
+Exec=pp-launch-doublecmd
+MimeType=
+Categories=Tools;Graphics

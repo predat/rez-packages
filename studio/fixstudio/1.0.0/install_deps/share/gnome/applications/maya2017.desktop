@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Maya 2017 (No pipeline)
+GenericName=Maya 2017 NO PIPE
+Comment=Maya
+Terminal=false
+Exec=xterm -T pp-launch-maya -e "export PP_OVERRIDE_MAYA_VERSION=2017 && export PP_OVERRIDE_MENTAL_RAY_MAYA_PLUGIN_VERSION="" && pp-launch-maya || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+Icon=mayaico_2017
+Categories=Graphics;

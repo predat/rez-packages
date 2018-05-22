@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Publish to TANK
+Comment=Publish any file to tank
+Type=Application
+Icon=tank.png
+Terminal=false
+Exec=pp-launch-file-publisher
+Categories=AudioVideo;Fix;
+

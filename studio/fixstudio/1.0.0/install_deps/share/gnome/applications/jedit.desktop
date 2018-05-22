@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=JEdit
+Comment=JEdit
+Type=Application
+Icon=jedit.png
+Terminal=false
+Exec=pp-launch-jedit
+MimeType=
+Categories=Benuts;

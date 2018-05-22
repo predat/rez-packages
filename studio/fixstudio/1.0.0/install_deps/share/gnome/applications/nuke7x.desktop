@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=NukeX 7
+Comment=NukeX 7
+Type=Application
+Icon=nukex7.png
+Terminal=false
+Exec=xterm -T pp-launch-nukex -e bash -c "export PP_OVERRIDE_NUKE_VERSION=7.0v8 && pp-launch-nukex || { echo '===== Command failed with status: $? =====' ; bash ; }"
+MimeType=
+Categories=Graphics
+

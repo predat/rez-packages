@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PFTrack Prod Version (2017)
+Comment=PFTrack Prod Version (2017)
+Type=Application
+Terminal=0
+Icon=pftrack
+Exec=pp-launch-pftrack %U
+MimeType=application/x-pftrack;
+Categories=Fix;Benuts;

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Houdini Version 16
+GenericName=Houdini Version 16
+Comment=Houdini Version 16
+Terminal=false
+Exec=xterm -T pp-launch-houdini -e "export PP_OVERRIDE_HOUDINI_VERSION=16.0.504.20 && pp-launch-houdini -foreground || { echo '===== Command failed with status: $? =====' ; cat ; }" %U
+Icon=houdini.png
+Categories=Graphics;Fix;Houdini

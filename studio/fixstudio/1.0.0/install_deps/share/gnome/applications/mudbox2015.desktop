@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Mudbox Prod Version (2015)
+GenericName=Mudbox Prod Version (2015)
+Comment=Mudbox Prod Version (2015)
+Terminal=false
+Exec=xterm -T pp-launch-maya -e "pp-launch-mudbox || { echo '===== Command failed with status: $? =====' ; cat ; }"
+Icon=mudbox2015.png
+Categories=Graphics;Fix;

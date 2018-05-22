@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Uv Layout
+Comment=Uv Layout
+Type=Application
+Terminal=0
+Icon=uvlayout.png
+Exec=pp-launch-uvlayout
+Categories=Graphics;Benuts;Fix;
+

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Maxwell Render Node
+Comment=Maxwell Render Node versioned
+Type=Application
+Terminal=false
+Icon=maxwell_rendernode.png
+Exec=pp-launch-maxwell-mxnetwork -node
+MimeType=
+Categories=Fix;Maxwell;Graphics
+

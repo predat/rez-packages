@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wiki
+Comment=Wiki Fix Studio
+Type=Application
+Icon=wiki
+Terminal=false
+Exec=firefox http://wiki.wizz.int
+MimeType=
+Categories=Fix;
+

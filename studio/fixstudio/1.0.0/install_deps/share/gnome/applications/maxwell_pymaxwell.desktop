@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Maxwell PyMaxwell Editor
+Comment=Maxwell PyMaxwell Editor versioned
+Type=Application
+Terminal=false
+Icon=maxwell_pymaxwell.png
+Exec=pp-launch-maxwell-pymaxwell
+MimeType=
+Categories=Fix;Maxwell;Graphics
+

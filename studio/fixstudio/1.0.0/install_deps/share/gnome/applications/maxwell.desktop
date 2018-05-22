@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Maxwell Render
+Comment=Maxwell Render versioned
+Type=Application
+Terminal=false
+Icon=maxwell.png
+Exec=pp-launch-maxwell %U
+MimeType=
+Categories=Fix;Maxwell;Graphics

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Geomorph
+GenericName=Geomorph
+Comment=Geomorph
+Terminal=false
+Exec=/prod/softprod/apps/geomorph/0.60.1/linux/geomorph
+Icon=geomorph.png
+Categories=Graphics;Benuts;
+

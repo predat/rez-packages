@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Houdini Prod Version (15) Apprentice
+GenericName=Houdini Prod Version (15) Apprentice
+Comment=Houdini Prod Version (15) Apprentice
+Terminal=false
+Exec=xterm -T pp-launch-houdini -e "pp-launch-houdini -apprentice -foreground || { echo '===== Command failed with status: $? =====' ; cat ; }"
+Icon=houdini.png
+Categories=Graphics;Benuts;Fix;;Houdini
+

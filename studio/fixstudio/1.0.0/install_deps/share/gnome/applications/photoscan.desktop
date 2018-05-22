@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Photoscan
+Comment=Photoscan 3d models
+Exec=pp-launch-photoscan %U
+Terminal=false
+Icon=photoscan.png
+Categories=Graphics;Fix;

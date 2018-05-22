@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Maxwell Manager
+Comment=Maxwell Render versioned
+Type=Application
+Terminal=false
+Icon=maxwell_manager.png
+Exec=pp-launch-maxwell-mxnetwork -manager
+MimeType=
+Categories=Fix;Maxwell;Graphics
+
