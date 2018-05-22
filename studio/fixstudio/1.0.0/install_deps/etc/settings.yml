@@ -1,0 +1,327 @@
+DISCREET:
+  rootNode:
+    project: REF_PROJECT_2018_1_F02
+    workstation: flame02
+  setupDir: /prod/discreet/project/%s/setup_flame
+  librariesList:
+    01_IMPORT:
+      #- 2D
+      #- 3D
+      - CONFO
+      - CT
+      #- DP
+      - ELEMENTS
+    02_JOB: []
+    03_WIP: []
+    04_MASTER: []
+
+FILE_EXT:
+  audio:
+    - aif
+    - wav
+  image:
+    - jpg
+    - jpeg
+    - dpx
+    - exr
+    - png
+    - tga
+    - tif
+    - tiff
+    - hdr
+  alembic_cache:
+    - abc
+  edl:
+    - edl
+    - xml
+  maya_scene:
+    - ma
+    - mb
+  nuke_script:
+    - nk
+
+INVALID_CHARACTERS:
+  - _
+  - ' '
+  - '|'
+  - '-'
+
+LICENSE:
+  FLARE:
+  - serverPath: 27001@coca.wizz.int
+    serverType: flex
+    softwares:
+    - 86990A400_2018_0F
+    - 86988A250_2018_0F
+    - 86989A350_2018_0F
+  SAPPHIRE:
+  - serverPath: 5053@licsapphire.prs.vfx.int
+    serverType: rlm
+    softwares:
+      - sapphire_ae_ofx_sparks_102f v20181120
+      - sapphire_sparks_162 v20190131
+  HDR:
+  - serverPath: 7053@lichdrlightstudio.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - hdrlspro v4.0
+    - hdrls_maya v2018.0302
+    - hdrls_maya v2018.1206
+    - hdrlightstudio v2018.0112
+    - hdrlightstudio v2018.0302
+    - hdrlightstudio v2018.1206
+    - hdrlightstudio v2019.0117
+    - hdrlightstudio v2019.0118
+  HOUDINI:
+  - serverPath: lichoudini.prs.vfx.int
+    serverType: sesi
+    softwares:
+    - Houdini-Master 16.5
+    - Houdini-Master 16.0
+    - Houdini-Master-NonCommercial 16.0
+    - Render 16.5
+    - Render 16.0
+  MARI:
+  - serverPath: 4101@licfoundry.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - mari_i v2018.0831
+  MAXWELL:
+  - serverPath: 8053@licmaxwell.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - maxwell v3.0
+    - maxwell_node v3.0
+    - maxwell v4.0
+    - maxwell_maya v4.0
+    - maxwell_node v4.0
+  MAYA:
+  - serverPath: 27001@coca.wizz.int
+    serverType: flex
+    softwares:
+    - MAYA_2016
+    - MAYA_2015
+    - MAYA_2014
+    - MAYA_2017
+    - MAYA_2018
+    - ENCSU_2018
+    - ENCSU_2017
+    - ENCSU_2016
+    - ENCSU_2015
+    - ENCSU_2014
+  MUDBOX:
+  - serverPath: 27001@coca.wizz.int
+    serverType: flex
+    softwares:
+    - MBXPRO_2018
+    - MBXPRO_2017
+    - MBXPRO_2016
+    - MBXPRO_2015
+    - MBXPRO_2014
+    - MBXPRO_2013
+  NUKE:
+  - serverPath: 4101@licfoundry.prs.vfx.int
+    serverType: rlm
+    softwares:
+    #- nuke_i v2018.0105
+    #- nuke_i v2017.1205
+    #- nuke_i v2017.1011
+    #- nuke_i v2017.1018
+    #- nuke_i v2018.0204
+    - nuke_i v2018.0406
+    - nukexassist_i v2018.0831
+    - nuke_i v2018.0306
+    - nuke_i v2018.0831
+    - nukex_i v2018.0831
+    - nukestudio_i v2018.0831
+    - nuke_r v2018.0831
+    - nuke_r v2017.0831
+  REALFLOW:
+  - serverPath: 8053@licrealflow.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - realflow v9.0
+  RV:
+  - serverPath: coca.wizz.int
+    serverType: tlm
+    softwares:
+    - rvsolo 4.*.*
+    - rvio 4.*.*
+  SHAVE:
+  - serverPath: 12053@licshavehaircut.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - shave_interactive v8.0
+    - shave_interactive v9.0
+    - shave_rendernode v8.0
+    - shave_rendernode v9.0
+  YETI:
+  - serverPath: 5053@licperegrinelabs.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - yeti_i v2.0
+    - yeti_r v2.0
+  ZBRUSH:
+  - serverPath: 2376@licpixologic.prs.vfx.int
+    serverType: rlm
+    softwares:
+    - zbrush v4.0
+
+MUSTER:
+  dispatcher: muster.prs.vfx.int
+  tcp_port: 9781
+  web_port: 9790
+  default_user_login: 'pipeline'
+  # by adding a root value, we ensure that the other folders will be created
+  # under this one
+  folders:
+    actions_folders:
+      root: 'pp'
+      pp_export_anim: 'pp_export_anim'
+      pp_linearize: 'pp_linearize'
+      pp_create_final_images: 'pp_create_final_images'
+      pp_qt_create: 'pp_qt_create'
+      pp_actions: 'pp_actions'
+      pp_create_delivery: 'pp_create_delivery'
+      pp_render_and_publish: 'pp_render_and_publish'
+      pp_convert_to: 'pp_convert_to'
+      pp_launch_app_bin: 'pp_launch_app_bin'
+      pp_casting_create: 'pp_casting_create'
+  pools:
+    pp_action: 'pp_action'
+    pp_process: 'pp_process'
+    rvio: 'rvio'
+    nuke: 'Nuke'
+    mantra: 'Mantra'
+
+PROJECT_SETTINGS:
+  availableExt:
+    audio:
+    - .aif
+    - .wav
+  colorSpace:
+    linear: ''
+    log: ' -inlog'
+    p3: ' -ingamma 2.6'
+    rec709: ' -in709'
+    srgb: ' -insrgb'
+  publishedEntities:
+  - Shot
+  - Asset
+  - Sequence
+
+COLOR_SPACE_MAPPING:
+  dpx: lgf
+  png: srgb8
+  jpg: srgb8
+  exr: lnf
+  tga: vd8
+  tif: vd8
+  mov: rec709
+
+PUBLISHED_FILE_TYPE:
+  default:
+    local_dir_name: default
+    default_thumbnail: pft_default.png
+  alembic:
+    local_dir_name: alembic
+    default_thumbnail: pft_alembic.png
+  audio_file:
+    local_dir_name: audio_file
+    default_thumbnail: pft_audio_file.png
+  camera_file:
+    local_dir_name: camera_file
+    default_thumbnail: pft_camera_file.png
+  edl_file:
+    local_dir_name: edl_file
+    default_thumbnail: pft_default.png
+  hdr:
+    local_dir_name: hdr_file
+    default_thumbnail: pft_hdr.png
+  houdini_scene:
+    local_dir_name: houdini_scene
+    default_thumbnail: pft_default.png
+  images:
+    local_dir_name: images
+    default_thumbnail: pft_image.png
+  maya_scene:
+    local_dir_name: maya_scene
+    default_thumbnail: pft_maya_scene.png
+  maya_scene_playblast:
+    local_dir_name: maya_scene_playblast
+    default_thumbnail: pft_maya_scene_playblast.png
+  movie_file:
+    local_dir_name: movie_file
+    default_thumbnail: pft_movie.png
+  mxs_static:
+    local_dir_name: mxs_static
+    default_thumbnail: pft_maxwell_studio.png
+  vrscene:
+    local_dir_name: vrscene
+    default_thumbnail: pft_vray.png
+  nuke_script:
+    local_dir_name: nuke_script
+    default_thumbnail: pft_nuke_script.png
+  photoscan:
+    local_dir_name: photoscan
+    default_thumbnail: pft_default.png
+  photoshop_image:
+    local_dir_name: photoshop_image
+    default_thumbnail: pft_image.png
+  snapshot:
+    local_dir_name: snapshot
+    default_thumbnail: pft_default.png
+  timewarp:
+    local_dir_name: timewarp
+    default_thumbnail: pft_timewarp.png
+  tracker_file:
+    local_dir_name: tracker_file
+    default_thumbnail: pft_default.png
+  vdb:
+    local_dir_name: nuke_script
+    default_thumbnail: pft_open_vdb.png
+
+SERVER:
+  prod1:
+    fqdn: prod1.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod2:
+    fqdn: prod2.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod3:
+    fqdn: prod3.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=3,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod4:
+    fqdn: prod4.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod5:
+    fqdn: prod5.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod6:
+    fqdn: prod6.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod7:
+    fqdn: prod7.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+  prod8:
+    fqdn: prod8.prs.vfx.int
+    mount_opt: -fstype=nfs,rw,noatime,vers=4,proto=tcp,hard,intr,timeo=600,retrans=2,wsize=32768,rsize=32768
+
+SHOTGUN:
+  customEntities:
+    Notification: CustomNonProjectEntity06
+    projectSettings: CustomEntity24
+    workstation: CustomNonProjectEntity01
+    Resolution: CustomEntity06
+    ColorSpace: CustomNonProjectEntity17
+    DeliverySpec: CustomEntity15
+    CodecSpec: CustomNonProjectEntity14
+    PublishedFileActions: CustomNonProjectEntity18
+    VersionActions: CustomNonProjectEntity16
+    PlaylistActions: CustomNonProjectEntity19
+    ProjectActions: CustomNonProjectEntity11
+    TaskActions: CustomNonProjectEntity12
+  scriptKey: 6bc5c3c46096703208c2035b18249ac81387f408
+  scriptName: pipeline
+  serverPath: https://wizz.shotgunstudio.com
+  templateProjectName: 0_PP_TEMPLATE_16_1117
