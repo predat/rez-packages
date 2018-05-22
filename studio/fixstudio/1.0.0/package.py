@@ -19,7 +19,7 @@ version = "1.0.0"
 
 # build_command = "python {root}/install.py"
 
-tools = ["pp-go-pipe"]
+tools = []
 
 
 def commands():
