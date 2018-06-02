@@ -50,19 +50,6 @@ def commands():
     env.PP_SOFTWARE_LIB = env.PP_SOFTWARE.value() + '/libs'
     env.PP_SOFTWARE_TOOLS = env.PP_SOFTWARE.value() + '/tools'
 
-    # studio
-    env.PP_STUDIO_PATH = env.PP_ROOT_DIR.value() + "/studio"
-
-    #
-    env.PP_PIPE_PATH = env.PP_STUDIO_PATH.value() + "/pipeline/latest"
-    env.PP_PIPE_COMMON_PATH = env.PP_PIPE_PATH.value() + "/common"
-    env.PP_PIPE_BIN_PATH = env.PP_PIPE_COMMON_PATH.value() + "/bin"
-    env.PP_PIPE_CONFIG_PATH = "{root}/etc"
-    env.PP_PIPE_ICONS = "{root}/share/icons"
-    env.PP_PIPE_SGTK_PATH = env.PP_PIPE_PATH.value() + "/sgtk"
-    env.PP_PIPE_LIB_PATH = env.PP_PIPE_COMMON_PATH.value() + "/lib"
-    env.PP_PIPE_UI_PATH = env.PP_PIPE_COMMON_PATH.value() + "/ui"
-
     # Shotgun
     env.PP_SHOTGUN = env.PP_ROOT_DIR.value() + '/shotgun'
     env.PP_SGTK_HOME = env.PP_SHOTGUN.value() + '/studio'
