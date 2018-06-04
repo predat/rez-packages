@@ -44,20 +44,9 @@ def commands():
         env.PP_ROOT_DIR = 'z:/prod'
         env.PP_SEP = ';'
 
-    env.PP_PS1_ORIG = "$PS1"
-    env.PP_SOFTWARE = env.PP_ROOT_DIR.value() + '/softprod'
-    env.PP_SOFTWARE_APP = env.PP_SOFTWARE.value() + '/apps'
-    env.PP_SOFTWARE_LIB = env.PP_SOFTWARE.value() + '/libs'
-    env.PP_SOFTWARE_TOOLS = env.PP_SOFTWARE.value() + '/tools'
-
     # Shotgun
     env.PP_SHOTGUN = env.PP_ROOT_DIR.value() + '/shotgun'
-    env.PP_SGTK_HOME = env.PP_SHOTGUN.value() + '/studio'
 
-    # TODO: TD
-    # TODO: users
-
-    # if defined("PP_DEBUG"):
     if defined("PP_DEBUG") and \
             getenv("PP_DEBUG") == "1":
         print "--------------------------------------------------------------"
