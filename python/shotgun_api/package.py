@@ -16,7 +16,7 @@ from rez.utils.lint_helper import env, building
 
 name = "shotgunapi"
 
-version = "3.0.34"
+version = "3.0.36"
 
 authors = ["Shotgun Software"]
 
