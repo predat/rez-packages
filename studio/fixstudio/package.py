@@ -47,9 +47,6 @@ def commands():
     # Shotgun
     env.PP_SHOTGUN = env.PP_ROOT_DIR.value() + '/shotgun'
 
-    if defined("PP_DEBUG") and \
-            getenv("PP_DEBUG") == "1":
-        print "--------------------------------------------------------------"
-
-    print(str(this.root))
     # source("/opt/rez/completion/complete.sh")
+
+    env.PATH.append('{root}/bin')
