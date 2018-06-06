@@ -8,7 +8,7 @@ include(RezBuild)
 #  DESTINATION .
 #)
 
-FILE(GLOB_RECURSE bin "install_deps/bin/*.sh")
+FILE(GLOB_RECURSE bin "install_deps/bin/*")
 rez_install_files(
   ${bin}
   RELATIVE install_deps/bin

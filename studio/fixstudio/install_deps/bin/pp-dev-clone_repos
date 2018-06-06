@@ -1,0 +1,96 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import os
+import sys
+import argparse
+import subprocess
+try:
+    import gitlab
+except ImportError as e:
+    print("* You need to install python-gitlab module.")
+    print("* Try to: \n  pip install python-gitlab --user")
+    print("* Or if you have root access, try this command to install globally:")
+    print("  sudo pip install python-gitlab\n")
+    sys.exit(1)
+
+GITLAB_URL = 'http://gitlab.prs.vfx.int'
+# token = 'ySbDdsvsA3zyDSEzayAc'
+# pipe_grp_id = 24
+
+
+def parse_args(args):
+    parser = argparse.ArgumentParser(
+        prog=__file__,
+        description="Clone Pipelene repo",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter)
+
+    parser.add_argument(
+        '--gitlab_url', '-u',
+        default=GITLAB_URL,
+        help='URL of Gitlab server')
+
+    parser.add_argument(
+        '--private_token', '-t',
+        default=os.environ.get('GITLAB_PRIVATE_TOKEN'),
+        help='Gitlab private token')
+
+    parser.add_argument(
+        '--groud_id', '-i',
+        default=24,
+        help='Id of the group to fetch from')
+
+    parser.add_argument(
+        '--path', '-p',
+        default=os.getcwd(),
+        help='Destination path to repos')
+
+    return parser
+
+
+def main(args):
+    parser = parse_args(args)
+    args = parser.parse_args(args)
+
+    if not args.private_token:
+        print("You need to provide Gitlab private token.\nCan also be specified using GITLAB_PRIVATE_TOKEN environment variable.")
+        sys.exit(parser.print_usage())
+
+    gl = gitlab.Gitlab(args.gitlab_url, private_token=args.private_token)
+    pipeline_prjs = []
+
+    def projects_finder(group):
+        sub_groups = group.subgroups.list()
+        if not sub_groups:
+            projects_in_group = group.projects.list()
+            for p in projects_in_group:
+                pipeline_prjs.append(p)
+        else:
+            for sub_group in sub_groups:
+                group_id = sub_group.get_id()
+                real_group = gl.groups.get(group_id)
+                projects_finder(real_group)
+
+    projects_finder(gl.groups.get(args.groud_id))
+
+    for prj in pipeline_prjs:
+        gitrepo_url = prj.attributes.get('ssh_url_to_repo')
+        current_dir = args.path
+        repo_path = os.path.join(
+            current_dir,
+            prj.attributes.get('path_with_namespace'))
+        directory, repo_dir = os.path.split(repo_path)
+
+        if not os.path.exists(directory):
+            os.makedirs(directory)
+
+        os.chdir(directory)
+        sys.stdout.write("Cloning {0}...".format(prj.attributes.get('path_with_namespace')),)
+        sys.stdout.flush()
+        subprocess.call('git clone -q {0} {1}'.format(gitrepo_url, repo_dir), shell=True)
+        print("done")
+        os.chdir(current_dir)
+
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
