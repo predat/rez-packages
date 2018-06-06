@@ -11,7 +11,7 @@
 # copied or duplicated, in whole or in part, without the prior written
 # consent of Fix Studio.
 
-from rez.utils.lint_helper import env, building, scope  # male linter happy
+from rez.utils.lint_helper import env, getenv, building, scope  # make linter happy
 
 
 name = 'pppy'
@@ -20,7 +20,13 @@ version = '1.0.0'
 
 build_requires = []
 
-requires = ['pip', 'tk_core', 'requests', 'pyseq', 'lxml', 'PyYAML', 'fixstudio']
+requires = [
+    'pip',
+    'requests',
+    'pyseq',
+    'lxml',
+    'PyYAML',
+    'fixstudio']
 
 variants = [
     ["platform-linux", "arch-x86_64", "python-2.7"]
@@ -44,5 +50,10 @@ tools = [
 
 
 def commands():
+    import os
     env.PATH.append("{root}/bin")
     env.PYTHONPATH.append("{root}/python")
+    env.PYTHONPATH.append(
+        os.path.join(
+            getenv('PP_SHOTGUN'),
+            'studio', 'install', 'core', 'python'))
