@@ -16,7 +16,7 @@ from rez.utils.lint_helper import env, getenv, building, scope  # make linter ha
 
 name = 'pppy'
 
-version = '1.0.0'
+version = '1.0.0.1'
 
 build_requires = []
 
