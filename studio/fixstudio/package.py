@@ -47,6 +47,8 @@ def commands():
     # Shotgun
     env.PP_SHOTGUN = env.PP_ROOT_DIR.value() + '/shotgun'
 
+    env.PP_PIPE_CONFIG_PATH = '{root}/etc'
+
     # source("/opt/rez/completion/complete.sh")
 
     env.PATH.append('{root}/bin')
