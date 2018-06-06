@@ -16,11 +16,11 @@ from rez.utils.lint_helper import env, building, scope  # male linter happy
 
 name = 'ppma'
 
-version = '1.0.0'
+version = '1.0.0.1'
 
 build_requires = []
 
-requires = ['pppy']
+requires = ['pppy', 'maya']
 
 variants = [
     ["platform-linux", "arch-x86_64", "python-2.7"]
@@ -34,4 +34,5 @@ uuid = 'repository.ppma'
 
 def commands():
     env.PATH.append("{root}/bin")
+    env.PYTHONPATH.append("{root}/setup")
     env.PYTHONPATH.append("{root}/python")
