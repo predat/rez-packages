@@ -50,6 +50,7 @@ def commands():
     env.PP_PIPE_CONFIG_PATH = '{root}/etc'
     env.PP_PIPE_ICONS = '{root}/share/icons'
     env.PP_DATA_DIR = '/mnt/data'
+    env.PP_USER_PATH = env.PP_ROOT_DIR.value() + "/studio/user"
 
     # source("/opt/rez/completion/complete.sh")
 
