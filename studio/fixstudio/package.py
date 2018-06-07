@@ -48,6 +48,8 @@ def commands():
     env.PP_SHOTGUN = env.PP_ROOT_DIR.value() + '/shotgun'
 
     env.PP_PIPE_CONFIG_PATH = '{root}/etc'
+    env.PP_PIPE_ICONS = '{root}/share/icons'
+    env.PP_DATA_DIR = '/mnt/data'
 
     # source("/opt/rez/completion/complete.sh")
 
