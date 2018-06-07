@@ -16,11 +16,11 @@ from rez.utils.lint_helper import env, building, scope  # male linter happy
 
 name = 'ppma'
 
-version = '1.0.0.1'
+version = '1.0.0.2'
 
 build_requires = []
 
-requires = ['pppy', 'maya']
+requires = ['pppy', 'maya', 'shotgunapi']
 
 variants = [
     ["platform-linux", "arch-x86_64", "python-2.7"]
