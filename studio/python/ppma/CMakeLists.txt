@@ -47,5 +47,5 @@ rez_install_files(
 rez_install_files(
     "install_deps/menu/ppMenu.yml"
     RELATIVE install_deps/menu
-    DESTINATION menu
+    DESTINATION common
 )

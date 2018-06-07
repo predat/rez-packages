@@ -36,3 +36,4 @@ def commands():
     env.PATH.append("{root}/bin")
     env.PYTHONPATH.append("{root}/setup")
     env.PYTHONPATH.append("{root}/python")
+    env.PP_PIPE_MAYA_COMMON_PATH = "{root}/common"
