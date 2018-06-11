@@ -6,7 +6,7 @@ include(ExternalProject)
 
 
 set(url_houdini
-    ${CMAKE_CURRENT_SOURCE_DIR}/archives/houdini-qt4-${HOUDINI_VERSION}-$ENV{REZ_PLATFORM_VERSION}_$ENV{REZ_ARCH_VERSION}_gcc4.8.tar.gz)
+    ${CMAKE_CURRENT_SOURCE_DIR}/archives/houdini-${HOUDINI_VERSION}-$ENV{REZ_PLATFORM_VERSION}_$ENV{REZ_ARCH_VERSION}_gcc4.8.tar.gz)
 
 
 if(${REZ_BUILD_INSTALL})
