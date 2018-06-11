@@ -59,15 +59,3 @@ if os.environ.get('TANK_CURRENT_PC'):
 
     menu_file = os.path.join(project_path, '0_setup', 'nuke', 'ppMenu.yml')
     ppMenu.build_menu_from_yaml(menu_file)
-
-
-import SearchReplacePanel
-
-def addSRPanel():
-        '''Run the panel script and add it as a tab into the pane it is called from'''
-        myPanel = SearchReplacePanel.SearchReplacePanel()
-        return myPanel.addToPane()
-
-nuke.menu('Pane').addCommand('SearchReplace', addSRPanel)
-nukescripts.registerPanel('com.ohufx.SearchReplace', addSRPanel)
-
