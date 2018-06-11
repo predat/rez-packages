@@ -1,0 +1,127 @@
+# pp Nuke menu
+- "/What's New": {'comment':'Open Wiki page.', 'cmd':'import webbrowser;webbrowser.open(url="http://wiki/wiki/index.php/Digital:Dev:WhatsNew")', 'cmdType':'python'}
+- "/separator": {}
+- "/Start Shotgun Menu": {'comment':'Try to start shotgun menu base on your scene filepath.', 'cmd':'import ppma.core.ppActions;ppma.core.ppActions.start_sgtk_engine()', 'cmdType':'python'}
+- '/Snapshot': {'comment':'Create Snapshot and Publish it','cmd':'import ppSnapshot.dialog;ppSnapshot.dialog.start_app(software="maya")', 'cmdType':'python'}
+- "/separator": {}
+# Init Scene
+- '/Init Scene/Asset/Model_Character human': {'comment':'Init the default scene - Step model','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="model_character_human")', 'cmdType':'python'}
+- '/Init Scene/Asset/Model_Prop': {'comment':'Init the default scene - Step model','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="model_prop")', 'cmdType':'python'}
+- "/Init Scene/Asset/separator": {}
+- '/Init Scene/Asset/Rig': {'comment':'Init the default scene - Step rig','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="rig_prop")', 'cmdType':'python'}
+- "/Init Scene/separator": {}
+- '/Init Scene/Asset/Shading': {'comment':'Init the default scene - Step shading','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="shading_prop")', 'cmdType':'python'}
+- '/Init Scene/Shot/Previz': {'comment':'Init the default scene - Step shading','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="previz")', 'cmdType':'python'}
+- '/Init Scene/Shot/Anim': {'comment':'Init the default scene - Step shading','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="previz")', 'cmdType':'python'}
+- "/Init Scene/Shot/separator": {}
+- '/Init Scene/Shot/Lighting': {'comment':'Init the default scene - Step shading','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="lighting")', 'cmdType':'python'}
+- "/Init Scene/separator": {}
+- '/Init Scene/Others/Turntable': {'comment':'Init the default scene - Step turntable','cmd':'import ppma.action.ppInitScene as ppInitScene; ppInitScene.init_scene(settings="turntable")', 'cmdType':'python'}
+- "/separator": {}
+# Common
+# Common/Tag
+- "/Common/separator": {}
+- "/Common/Maya Bonus Tools": {'comment':'Maya Bonus Tools', 'cmd':'bonusToolsMenu', 'cmdType':'mel'}
+- '/Common/Copy': {'comment':'Copy Selected Nodes', 'cmd':'import ppma.action.ppCopyPaste; ppma.action.ppCopyPaste.copy()', 'cmdType':'python'}
+- '/Common/Paste': {'comment':'Copy Selected Nodes', 'cmd':'import ppma.action.ppCopyPaste; ppma.action.ppCopyPaste.paste()', 'cmdType':'python'}
+- "/Common/separator": {}
+- '/Common/Tag/Auto Tag/ exportAnim': {'comment':'Auto Tag - exportAnim', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement; ppSceneManagement.autoTag(tagName="exportAnim")', 'cmdType':'python'}
+- '/Common/Tag/Add Tag/ exportAnim - Sel': {'comment':'Add Tag exportAnim on Selection', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement; import maya.cmds as cmds; ppSceneManagement.addTag(tagName="exportAnim", nodeList=cmds.ls(sl=True))', 'cmdType':'python'}
+- '/Common/Tag/Add Tag/ dyn - Sel': {'comment':'Add Tag dyn on Selection', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement; import maya.cmds as cmds; ppSceneManagement.addTag(tagName="dyn", nodeList=cmds.ls(sl=True))', 'cmdType':'python'}
+- '/Common/Tag/Add Tag/ do_not_export - Sel': {'comment':'Add Tag dyn on Selection', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement; import maya.cmds as cmds; ppSceneManagement.addTag(tagName="do_not_export", nodeList=cmds.ls(sl=True))', 'cmdType':'python'}
+- '/Common/Tag/Remove Tag/ exportAnim - Sel': {'comment':'Add Tag exportAnim on Selection', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement; import maya.cmds as cmds; ppSceneManagement.removeTag(tagName="exportAnim", nodeList=cmds.ls(sl=True))', 'cmdType':'python'}
+- '/Common/Tag/Remove Tag/ dyn - Sel': {'comment':'Add Tag dyn on Selection', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement; import maya.cmds as cmds; ppSceneManagement.removeTag(tagName="dyn", nodeList=cmds.ls(sl=True))', 'cmdType':'python'}
+# Common/Reference
+- '/Common/Reference/Reload pp_referenceNode': {'comment':'this script reload each pp_referenceNode.','cmd':'import ppma.core.ppSceneManagement as ppSceneManagement;ppSceneManagement.reloadPPReferenceNode()', 'cmdType':'python'}
+
+# Sanity Check
+- 'Sanity Check/Common/Delete Locked Node': {'comment': 'Delete Locked Node', 'cmd': 'import ppma.core.ppNode as ppNode;reload(ppNode); ppNode.delete_locked_node()', 'cmdType':'python'}
+- 'Sanity Check/Animation/Delete Anim Curve connected to Reference Node': {'comment': 'Delete Anim Curve connected to Reference Node', 'cmd': 'import ppma.action.ppSanityCheck as ppSanityCheck; reload(ppSanityCheck);ppSanityCheck.remove_anim_curve_connected_to_reference_node()', 'cmdType':'python'}
+- "/separator": {}
+
+# Modeling
+- '/Modeling/Create outMesh inMesh': {'comment':'Connect outMesh to inMesh.','cmd':'import ppma.core.ppTools as ppTools;ppTools.create_outMesh_inMesh_selection()', 'cmdType':'python'}
+- '/Modeling/Snap/Snap Transform': {'comment':'Snap Object to an other','cmd':'import ppma.core.ppTools as ppTools;ppTools.snap_selection()', 'cmdType':'python'}
+- "/Modeling/separator": {}
+- '/Modeling/Clean/Auto Rename Shape Name based on Parent': {'comment':'','cmd':'import ppma.action.ppModeling.pp_clean as pp_clean; pp_clean.auto_rename_shape()', 'cmdType':'python'}
+- "/Modeling/separator": {}
+- '/Modeling/Merge Edge Tool': {'comment':'','cmd':'MergeEdgeTool()', 'cmdType':'mel'}
+
+# Rigging
+- '/Rigging/Launch Comet Menu': {'comment':'Source the Comet Menu','cmd':'source cometMenu', 'cmdType':'mel'}
+- "/Rigging/separator": {}
+- '/Rigging/Autorig - Prop': {'comment':'Select hierarchy top node.','cmd':'import ppma.action.ppRigging as ppRigging;reload(ppRigging); ppRigging.autorig_selection(rig_type="prop")', 'cmdType':'python'}
+- "/Rigging/separator": {}
+
+# Shading
+- '/Shading/Publish Mxs': {'comment':'Publish Mxs','cmd':'import ppma.core.ppActions as ppActions;a=ppActions.Action();a._publish_mxs()', 'cmdType':'python'}
+- '/Shading/Publish VrScene': {'comment':'Publish VrScener','cmd':'import ppma.core.ppActions as ppActions;a=ppActions.Action();a._publish_vrscene()', 'cmdType':'python'}
+
+# Fx
+- '/Fx/geometrie/rivets/createFollicleFromSelection' : {'comment':'select vertex, edges or faces','cmd':'import ppma.action.ppFx as ppFxGeo;ppFxGeo.createFollicleFromVertex()','cmdType':'python'}
+- '/Fx/hda/fix_scatter' : {'comment':'select mesh growth from and groups containing objects to instance','cmd':'import ppma.action.ppFxHda as ppFxHda;ppFxHda.create_fix_scatter_hda()','cmdType':'python'}
+- '/Fx/hda/fix_pixelizer' : {'comment':'select mesh to voxelize','cmd':'import ppma.action.ppFxHda as ppFxHda;ppFxHda.create_fix_pixelizer_hda();','cmdType':'python'}
+
+#-------------------
+- "/separator": {}
+# Camera
+- "/Camera/separator": {}
+- "/Camera/Get Camera/Get Default Camera Rig from Library": {'comment':'Reference Camera from Library.', 'cmd':'import ppma.action.ppLibrary as ppLibrary;ppLibrary.get_camera()', 'cmdType':'python'}
+- "/Camera/Get Camera/Get Turntable Camera from Library": {'comment':'Reference Camera from Library.', 'cmd':'import ppma.action.ppLibrary as ppLibrary;ppLibrary.get_turntable_camera()', 'cmdType':'python'}
+- "/Camera/separator": {}
+- "/Camera/Camera Rig/Push Cam Position to Rig": {'comment':'Push Cam Position to Rig.', 'cmd':'import ppma.action.ppCamera as ppCamera; reload(ppCamera); ppCamera.push_camera_position_to_rig_selection()', 'cmdType':'python'}
+- "/Camera/separator": {}
+- "/Camera/Publish/Help": {'comment':'Open Help for Publish Camera.', 'cmd':'import webbrowser;webbrowser.open(url="http://wiki/wiki/index.php/Digital:Dev:tools:ppma-action-publishCamera:user#Publish_Camera")', 'cmdType':'python'}
+- '/Camera/Publish/Publish Cambaked': {'comment':'Publish Selected Camera as Camera Baked','cmd':'import ppma.action.ppPublishCamera as ppPublishCamera; ppPublishCamera.publishSelectedCamera(cameraType="cambaked")', 'cmdType':'python'}
+- '/Camera/Publish/Publish Camtrack': {'comment':'Publish Selected Camera as Camera Track','cmd':'import ppma.action.ppPublishCamera as ppPublishCamera; ppPublishCamera.publishSelectedCamera(cameraType="camtrack")', 'cmdType':'python'}
+- "/Camera/separator": {}
+- '/Camera/Set Near-Far based on Scene': {'comment':'Set near and far based on scene.','cmd':'import ppma.core.ppTools as ppTools; ppTools.set_near_far_based_on_scene()', 'cmdType':'python'}
+- '/Camera/Switch All Cameras to Pin Hole': {'comment':'Switch All Cameras to Pin Hole','cmd':'import ppma.core.ppTools as ppTools; ppTools.set_camera_to_pin_hole()', 'cmdType':'python'}
+- '/Camera/Add ppCameraPlane': {'comment':'Add ppCameraPlane to the selected camera','cmd':'import ppCameraPlane;ppCameraPlane.connect_to_selected_camera()', 'cmdType':'python'}
+
+# Camera
+- "/Sound/Auto Get Sound": {'comment':'Get Sound linked to your Context.', 'cmd':'import ppma.core.ppActions as ppActions;ppActions.execute_action(action="auto_get_sound")', 'cmdType':'python'}
+
+# Tracking
+- '/Tracking/Publish Cambaked': {'comment':'Publish Selected Camera as Camera Baked','cmd':'import ppma.action.ppPublishCamera as ppPublishCamera; ppPublishCamera.publishSelectedCamera(cameraType="cambaked")', 'cmdType':'python'}
+- '/Tracking/Publish Camtrack': {'comment':'Publish Selected Camera as Camera Track','cmd':'import ppma.action.ppPublishCamera as ppPublishCamera; ppPublishCamera.publishSelectedCamera(cameraType="camtrack")', 'cmdType':'python'}
+
+# Animation
+- '/Animation/Timewarp/Create Shot Timewarp': {'comment':'This func apply a shot timewarp on your selection.','cmd':'import ppma.action.ppTimewarp as ppTimewarp; ppTimewarp.create_timewarp_on_selection(killPreviousNode=True)', 'cmdType':'python'}
+- '/Animation/Timewarp/Add your Selection to the Shot Timewarp': {'comment':'This func add your selection to the existing shot timewarp.','cmd':'import ppma.action.ppTimewarp as ppTimewarp; ppTimewarp.create_timewarp_on_selection(killPreviousNode=False)', 'cmdType':'python'}
+- '/Animation/separator': {}
+- '/Animation/Timewarp/Publish Selected Timewarp': {'comment':'This func publish you re selected Timewarp.','cmd':'import ppma.action.ppTimewarp as ppTimewarp; ppTimewarp.publish_selected_timewarp()', 'cmdType':'python'}
+
+# Import Export
+- "/separator": {}
+- "/Import Export/Help": {'comment':'Open Help for Import Export Anim.', 'cmd':'import webbrowser;webbrowser.open(url="http://wiki/wiki/index.php/Digital:Dev:tools:ppma-action-ppImpExpAnim:user#Export_Anim")', 'cmdType':'python'}
+- '/Import Export/separator': {}
+- '/Import Export/Export Anim - All': {'comment':'Export Animation - All', 'cmd':'import ppma.action.ppImpExpAnim as ppImpExpAnim; ppImpExpAnim.export_animation_from_current_scene()', 'cmdType':'python'}
+- '/Import Export/Export Anim - Maya Selection': {'comment':'Export Animation for the selected node. please select node like namespace:model:root', 'cmd':'import ppma.action.ppImpExpAnim as ppImpExpAnim;ppImpExpAnim.export_animation_from_selection()', 'cmdType':'python'}
+- '/Import Export/Export Anim - Renderfarm - All': {'comment':'Export Animation - All', 'cmd':'import ppma.action.ppImpExpAnim as ppImpExpAnim; ppImpExpAnim.export_animation_from_current_scene(subProcessMode="renderfarm")', 'cmdType':'python'}
+- '/Import Export/Export Anim - Renderfarm - Maya Selection': {'comment':'Export Animation for the selected node. please select node like namespace:model:root', 'cmd':'import ppma.action.ppImpExpAnim as ppImpExpAnim;ppImpExpAnim.export_animation_from_selection(subProcessMode="renderfarm")', 'cmdType':'python'}
+- '/Import Export/Export Anim Advanced/Add Maya Attr for On Fly Mesh Export': {'comment':'Add Attribute Override on Selection for On Fly Mesh Export.', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement;ppSceneManagement.do_AddMayaAttrOverrideSelection()', 'cmdType':'python'}
+- '/Import Export/separator': {}
+- '/Import Export/Import Anim - All': {'comment':'Import Animation - All', 'cmd':'import ppma.action.ppImpExpAnim as ppImpExpAnim; ppImpExpAnim.import_animation_from_current_scene()', 'cmdType':'python'}
+- '/Import Export/Import Anim - Selection': {'comment':'Import Animation - Selection', 'cmd':'import ppma.action.ppImpExpAnim as ppImpExpAnim; ppImpExpAnim.import_animation_from_selection()', 'cmdType':'python'}
+- '/Import Export/Import Anim Advanced/Reload All pp Script Node': {'comment':'Reload re evaluate all pp script node.', 'cmd':'import ppma.core.ppSceneManagement as ppSceneManagement;ppSceneManagement.do_AddMayaAttrOverrideSelection()', 'cmdType':'python'}
+- '/Import Export/separator': {}
+- "/separator": {}
+# Finalling
+- '/Finalling/Place Holder': {'comment':'Place Holder','cmd':'print "hi"', 'cmdType':'python'}
+# Lighting/Reference
+- '/Lighting/Reload pp_referenceNode': {'comment':'this script reload each pp_referenceNode.','cmd':'import ppma.core.ppSceneManagement as ppSceneManagement;ppSceneManagement.reloadPPReferenceNode()', 'cmdType':'python'}
+- '/Lighting/Fix Render Layer': {'comment':'Fix Render Layer','cmd':'source fixRenderLayerOutAdjustmentErrors.mel;fixRenderLayerOutAdjustmentErrors', 'cmdType':'mel'}
+# Menu
+- '/separator': {}
+- '/Menu/Reload Menu': {'comment':'Reload the Menu', 'cmd':'import ppma.core.ppMenu as ppMenu; ppMenu.buildMenu()', 'cmdType':'python'}
+- "/Menu/How to Custom Menu": {'comment':'Open Web Browser.', 'cmd':'import webbrowser;webbrowser.open(url="http://kiwi/wiki/index.php/digital:Dev:tools:ppma-core-ppMenu:user")', 'cmdType':'python'}
+# Init Scene
+- "/Maya/Force Refresh Viewport": {'comment':'Force Refresh Viewport', 'cmd':'cmds.ogs(reset=True)', 'cmdType':'python'}
+- "/Maya/Set all viewport in/Legacy Viewport": {'comment':'Set all viewport in Legacy Viewport', 'cmd':'import ppma.core.ppUi as ppUi;reload(ppUi);ppUi.set_all_viewport_in(renderer="default")', 'cmdType':'python'}
+- "/Maya/Set all viewport in/High Quality Viewport": {'comment':'Set all viewport in High Quality', 'cmd':'import ppma.core.ppUi as ppUi;reload(ppUi);ppUi.set_all_viewport_in(renderer="highQuality")', 'cmdType':'python'}
+- "/Maya/Set all viewport in/Viewport 2": {'comment':'Set all viewport in Viewport 2', 'cmd':'import ppma.core.ppUi as ppUi;reload(ppUi);ppUi.set_all_viewport_in(renderer="viewport2")', 'cmdType':'python'}
+- '/Maya/separator': {}
+- '/Maya/Fix Render Layer': {'comment':'Fix Render Layer','cmd':'source fixRenderLayerOutAdjustmentErrors.mel;fixRenderLayerOutAdjustmentErrors', 'cmdType':'mel'}
+- '/separator': {}
+
