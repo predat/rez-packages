@@ -1,0 +1,41 @@
+# Command example:
+# - "ppTools/RV/Play in RV": {'command': 'nuke.message(str(ppnk.utils.ppNukeUtils.DEFAULT_TILE_SIZE))', 'hotkey': 'alt+l', 'icon':'fixstudio.png'}
+# Icons have to be in the menu_icons folder
+# Separator example:
+# - "ppTools/RV/separator": {}
+# Help
+- "Fix Studio/Help": {'command': 'import webbrowser;webbrowser.open(url="http://wiki.prs.vfx.int/wiki/index.php/Digital:2d:help")', 'icon':'appbar.social.wikipedia.png'}
+# Play
+- "Fix Studio/View/Play in RV": {'command': 'import ppnk.action.pp_play_in_viewer;ppnk.action.pp_play_in_viewer.play_selection(play_mode="play", viewer="rv")', 'hotkey': 'alt+v', 'icon':'rv.png'}
+- "Fix Studio/View/Compare in RV": {'command': 'import ppnk.action.pp_play_in_viewer;ppnk.action.pp_play_in_viewer.play_selection(play_mode="compare", viewer="rv")', 'icon':'rv.png'}
+- "Fix Studio/View/Push in RV": {'command': 'import ppnk.action.pp_play_in_viewer;ppnk.action.pp_play_in_viewer.play_selection(play_mode="push", viewer="rv")', 'hotkey': 'alt+u', 'icon':'rv.png'}
+# Create
+- "Fix Studio/Create/Read From Write": {'command': 'ppnk.utils.ppNukeUtils.create_reads_from_writes(nuke.selectedNodes())'}
+- "Fix Studio/Create/Ocio Display": {'command': 'import ppnk.core.ppActions as ppActions;ppActions.execute_action("create_OCIODisplay")', 'icon':'ocio.png'}
+# Ocio
+- "Fix Studio/Ocio/Create Ocio Display": {'command': 'import ppnk.core.ppActions as ppActions;ppActions.execute_action("create_OCIODisplay")', 'icon':'ocio.png'}
+- "Fix Studio/Ocio/separator": {}
+- "Fix Studio/Ocio/Update Ocio Display Context - All": {'command': 'import ppnk.core.ppTools as ppTools;ppTools.auto_set_context_ocio_node()', 'icon':'ocio.png'}
+- "Fix Studio/Ocio/Update Ocio Display Context - Selected": {'command': 'import ppnk.core.ppTools as ppTools;ppTools.auto_set_context_selected_ocio_node()', 'icon':'ocio.png'}
+# Hotfix
+- "Fix Studio/Hotfix/Update Shotgun Write Node 1.0": {'command': 'import ppnk.action.pp_hotfix;ppnk.action.pp_hotfix.shogtun_write_update(version="1.0")', 'icon':'ocio.png'}
+- "Fix Studio/Farm/Submit to Muster": {'command': 'import submitToMuster;submitToMuster.submitToMuster()'}
+# Menu
+- "Fix Studio/Menu/Reload Menu": {'command': 'import ppnk.core.ppMenu;ppnk.core.ppMenu.build_menu()'}
+- "Fix Studio/Cryptomatte/Cryptomatte": {'command': 'import cryptomatte_utilities as cu; cu.cryptomatte_create_gizmo();', 'icon': 'cryptomatte_logo.png'}
+- "Fix Studio/Cryptomatte/Decryptomatte All": {'command': 'import cryptomatte_utilities as cu; cu.decryptomatte_all();'}
+- "Fix Studio/Cryptomatte/Decryptomatte Selection": {'command': 'import cryptomatte_utilities as cu; cu.decryptomatte_selected();'}
+- "Fix Studio/Cryptomatte/Encryptomatte": {'command': 'import cryptomatte_utilities as cu; cu.encryptomatte_create_gizmo();'}
+- "Fix Studio/Tools/Multi Channel Split": {'command': 'import MultiChannelSplit; MultiChannelSplit.MultiChannelSplit();'}
+
+
+- "Fix Studio/Tools/dDot/dDotParent": {'command': 'import dDot; dDot.dDotParent()', 'hotkey': 'shift+p'}
+- "Fix Studio/Tools/dDot/dDotConnect": {'command': 'import dDot ; dDot.dDotConnect()', 'hotkey': 'alt+shift+a'}
+- "Fix Studio/Tools/dDot/dDotConnectSelected": {'command': 'import dDot; dDot.dDotConnectSelected()', 'hotkey': 'ctrl+,'}
+- "Fix Studio/Tools/dDot/dDotCheckInput": {'command': 'import dDot; dDot.dDotCheckInput()', 'hotkey': 'ctrl+shift+,'}
+- "Fix Studio/Tools/dDot/dDotAutoConnect": {'command': 'import dDot; dDot.dDotAutoConnect()', 'hotkey': 'alt+a'}
+- "Fix Studio/Tools/dDot/dDotShowChildren": {'command': 'import dDot; dDot.dDotShowChildren()', 'hotkey': 'alt+,'}
+- "Fix Studio/Tools/dDot/dDotToggleConnectionsVisibility": {'command': 'import dDot; dDot.dDotToggleConnectionsVisibility()', 'hotkey': 'alt+.'}
+- "Fix Studio/Tools/dDot/dDotRollDownNameChange": {'command': 'import dDot; dDot.dDotRollDownNameChange()', 'hotkey': 'alt+shift+,'}
+- "Fix Studio/Tools/dDot/dDotGrabParentName": {'command': 'import dDot; dDot.dDotGrabParentName()', 'hotkey': 'alt+shift+.'}
+- "Fix Studio/Tools/dDot/dDotSelectChildren": {'command': 'import dDot; dDot.dDotSelectChildren()'}
