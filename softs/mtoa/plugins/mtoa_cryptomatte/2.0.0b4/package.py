@@ -2,7 +2,7 @@
 from rez.utils.lint_helper import env, building
 
 
-name = "cryptomatte_mtoa"
+name = "mtoa_cryptomatte"
 
 version = "2.0.0b4"
 
@@ -14,7 +14,7 @@ variants = [["platform-linux", "arch-x86_64"]]
 
 plugin_for = ["maya", "mtoa"]
 
-uuid = "repository.cryptomatte_mtoa"
+uuid = "repository.mtoa_cryptomatte"
 
 
 def commands():
