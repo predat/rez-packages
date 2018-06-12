@@ -14,7 +14,7 @@ variants = [["platform-linux", "arch-x86_64"]]
 
 plugin_for = ["maya", "mtoa"]
 
-uuid = "repository.cryptomatte"
+uuid = "repository.cryptomatte_mtoa"
 
 
 def commands():
