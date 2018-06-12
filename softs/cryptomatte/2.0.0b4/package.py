@@ -4,7 +4,7 @@ from rez.utils.lint_helper import env, building
 
 name = "cryptomatte"
 
-version = "2.0.0b3"
+version = "2.0.0b4"
 
 authors = [""]
 
