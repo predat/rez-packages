@@ -2,7 +2,7 @@
 from rez.utils.lint_helper import env, building
 
 
-name = "cryptomatte"
+name = "cryptomatte_mtoa"
 
 version = "2.0.0b4"
 
