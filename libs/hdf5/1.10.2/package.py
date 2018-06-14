@@ -1,6 +1,6 @@
 name = "hdf5"
 
-version = "1.8.9"
+version = "1.10.2"
 
 authors = [
     "The HDF Group"
@@ -11,12 +11,10 @@ description = \
     Data model, library, and file format for storing and managing data.
     """
 
-build_requires = [
-    "gcc-4.8.3"
-]
+build_requires = []
 
 variants = [
-    ["platform-linux", "arch-x86_64","os-CentOS-6.8"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 tools = [
