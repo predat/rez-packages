@@ -8,9 +8,8 @@ ProcessorCount(ncpus)
 
 set(cmake_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-rez_set_archive(
-    url_cmake cmake/cmake-${cmake_version}.tar.gz
-     https://cmake.org/files/v3.7/cmake-${cmake_version}.tar.gz
+set(url_cmake 
+    https://cmake.org/files/v3.11/cmake-${cmake_version}.tar.gz
 )
 
 if(${REZ_BUILD_INSTALL})

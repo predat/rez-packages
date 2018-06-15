@@ -24,6 +24,11 @@ ExternalProject_add(
     CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic
     --enable-build-mode=production
     INSTALL_COMMAND "${install_cmd}"
-    BUILD_IN_SOURCE 1
     BUILD_COMMAND make ${make_args}
+    BUILD_IN_SOURCE 1
+)
+
+install(
+    FILES cmake/hdf5.cmake
+    DESTINATION cmake
 )
