@@ -22,7 +22,7 @@ ExternalProject_add(
     PREFIX hdf5
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic
-    --enable-build-mode=production
+    --enable-build-mode=production --enable-cxx
     INSTALL_COMMAND "${install_cmd}"
     BUILD_COMMAND make ${make_args}
     BUILD_IN_SOURCE 1
