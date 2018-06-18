@@ -32,10 +32,17 @@ build_requires = [
     'oiio',
     'opensubdiv',
     'ptex',
-    'maya'
+    'maya',
+    'PyOpenGL',
+    'PySide',
+    'PySideTools'
 ]
 
-requires = []
+requires = [
+    'Jinja2',
+    'PyOpenGL',
+    'PySide'
+]
 
 tools = []
 
