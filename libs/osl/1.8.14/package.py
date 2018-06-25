@@ -14,7 +14,7 @@ description = ''
 requires = ['openexr']
 
 build_requires = [
-    'llvm',
+    'llvm-3',
     'cmake',
     'openexr',
     'oiio'

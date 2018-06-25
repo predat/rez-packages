@@ -8,8 +8,7 @@ ProcessorCount(ncpus)
 
 set(blosc_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-set(url https://github.com/Blosc/c-blosc/archive/v${blosc_version}.tar.gz
-)
+set(url https://github.com/Blosc/c-blosc/archive/v${blosc_version}.tar.gz)
 
 if(${REZ_BUILD_INSTALL})
     set(install_cmd make install)

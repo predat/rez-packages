@@ -8,10 +8,7 @@ ProcessorCount(ncpus)
 
 set(pyside_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-rez_set_archive(
-    url_pyside PySideTools/Tools-${pyside_version}.tar.gz
-    https://github.com/pyside/Tools/archive/${pyside_version}.tar.gz
-)
+set(url_pyside https://github.com/pyside/Tools/archive/${pyside_version}.tar.gz)
 
 if(${REZ_BUILD_INSTALL})
     set(install_cmd make install)

@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+
+from rez.utils.lint_helper import env, building
+
 name = "PySideTools"
 
 version = "0.2.15"
@@ -24,10 +28,11 @@ tools = [
 build_requires = []
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8", "python-2.7"]
+    ["platform-linux", "arch-x86_64", "python-2.7"]
 ]
 
 uuid = "repository.PySideTools"
+
 
 def commands():
     env.PATH.append('{root}/bin')

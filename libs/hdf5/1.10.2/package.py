@@ -11,12 +11,10 @@ description = \
     Data model, library, and file format for storing and managing data.
     """
 
-build_requires = [
-    "gcc-4.8.3"
-]
+build_requires = []
 
 variants = [
-    ["platform-linux", "arch-x86_64","os-CentOS-6.8"]
+    ["platform-linux", "arch-x86_64"]
 ]
 
 tools = [
@@ -46,6 +44,6 @@ def commands():
 
     if building:
         env.HDF5_INCLUDE_DIR = "{root}/include"
-
         # static libs
         env.LD_LIBRARY_PATH.append("{root}/lib")
+        env.CMAKE_MODULE_PATH.append("{root}/cmake")

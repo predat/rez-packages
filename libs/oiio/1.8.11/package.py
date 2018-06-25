@@ -27,7 +27,7 @@ requires = [
     "zlib-1",
     # "qt",
     "boost-1",
-    "ffmpeg",
+    # "ffmpeg",
     "python-2.7",
     # "nuke"
 ]
@@ -51,7 +51,7 @@ uuid = "repository.oiio"
 
 def commands():
     env.PATH.append("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib")
+    env.LD_LIBRARY_PATH.append("{root}/lib64")
     env.PYTHONPATH.append("{root}/lib/python2.7/site-packages")
 
     if building:

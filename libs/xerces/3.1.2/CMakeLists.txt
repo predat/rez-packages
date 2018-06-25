@@ -17,18 +17,13 @@ endif()
 
 
 ExternalProject_add(
-    hdf5
-    URL https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.2/src/hdf5-1.10.2.tar.bz2
-    PREFIX hdf5
+    xerces
+    URL http://archive.apache.org/dist/xerces/c/3/sources/xerces-c-3.1.2.tar.gz
+    PREFIX xerces
     UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --with-pic
-    --enable-build-mode=production --enable-cxx
+    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX}
+    --without-icu
     INSTALL_COMMAND "${install_cmd}"
     BUILD_COMMAND make ${make_args}
     BUILD_IN_SOURCE 1
-)
-
-install(
-    FILES cmake/hdf5.cmake
-    DESTINATION cmake
 )

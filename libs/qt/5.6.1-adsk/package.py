@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 # Copyright (C) Fix Studio, and/or its licensors.
 # All rights reserved.
 #
@@ -14,22 +13,21 @@
 from rez.utils.lint_helper import env, building
 
 
-name = "shotgunapi"
+name = "qt"
 
-version = "3.0.36"
+version = "5.6.1-adsk"
 
-authors = ["Shotgun Software"]
+authors = [""]
 
-description = "Python-based API for accessing Shotgun"
+description = ""
 
-variants = [["platform-linux", "arch-x86_64", "python-2.7"]]
+variants = [
+    ["platform-linux", "arch-x86_64"]
+]
 
-tools = []
-
-build_requires = ['setuptools']
-
-uuid = "repository.shotgunapi"
+uuid = "repository.qt"
 
 
 def commands():
-    env.PYTHONPATH.append("{root}/python")
+    env.LD_LIBRARY_PATH.append("{root}/lib")
+    env.PATH.append("{root}/bin")
