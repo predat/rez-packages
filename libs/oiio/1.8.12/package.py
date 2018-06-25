@@ -5,8 +5,7 @@ from rez.utils.lint_helper import env, building, scope  # make linter happy
 
 name = "oiio"
 
-# version = "1.7.18"
-version = "1.8.11"
+version = "1.8.12"
 
 authors = [
     "Larry Gritz"
