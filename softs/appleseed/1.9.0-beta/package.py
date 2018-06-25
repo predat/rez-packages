@@ -11,7 +11,18 @@ description = "Appleseed Rendering engine"
 
 requires = []
 
-build_requires = []
+build_requires = [
+    'openexr-2',
+    'ocio',
+    'oiio',
+    'osl-1.8.14',
+    'boost-1.61',
+    'xerces',
+    'python-2.7',
+    'seexpr',
+    'zlib',
+    'png'
+]
 
 variants = [["platform-linux", "arch-x86_64"]]
 

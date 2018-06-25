@@ -3,25 +3,71 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 include(RezBuild)
 include(ExternalProject)
 
-set(blender_version $ENV{REZ_BUILD_PROJECT_VERSION})
+set(version $ENV{REZ_BUILD_PROJECT_VERSION})
+set(name $ENV{REZ_BUILD_PROJECT_NAME})
 
-#rez_set_archive(
-#    url_blender blender/blender-${blender_version}.tar.gz
-#    https://github.com/glfw/glfw/archive/${glfw_version}.tar.gz
-#)
 
-set(url_pkg https://github.com/appleseedhq/appleseed/releases/download/1.9.0-beta/appleseed-1.9.0-beta-0-g5693918-linux64-gcc48.zip)
+set(url https://github.com/appleseedhq/appleseed/archive/1.9.0-beta.tar.gz)
 
-set(install_cmd ${CMAKE_CURRENT_SOURCE_DIR}/install.sh
-    ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_INSTALL_PREFIX})
 
+if(${REZ_BUILD_INSTALL})
+    set(install_cmd make -j24 install ${make_args})
+else()
+    set(install_cmd "")
+endif()
 
 ExternalProject_add(
-    appleseed
-    URL ${url_pkg}
-    PREFIX appleseed
-    UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
+    ${name}
+    URL ${url}
+    PREFIX ${name}
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+    -DCMAKE_BUILD_TYPE=Release
+    -DWITH_PYTHON2_BINDINGS=ON
+    -DWITH_CLI=ON
+    -DWITH_STUDIO=OFF
+    -DWITH_TESTS=OFF
+    -DWITH_TOOLS=OFF
+    -DWITH_PYTHON=ON
+    -DUSE_STATIC_BOOST=OFF
+    -DUSE_STATIC_OIIO=OFF
+    -DUSE_STATIC_OSL=OFF
+    -DUSE_EXTERNAL_EXR=ON
+    -DUSE_EXTERNAL_OSL=ON
+    -DUSE_EXTERNAL_OIIO=ON
+    -DUSE_EXTERNAL_OCIO=ON
+    -DUSE_EXTERNAL_XERCES=ON
+    -DUSE_EXTERNAL_PNG=ON
+    -DUSE_EXTERNAL_SEEXPR=ON
+    -DUSE_EXTERNAL_ZLIB=ON
+    -DUSE_SSE=ON
+    -DUSE_SSE42=ON
+    -DUSE_AVX=ON
+    -DUSE_AVX2=ON
+    -DWITH_DISNEY_MATERIAL=ON
+    -DWARNINGS_AS_ERRORS=OFF
+    -DIMATH_INCLUDE_DIR=$ENV{REZ_OPENEXR_ROOT}/include
+    -DIMATH_HALF_LIBRARY=$ENV{REZ_OPENEXR_ROOT}/lib/libHalf.so
+    -DIMATH_IEX_LIBRARY=$ENV{REZ_OPENEXR_ROOT}/lib/libIex.so
+    -DIMATH_MATH_LIBRARY=$ENV{REZ_OPENEXR_ROOT}/lib/libImath.so
+    -DOPENEXR_INCLUDE_DIR=$ENV{REZ_OPENEXR_ROOT}/include
+    -DOPENEXR_IMF_LIBRARY=$ENV{REZ_OPENEXR_ROOT}/lib/libIlmImf.so
+    -DOPENEXR_THREADS_LIBRARY=$ENV{REZ_OPENEXR_ROOT}/lib/libIlmThread.so
+    -DOPENIMAGEIO_INCLUDE_DIR=$ENV{REZ_OIIO_ROOT}/include
+    -DOPENIMAGEIO_LIBRARY=$ENV{REZ_OIIO_ROOT}/lib64/libOpenImageIO.so
+    -DOPENCOLORIO_INCLUDE_DIR=$ENV{REZ_OCIO_ROOT}/include
+    -DOPENCOLORIO_LIBRARY=$ENV{REZ_OCIO_ROOT}/lib/libOpenColorIO.so
+    -DOSL_INCLUDE_DIR=$ENV{REZ_OSL_ROOT}/include
+    -DOSL_EXEC_LIBRARY=$ENV{REZ_OSL_ROOT}/lib/liboslexec.so
+    -DOSL_COMP_LIBRARY=$ENV{REZ_OSL_ROOT}/lib/liboslcomp.so
+    -DOSL_QUERY_LIBRARY=$ENV{REZ_OSL_ROOT}/lib/liboslquery.so
+    -DXERCES_INCLUDE_DIR=$ENV{REZ_XERCES_ROOT}/include
+    -DXERCES_LIBRARY=$ENV{REZ_XERCES_ROOT}/lib/libxerces-c.so
+    -DPYTHON_INCLUDE_DIR=$ENV{REZ_PYTHON_ROOT}/include/python2.7
+    -DPYTHON_LIBRARY=$ENV{REZ_PYTHON_ROOT}/lib/libpython2.7.so
+    -DPNG_PNG_INCLUDE_DIR=$ENV{REZ_PNG_ROOT}/include
+    -DPNG_LIBRARY=$ENV{REZ_PNG_ROOT}/lib64/libpng.so
+    -DSEEXPR_INCLUDE_DIR=$ENV{REZ_SEEXPR_ROOT}/include
+    -DSEEXPR_LIBRARY=$ENV{REZ_SEEXPR_ROOT}/lib64/libSeExpr.so
+    -DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
     INSTALL_COMMAND "${install_cmd}"
 )

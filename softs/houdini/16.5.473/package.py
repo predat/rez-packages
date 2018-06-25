@@ -4,11 +4,11 @@ from rez.utils.lint_helper import env, building, source, command
 
 name = "houdini"
 
-version = "16.0.736"
+version = "16.5.473"
 
 authors = ["SideFx"]
 
-description = "Houdini version 16.0.736"
+description = "Houdini version %s" % version
 
 variants = [
     ["platform-linux", "arch-x86_64"]
@@ -39,14 +39,18 @@ def commands():
 
     command("rm -rf ~/.sesi_licenses.pref")
     env.SESI_LMHOST = "lichoudini.prs.vfx.int"
-    env.PATH.prepend("{root}/houdini/bin")
+    # source("{root}/houdini/houdini_setup_bash")
     env.H = "{root}/houdini"
     env.HB = "{root}/houdini/bin"
     env.HDSO = "{root}/houdini/dsolib"
     env.HD = "{root}/houdini/demo"
     env.HH = "{root}/houdini/houdini"
-    env.HHC = env.HH.value() + "/config"
+    env.HHC = "{root}/houdini/houdini/config"
     env.HT = "{root}/houdini/toolkit"
-    env.HSB = env.HH.value() + "/sbin"
+    env.HSB = "{root}/houdini/houdini/sbin"
 
-    env.TEMP = '/tmp'
+    env.PATH.prepend("{root}/houdini/bin")
+
+    env.LD_LIBRARY_PATH.append("{root}/houdini/dsolib")
+    # if building:
+    #     env.CMAKE_MODULE_PATH.append("{root}/cmake")

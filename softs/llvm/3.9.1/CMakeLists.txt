@@ -13,7 +13,7 @@ find_package(Git REQUIRED)
 option (WITH_CLANG "Compile LLVM with Clang" ON)
 
 
-set (TAG "release_36" CACHE STRING "LLVM tag")
+set (TAG "release_39" CACHE STRING "LLVM tag")
 set (git_url https://git.llvm.org/git)
 
 
