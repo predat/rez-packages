@@ -19,6 +19,7 @@ ExternalProject_add(
     CONFIGURE_COMMAND sh -c "python configure.py --confirm-license --verbose \
     -b ${CMAKE_INSTALL_PREFIX}/bin \
     -d ${CMAKE_INSTALL_PREFIX}/lib/python2.7/site-packages \
+    --sipdir ${CMAKE_INSTALL_PREFIX}/share/sip \
     -e QtCore -e QtGui -e QtHelp -e QtMultimedia -e QtNetwork -e QtDeclarative \
     -e QtScript -e QtScriptTools -e QtOpenGL -e QtSvg -e QtSql -e QtTest \
     -e QtWebKit -e QtXml -e QtXmlPatterns -e QtDesigner "
