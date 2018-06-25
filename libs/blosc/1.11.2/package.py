@@ -19,8 +19,7 @@ build_requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8"],
-    ["platform-linux", "arch-x86_64", "os-CentOS-7.3.1611"],
+    ["platform-linux", "arch-x86_64"],
 ]
 
 uuid = "repository.blosc"

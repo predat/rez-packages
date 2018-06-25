@@ -8,10 +8,7 @@ ProcessorCount(ncpus)
 
 set(blosc_version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-rez_set_archive(
-    url_blosc blosc/c-blosc-${blosc_version}.tar.gz
-    https://github.com/Blosc/c-blosc/archive/v${blosc_version}.tar.gz
-)
+set(url https://github.com/Blosc/c-blosc/archive/v${blosc_version}.tar.gz)
 
 if(${REZ_BUILD_INSTALL})
     set(install_cmd make install)
@@ -21,7 +18,7 @@ endif()
 
 ExternalProject_add(
     blosc
-    URL ${url_blosc}
+    URL ${url}
     PREFIX blosc
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND cmake
