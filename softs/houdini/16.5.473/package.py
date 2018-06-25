@@ -38,12 +38,19 @@ uuid = "repository.houdini"
 def commands():
 
     command("rm -rf ~/.sesi_licenses.pref")
-
     env.SESI_LMHOST = "lichoudini.prs.vfx.int"
-
-    source("{root}/houdini/houdini_setup_bash")
+    # source("{root}/houdini/houdini_setup_bash")
+    env.H = "{root}/houdini"
+    env.HB = "{root}/houdini/bin"
+    env.HDSO = "{root}/houdini/dsolib"
+    env.HD = "{root}/houdini/demo"
+    env.HH = "{root}/houdini/houdini"
+    env.HHC = "{root}/houdini/houdini/config"
+    env.HT = "{root}/houdini/toolkit"
+    env.HSB = "{root}/houdini/houdini/sbin"
 
     env.PATH.prepend("{root}/houdini/bin")
 
+    env.LD_LIBRARY_PATH.append("{root}/houdini/dsolib")
     # if building:
     #     env.CMAKE_MODULE_PATH.append("{root}/cmake")
