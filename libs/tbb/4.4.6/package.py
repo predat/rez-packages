@@ -13,5 +13,7 @@ variants = [
 
 
 def commands():
+    env.LD_LIBRARY_PATH.append('{root}/lib')
+
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
