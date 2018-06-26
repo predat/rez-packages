@@ -1,0 +1,149 @@
+diff --git a/SConstruct b/SConstruct
+index 9e16ab8d8..b4082396e 100644
+--- a/SConstruct
++++ b/SConstruct
+@@ -2783,7 +2783,7 @@ usdEnvAppends = {
+ 		"vt",
+ 		"ar",
+ 		"plug",
+-		"tracelite",
++		"trace",
+ 		"kind",
+ 		"work"
+ 	]
+diff --git a/contrib/IECoreUSD/src/IECoreUSD/USDScene.cpp b/contrib/IECoreUSD/src/IECoreUSD/USDScene.cpp
+index 381a05a95..a40c66cad 100644
+--- a/contrib/IECoreUSD/src/IECoreUSD/USDScene.cpp
++++ b/contrib/IECoreUSD/src/IECoreUSD/USDScene.cpp
+@@ -1651,7 +1651,8 @@ bool USDScene::hasTag( const SceneInterface::Name &name, int filter ) const
+ 	pxr::TfToken pxrTag;
+ 	convert( pxrTag, name );
+ 
+-	pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::GetCollection( defaultPrim.GetPrim(), pxrTag );
++    // pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::GetCollection( defaultPrim.GetPrim(), pxrTag );
++    pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::UsdCollectionAPI( defaultPrim, pxrTag );
+ 
+ 	if (!collection)
+ 	{
+@@ -1756,7 +1757,7 @@ void USDScene::writeTags( const SceneInterface::NameList &tags )
+ 		pxr::TfToken pxrTag;
+ 		convert( pxrTag, tag );
+ 
+-		pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::AddCollection( defaultPrim, pxrTag, pxr::UsdTokens->explicitOnly );
++		pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::ApplyCollection( defaultPrim, pxrTag, pxr::UsdTokens->explicitOnly );
+ 		collection.CreateIncludesRel().AddTarget( m_location->prim.GetPath() );
+ 	}
+ }
+@@ -1828,7 +1829,8 @@ IECore::PathMatcherDataPtr USDScene::readLocalSet( const Name &name ) const
+ {
+ 	pxr::TfToken collectionName;
+ 	convert( collectionName, name );
+-	pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::GetCollection( m_location->prim, collectionName );
++	// pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::GetCollection( m_location->prim, collectionName );
++	pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::UsdCollectionAPI( m_location->prim, collectionName );
+ 
+ 	if( !collection )
+ 	{
+@@ -1858,7 +1860,7 @@ void USDScene::writeSet( const Name &name, const IECore::PathMatcher &set )
+ {
+ 	pxr::TfToken pxrSetName;
+ 	convert( pxrSetName, name );
+-	pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::AddCollection( m_location->prim, pxrSetName, pxr::UsdTokens->explicitOnly );
++	pxr::UsdCollectionAPI collection = pxr::UsdCollectionAPI::ApplyCollection( m_location->prim, pxrSetName, pxr::UsdTokens->explicitOnly );
+ 
+ 	for( PathMatcher::Iterator it = set.begin(); it != set.end(); ++it )
+ 	{
+diff --git a/include/IECoreMaya/ParameterisedHolder.h b/include/IECoreMaya/ParameterisedHolder.h
+index 8e78be0f8..75f420c5c 100644
+--- a/include/IECoreMaya/ParameterisedHolder.h
++++ b/include/IECoreMaya/ParameterisedHolder.h
+@@ -35,6 +35,13 @@
+ #ifndef IE_COREMAYA_PARAMETERISEDHOLDER_H
+ #define IE_COREMAYA_PARAMETERISEDHOLDER_H
+ 
++
++#include "IECore/Parameterised.h"
++
++#include "IECoreMaya/ParameterisedHolderInterface.h"
++#include "IECoreMaya/MStringLess.h"
++#include "IECoreMaya/PostLoadCallback.h"
++
+ class MPxNode;
+ class MPxLocatorNode;
+ class MPxDeformerNode;
+@@ -44,12 +51,6 @@ class MPxSurfaceShape;
+ class MPxComponentShape;
+ class MPxImagePlane;
+ 
+-#include "IECore/Parameterised.h"
+-
+-#include "IECoreMaya/ParameterisedHolderInterface.h"
+-#include "IECoreMaya/MStringLess.h"
+-#include "IECoreMaya/PostLoadCallback.h"
+-
+ namespace IECoreMaya
+ {
+ 
+diff --git a/src/IECoreMaya/ConverterHolder.cpp b/src/IECoreMaya/ConverterHolder.cpp
+index 038ec6692..9191ddc90 100644
+--- a/src/IECoreMaya/ConverterHolder.cpp
++++ b/src/IECoreMaya/ConverterHolder.cpp
+@@ -32,16 +32,16 @@
+ //
+ //////////////////////////////////////////////////////////////////////////
+ 
++#include "maya/MFnMessageAttribute.h"
++#include "maya/MFnTypedAttribute.h"
++#include "maya/MFnStringData.h"
++
+ #include "IECoreMaya/ConverterHolder.h"
+ #include "IECoreMaya/FromMayaObjectConverter.h"
+ #include "IECoreMaya/MayaTypeIds.h"
+ 
+ #include "IECore/Object.h"
+ 
+-#include "maya/MFnMessageAttribute.h"
+-#include "maya/MFnTypedAttribute.h"
+-#include "maya/MFnStringData.h"
+-
+ using namespace IECoreMaya;
+ 
+ MTypeId ConverterHolder::id = ConverterHolderId;
+diff --git a/src/IECoreMaya/FromMayaMeshConverter.cpp b/src/IECoreMaya/FromMayaMeshConverter.cpp
+index 9af3ea74b..82291dab7 100644
+--- a/src/IECoreMaya/FromMayaMeshConverter.cpp
++++ b/src/IECoreMaya/FromMayaMeshConverter.cpp
+@@ -465,7 +465,8 @@ IECoreScene::PrimitivePtr FromMayaMeshConverter::doPrimitiveConversion( MFnMesh
+ 		MPlug interpolationPlug = fnMesh.findPlug( "ieMeshInterpolation", &st );
+ 		if ( st )
+ 		{
+-			unsigned int interpolationIndex = interpolationPlug.asInt(MDGContext::fsNormal, &st);
++			// unsigned int interpolationIndex = interpolationPlug.asInt(MDGContext::fsNormal, &st);
++			unsigned int interpolationIndex = interpolationPlug.asInt(&st);
+ 			if ( st )
+ 			{
+ 				if ( interpolationIndex < interpolationParameter()->getPresets().size() - 1 )
+diff --git a/src/IECoreMaya/bindings/FromMayaConverterBinding.cpp b/src/IECoreMaya/bindings/FromMayaConverterBinding.cpp
+index dcf13d926..ef93003df 100644
+--- a/src/IECoreMaya/bindings/FromMayaConverterBinding.cpp
++++ b/src/IECoreMaya/bindings/FromMayaConverterBinding.cpp
+@@ -34,6 +34,9 @@
+ 
+ #include "boost/python.hpp"
+ 
++#include "maya/MSelectionList.h"
++#include "maya/MString.h"
++
+ #include "IECoreMaya/FromMayaConverter.h"
+ #include "IECoreMaya/FromMayaShapeConverter.h"
+ #include "IECoreMaya/FromMayaDagNodeConverter.h"
+@@ -46,9 +49,6 @@
+ 
+ #include "IECore/Object.h"
+ 
+-#include "maya/MSelectionList.h"
+-#include "maya/MString.h"
+-
+ using namespace IECoreMaya;
+ using namespace boost::python;
+ 
