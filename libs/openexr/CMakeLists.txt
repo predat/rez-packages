@@ -55,24 +55,24 @@ ExternalProject_add(
     BUILD_COMMAND make -j ${ncpu} ${make_args}
 )
 
-ExternalProject_add(
-    pyilmbase
-    DEPENDS ilmbase
-    DOWNLOAD_COMMAND ""
-    PREFIX pyilmbase
-    SOURCE_DIR ${PROJECT_BINARY_DIR}/openexr/src/openexr/PyIlmBase
-    UPDATE_COMMAND ./bootstrap
-    CONFIGURE_COMMAND LD_LIBRARY_PATH=${CMAKE_INSTALL_PREFIX}/lib ./configure
-    --prefix=${CMAKE_INSTALL_PREFIX}
-    -with-ilmbase-prefix=${CMAKE_INSTALL_PREFIX}
-    --with-boost-include-dir=$ENV{REZ_BOOST_ROOT}/include
-    --with-boost-lib-dir=$ENV{REZ_BOOST_ROOT}/lib
-    --disable-ilmbasetest
-    --disable-boostpythontest
-    INSTALL_COMMAND "${install_cmd}"
-    BUILD_IN_SOURCE 1
-    BUILD_COMMAND VERBOSE=1 make -j ${ncpu} ${make_args}
-)
+#ExternalProject_add(
+#    pyilmbase
+#    DEPENDS ilmbase
+#    DOWNLOAD_COMMAND ""
+#    PREFIX pyilmbase
+#    SOURCE_DIR ${PROJECT_BINARY_DIR}/openexr/src/openexr/PyIlmBase
+#    UPDATE_COMMAND ./bootstrap
+#    CONFIGURE_COMMAND LD_LIBRARY_PATH=${CMAKE_INSTALL_PREFIX}/lib ./configure
+#    --prefix=${CMAKE_INSTALL_PREFIX}
+#    -with-ilmbase-prefix=${CMAKE_INSTALL_PREFIX}
+#    --with-boost-include-dir=$ENV{REZ_BOOST_ROOT}/include
+#    --with-boost-lib-dir=$ENV{REZ_BOOST_ROOT}/lib
+#    --disable-ilmbasetest
+#    --disable-boostpythontest
+#    INSTALL_COMMAND "${install_cmd}"
+#    BUILD_IN_SOURCE 1
+#    BUILD_COMMAND VERBOSE=1 make -j ${ncpu} ${make_args}
+#)
 
 
 rez_install_files(
