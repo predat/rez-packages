@@ -18,9 +18,12 @@ variants = [
 ]
 
 build_requires = [
-    'hdf5',
-    'boost',
-    'openexr'
+]
+
+requires = [
+    'hdf5-1.10',
+    'boost-1.61',
+    'openexr-2.2'
 ]
 
 tools = []
