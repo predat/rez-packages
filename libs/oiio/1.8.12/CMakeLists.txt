@@ -13,15 +13,16 @@ set(tag_oiio Release-${oiio_version})
 
 
 if(${REZ_BUILD_INSTALL})
-    set(install_cmd make ${make_args})
+    set(install_cmd make -j12 ${make_args})
 else()
     set(install_cmd "")
 endif()
 
 set(CMAKE_ARGS
     -DVERBOSE=ON
-    -DILMBASE_INCLUDE_PATH=${openexr_INCLUDE_DIRS}
-    -DOPENEXR_INCLUDE_PATH=${openexr_INCLUDE_DIRS}
+    -DOPENEXR_HOME=$ENV{REZ_OPENEXR_ROOT}
+    -DILMBASE_INCLUDE_PATH=$ENV{REZ_OPENEXR_ROOT}/include
+    -DOPENEXR_INCLUDE_PATH=$ENV{REZ_OPENEXR_ROOT}/include
     -DUSE_PYTHON=ON
     -DPYTHON_EXECUTABLE=$ENV{REZ_PYTHON_ROOT}/bin/python2.7
     -DPYTHON_LIBRARIES=${python_LIBRARIES}

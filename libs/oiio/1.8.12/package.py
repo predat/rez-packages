@@ -18,17 +18,13 @@ description = \
 
 requires = [
     "ocio-1.0.9",
-    # "ilmbase-2",
     "openexr-2",
     "jpeg-1",
     "tiff-4",
     "png-1",
     "zlib-1",
-    # "qt",
-    "boost-1",
-    # "ffmpeg",
+    "boost-1.61",
     "python-2.7",
-    # "nuke"
 ]
 
 variants = [
