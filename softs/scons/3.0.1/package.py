@@ -23,7 +23,6 @@ build_requires = [
 ]
 
 requires = [
-    'python-2.7'
 ]
 
 tools = []
