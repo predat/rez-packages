@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+
+from rez.utils.lint_helper import env, building, scope, early, resolve  # make linter happy
+
+
 name = "openvdb"
 
 version = "3.3.0"
@@ -20,22 +25,22 @@ requires = [
 ]
 
 build_requires = [
-    "blosc",
-    "boost-1.55",
-    "ilmbase-2.20",
-    "openexr-2.20"
+    "cppunit",
+    "blosc-1.11",
+    "boost-1.61",
+    "openexr-2.2",
+    "tbb-4.4"
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-CentOS-6.8"],
-    ["platform-linux", "arch-x86_64", "os-CentOS-7.3.1611"],
+    ["platform-linux", "arch-x86_64"]
 ]
 
-uuid = "repository.blosc"
+uuid = "repository.openvdb"
+
 
 def commands():
     env.LD_LIBRARY_PATH.append('{root}/lib')
 
     if building:
         env.PKG_CONFIG_PATH.append("{root}/lib/pkgconfig")
-
