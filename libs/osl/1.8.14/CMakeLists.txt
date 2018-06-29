@@ -12,7 +12,7 @@ set(url
     https://github.com/imageworks/OpenShadingLanguage/archive/Release-${version}.tar.gz )
 
 if(${REZ_BUILD_INSTALL})
-    set(install_cmd make install)
+    set(install_cmd make install VERBOSE=1)
 else()
     set(install_cmd "")
 endif()
@@ -28,14 +28,17 @@ ExternalProject_add(
     -DSTOP_ON_WARNING=OFF
     -DOSL_BUILD_PLUGINS=OFF
     -DOSL_BUILD_TESTS=OFF
+    -DENABLERTTI=ON
     -DOSL_BUILD_CPP11=1
     -DILMBASE_HOME=$ENV{REZ_OPENEXR_ROOT}
-    -DILMBASE_CUSTOM_LIBRARIES='Half;Iex;Imath;IlmThread'
+    #-DILMBASE_CUSTOM_LIBRARIES='Half;Iex;Imath;IlmThread'
     -DBOOST_ROOT=$ENV{REZ_BOOST_ROOT}
     -DOPENIMAGEIOHOME=$ENV{REZ_OIIO_ROOT}
     -DLLVM_VERSION=3.4.2
     -DLLVM_DIRECTORY=$ENV{REZ_LLVM_ROOT}
     -DLLVM_STATIC=ON
+    -DUSE_fPIC=ON
+    #-DUSE_LLVM_BITCODE:BOOL=0  # FIXME: compile clang with llvm
     -DVERBOSE=ON
     ../osl
     BUILD_IN_SOURCE 0
