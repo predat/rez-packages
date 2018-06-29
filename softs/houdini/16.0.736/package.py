@@ -37,7 +37,7 @@ uuid = "repository.houdini"
 
 def commands():
 
-    command("rm -rf ~/.sesi_licenses.pref")
+    command("[[ -e ~/.sesi_licenses.pref ]] && /bin/rm -rf ~/.sesi_licenses.pref")
     env.SESI_LMHOST = "lichoudini.prs.vfx.int"
     env.PATH.prepend("{root}/houdini/bin")
     env.H = "{root}/houdini"
