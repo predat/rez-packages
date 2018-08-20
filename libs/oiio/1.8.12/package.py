@@ -47,7 +47,7 @@ uuid = "repository.oiio"
 def commands():
     env.PATH.append("{root}/bin")
     env.LD_LIBRARY_PATH.append("{root}/lib64")
-    env.PYTHONPATH.append("{root}/lib/python2.7/site-packages")
+    env.PYTHONPATH.append("{root}/lib64/python2.7/site-packages")
 
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
