@@ -5,7 +5,7 @@ from rez.utils.lint_helper import env, building
 
 name = "llvm"
 
-version = "3.4.2"
+version = "3.6.2"
 
 authors = []
 
@@ -22,3 +22,7 @@ uuid = "repository.llvm"
 
 def commands():
     env.PATH.append("{root}/bin")
+
+    if building:
+        env.CMAKE_MODULE_PATH.append("{root}/share/llvm/cmake")
+        env.CMAKE_MODULE_PATH.append("{root}/share/clang/cmake")

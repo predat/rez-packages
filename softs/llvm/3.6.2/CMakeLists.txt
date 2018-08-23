@@ -1,29 +1,72 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+# Found here: https://github.com/seahorn/seatooling/blob/master/CMakeLists.txt
+#
 
+cmake_minimum_required(VERSION 2.8.12)
 include(RezBuild)
 include(RezRepository)
 include(ExternalProject)
-include(ProcessorCount)
-ProcessorCount(ncpus)
 
-set(version $ENV{REZ_BUILD_PROJECT_VERSION})
 
-set(url http://releases.llvm.org/${version}/llvm-${version}.src.tar.gz )
+find_package(Git REQUIRED)
 
-if(${REZ_BUILD_INSTALL})
-    set(install_cmd make install)
-else()
-    set(install_cmd "")
+
+option (WITH_CLANG "Compile LLVM with Clang" ON)
+
+
+set (TAG "release_36" CACHE STRING "LLVM tag")
+
+
+add_custom_target (llvm-src
+    # HACK: remove all sources so that git-clone does not fail
+    # HACK: a proper solution is to work arround this as in ExternalProject
+    ${CMAKE_COMMAND} -E remove_directory ${CMAKE_CURRENT_BINARY_DIR}/ext/llvm
+    COMMAND
+    ${GIT_EXECUTABLE} clone --depth=1 --branch=${TAG}
+    https://git.llvm.org/git/llvm.git ${CMAKE_CURRENT_BINARY_DIR}/ext/llvm
+)
+
+if (WITH_CLANG)
+  add_custom_target (clang-src
+    ${GIT_EXECUTABLE} clone --depth=1 --branch=${TAG}
+    https://git.llvm.org/git/clang.git
+    ${CMAKE_CURRENT_BINARY_DIR}/ext/llvm/tools/clang
+    DEPENDS llvm-src)
+  add_custom_target (compiler-rt
+    ${GIT_EXECUTABLE} clone --depth=1 --branch=${TAG}
+    https://git.llvm.org/git/compiler-rt.git
+    ${CMAKE_CURRENT_BINARY_DIR}/ext/llvm/projects/compiler-rt
+    DEPENDS clang-src)
+  add_custom_target (openmp
+    ${GIT_EXECUTABLE} clone --depth=1 --branch=${TAG}
+    https://git.llvm.org/git/openmp.git
+    ${CMAKE_CURRENT_BINARY_DIR}/ext/llvm/projects/openmp
+    DEPENDS clang-src)
 endif()
 
-ExternalProject_add(
-    llvm
-    URL ${url}
-    PREFIX llvm
-    UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX}
-    --enable-optimized --enable-assertions=no
-    INSTALL_COMMAND "${install_cmd}"
-    BUILD_IN_SOURCE 1
-    BUILD_COMMAND REQUIRES_RTTI=1 make -j ${ncpus}
+
+if (WITH_CLANG)
+  set (LAST_LLVM_SRC openmp)
+else()
+  set (LAST_LLVM_SRC llvm-src)
+endif()
+
+
+add_custom_target (download-llvm-src DEPENDS ${LAST_LLVM_SRC})
+
+
+set_property(DIRECTORY PROPERTY EP_STEP_TARGETS configure build test)
+# build llvm using previously downloaded source
+ExternalProject_Add (llvm
+    DEPENDS download-llvm-src
+    DOWNLOAD_COMMAND ""
+    SOURCE_DIR ${CMAKE_CURRENT_BINARY_DIR}/ext/llvm
+    INSTALL_DIR ${CMAKE_INSTALL_PREFIX}
+    CMAKE_ARGS
+    -DCMAKE_C_COMPILER=${CMAKE_C_COMPILER} -DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}
+    -DCMAKE_BUILD_TYPE:STRING=${CMAKE_BUILD_TYPE}
+    -DCMAKE_INSTALL_PREFIX:PATH=<INSTALL_DIR>
+    -DLLVM_TARGETS_TO_BUILD:STRING=X86
+    -DLLVM_ENABLE_PEDANTIC=OFF
+    -DLLVM_REQUIRES_RTTI:BOOL=TRUE
+    -DLLVM_BUILD_LLVM_DYLIB:BOOL=TRUE
 )
