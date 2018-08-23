@@ -1,0 +1,2 @@
+#!/bin/bash
+Nuke@NUKE_MAJOR_VERSION@.@NUKE_MINOR_VERSION@ "$@"
