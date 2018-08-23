@@ -24,7 +24,7 @@ endif()
 ExternalProject_add(
     $ENV{REZ_BUILD_PROJECT_NAME}
     GIT_REPOSITORY git@git.prs.vfx.int:pipeline3.0/python/pppy.git
-    GIT_TAG $ENV{REZ_BUILD_PROJECT_VERSION}
+    #GIT_TAG $ENV{REZ_BUILD_PROJECT_VERSION}
     PREFIX $ENV{REZ_BUILD_PROJECT_NAME}
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ""
