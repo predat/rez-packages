@@ -35,6 +35,7 @@ uuid = 'repository.ppnk'
 def commands():
     env.PATH.append("{root}/bin")
     env.PYTHONPATH.append("{root}/setup")
-    env.PP_PIPE_NUKE_COMMON_PATH = "{root}/common"
     env.NUKE_PATH.append('{root}/common')
     env.NUKE_PATH.append('{root}/python')
+    env.PP_NUKE_MENU.append('{root}/common')
+    env.PP_PIPE_NUKE_COMMON_PATH = '{root}/common'
