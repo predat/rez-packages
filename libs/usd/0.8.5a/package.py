@@ -20,28 +20,23 @@ variants = [
 
 
 build_requires = [
-    'alembic',
-    'hdf5',
-    'boost',
-    'tbb',
-    'openexr',
-    'oiio',
-    'glew',
-    'opensubdiv',
     'Jinja2',
-    'oiio',
-    'opensubdiv',
-    'ptex',
+    'alembic-1.7',
+    'hdf5-1.10',
+    'tbb-4.4',
+    'openexr-2.2',
+    'glew-2.0',
+    'ptex-2.1',
     'maya',
-    'PyOpenGL',
-    'PySide',
     'PySideTools'
 ]
 
 requires = [
-    'Jinja2',
     'PyOpenGL',
-    'PySide'
+    'PySide-1.2',
+    'opensubdiv-3.1',
+    'oiio-1.8',
+    'boost-1.61',
 ]
 
 tools = []
@@ -55,7 +50,7 @@ def commands():
     env.PATH.append("{root}/bin")
 
     if building:
-        env.CMAKE_MODULE_PATH.append("{root}/cmake")
+        env.CMAKE_MODULE_PATH.append("{root}")
 
     if "maya" in resolve:
         env.MAYA_PLUG_IN_PATH.append("{root}/third_party/maya/plugin")
