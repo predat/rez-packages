@@ -19,9 +19,11 @@ authors = [""]
 description = ""
 variants = [["platform-linux", "arch-x86_64"]]
 uuid = "repository.qt5"
-build_requires = ['gcc-5']
 
 
 def commands():
     env.LD_LIBRARY_PATH.append("{root}/lib")
     env.PATH.append("{root}/bin")
+
+    if building:
+        env.CMAKE_MODULE_PATH.append("{root}/lib/cmake")
