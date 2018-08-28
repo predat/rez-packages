@@ -9,9 +9,7 @@ authors = [""]
 
 description = "Appleseed Rendering engine"
 
-requires = []
-
-build_requires = [
+requires = [
     'openexr-2',
     'ocio',
     'oiio',
@@ -19,9 +17,13 @@ build_requires = [
     'boost-1.61',
     'xerces',
     'python-2.7',
-    'seexpr',
+    'seexpr-2.11',
     'zlib',
-    'png'
+    'png',
+    'qt-4'
+]
+
+build_requires = [
 ]
 
 variants = [["platform-linux", "arch-x86_64"]]

@@ -29,7 +29,18 @@ ExternalProject_add(
 )
 
 
-#install(
-#    FILES cmake/glew.cmake
-#    DESTINATION cmake
-#)
+ExternalProject_add(
+    ${name}-static
+    URL ${url}
+    PREFIX ${name}-static
+    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+    -DGLFW_BUILD_TESTS=OFF
+    -DGLFW_BUILD_EXAMPLES=OFF
+    -DGLFW_BUILD_DOCS=OFF
+    -DCMAKE_BUILD_TYPE=Release
+)
+
+install(
+    FILES cmake/glfw.cmake
+    DESTINATION cmake
+)

@@ -19,6 +19,11 @@ variants = [
 
 uuid = "repository.llvm"
 
+tools = [
+    'llvm-ar',
+    'clang'
+]
+
 
 def commands():
     env.PATH.append("{root}/bin")

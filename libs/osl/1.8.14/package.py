@@ -11,13 +11,15 @@ authors = []
 
 description = ''
 
-requires = ['openexr']
+requires = [
+    'openexr-2.2',
+    'oiio-1.8',
+    'boost-1.61'
+]
 
 build_requires = [
-    'llvm-3',
-    'cmake',
-    'openexr',
-    'oiio'
+    'llvm-3.9',
+    'cmake-3',
 ]
 
 variants = [
@@ -29,3 +31,4 @@ uuid = "repository.osl"
 
 def commands():
     env.PATH.append("{root}/bin")
+    env.LD_LIBRARY_PATH.append("{root}/lib")

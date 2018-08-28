@@ -5,7 +5,7 @@ from rez.utils.lint_helper import env, building, resolve  # make linter happy
 
 name = "AL_USDMaya"
 
-version = "0.28.1"
+version = "0.28.4"
 
 authors = [
     'AnimalLogic'
@@ -16,18 +16,17 @@ description = \
     """
 
 build_requires = [
-    'usd',
-    'maya',
-    'openexr',
-    'glew',
-    'boost'
+    'openexr-2.2',
+    'boost-1.61'
 ]
 
 requires = [
+    'glew-2',
+    'usd-0.8',
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "python-2.7"]
+    ["platform-linux", "arch-x86_64", "python-2.7", "maya-2018"]
 ]
 
 tools = [

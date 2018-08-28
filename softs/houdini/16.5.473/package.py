@@ -37,9 +37,9 @@ uuid = "repository.houdini"
 
 def commands():
 
-    command("rm -rf ~/.sesi_licenses.pref")
+    command("[[ -e ~/.sesi_licenses.pref ]] && /bin/rm -rf ~/.sesi_licenses.pref")
+
     env.SESI_LMHOST = "lichoudini.prs.vfx.int"
-    # source("{root}/houdini/houdini_setup_bash")
     env.H = "{root}/houdini"
     env.HB = "{root}/houdini/bin"
     env.HDSO = "{root}/houdini/dsolib"
@@ -52,5 +52,6 @@ def commands():
     env.PATH.prepend("{root}/houdini/bin")
 
     env.LD_LIBRARY_PATH.append("{root}/houdini/dsolib")
+
     # if building:
     #     env.CMAKE_MODULE_PATH.append("{root}/cmake")

@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+
+from rez.utils.lint_helper import env, building, scope, early, resolve  # make linter happy
+
+
 name = "xerces"
 
 version = "3.1.2"
@@ -22,6 +27,4 @@ uuid = "repository.xerces"
 
 
 def commands():
-
-    if building:
-        env.LD_LIBRARY_PATH.append("{root}/lib")
+    env.LD_LIBRARY_PATH.append("{root}/lib")

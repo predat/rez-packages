@@ -13,7 +13,7 @@ set(tag_oiio Release-${oiio_version})
 
 
 if(${REZ_BUILD_INSTALL})
-    set(install_cmd make ${make_args})
+    set(install_cmd make -j12 ${make_args})
 else()
     set(install_cmd "")
 endif()

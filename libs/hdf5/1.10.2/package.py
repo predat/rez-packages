@@ -41,9 +41,9 @@ uuid = "repository.hdf5"
 
 def commands():
     env.PATH.append("{root}/bin")
+    env.LD_LIBRARY_PATH.append("{root}/lib")
 
     if building:
         env.HDF5_INCLUDE_DIR = "{root}/include"
         # static libs
-        env.LD_LIBRARY_PATH.append("{root}/lib")
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
