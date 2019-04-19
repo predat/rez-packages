@@ -2,7 +2,13 @@
 
 name = 'setuptools'
 
-version = '36.0.1'
+#version = '36.0.1'
+@early()
+def _version():
+    import os
+    return os.path.basename(os.getcwd())
+
+version = _version()
 
 tools = ['easy_install']
 
