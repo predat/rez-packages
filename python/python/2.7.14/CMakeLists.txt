@@ -23,7 +23,7 @@ ExternalProject_add(
     PREFIX python
     UPDATE_COMMAND ""
     CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX}
-    --enable-shared --enable-ipv6 --enable-unicode=ucs4
+    --enable-shared --enable-ipv6 --enable-unicode=ucs4 --with-ssl
     LDFLAGS=-Wl,-rpath,'$$ORIGIN/../lib/' --enable-optimizations
     INSTALL_COMMAND "${install_cmd}"
     BUILD_IN_SOURCE 1
