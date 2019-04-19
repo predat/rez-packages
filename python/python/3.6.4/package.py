@@ -5,7 +5,12 @@ from rez.utils.lint_helper import env, building, scope  # make linter happy
 
 name = "python"
 
-version = "3.6.4"
+@early()
+def _version():
+    import os
+    return os.path.basename(os.getcwd())
+
+version = _version()
 
 authors = [
     "Guido van Rossum"
@@ -21,7 +26,7 @@ build_requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64"]
+    ["platform-linux"]
 ]
 
 tools = [
