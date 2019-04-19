@@ -10,3 +10,6 @@ rez_pip_install(
     pyseq
     URL ${url_pyseq}
 )
+
+install(CODE "message(STATUS Running Phony install)")
+

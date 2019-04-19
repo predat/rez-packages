@@ -12,7 +12,8 @@ description = \
     convention containing a numerical sequence index.
     """
 
-requires = ["pip","python"]
+build_requires = ["setuptools", "pip"]
+requires = ["python-2.7"]
 
 variants = [
     ["platform-linux", "arch-x86_64"]
