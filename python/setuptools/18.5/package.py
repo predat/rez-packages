@@ -13,7 +13,7 @@ build_requires = [
 ]
 
 variants = [
-    ["platform-linux", "arch-x86_64", "os-Ubuntu-12.04", "python-2.7"]
+    ["platform-linux", "python-2.7"]
 ]
 
 def commands():
