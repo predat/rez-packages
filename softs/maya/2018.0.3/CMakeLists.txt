@@ -32,8 +32,7 @@ configure_file(config/bin/maya.in bin/maya @ONLY)
 configure_file(config/bin/register_maya.in bin/register_maya @ONLY)
 
 
-set(url_maya
-     ${CMAKE_CURRENT_SOURCE_DIR}/archives/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
+set(url_maya http://up.autodesk.com/${MAYA_MAJOR_VERSION}/MAYA/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
 
 
 set(build_cmd ${CMAKE_CURRENT_SOURCE_DIR}/extract.sh  ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${MAYA_MAJOR_VERSION} )
