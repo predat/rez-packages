@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SynHubConfig SchemaVersion="1.0">
+<!-- Schema version 1 description
+   The document must be contained in a "SynHubConfig" element, with the
+   SchemaVersion used.
+
+   The root element can contain an arbitrary number of "Application" elements,
+   each describing an appliaction that will be known to programes using SynHub.
+
+   The "Application" element is made of a few attributes:
+
+      Name [String]: Application name (e.g.: "Softimage").  Case is important.
+      The name can contain spaces (e.g.: "3ds Max" ).
+
+      StringVersion [String]: Describes the version in a user-readable way
+      (e.g.: "2011 extension 1 beta 3").  Will not be interpreted by the
+      application but may end up being displayed in an information panel.
+
+      NumericVersion [String]:  Used for sorting, e.g. finding the latest
+      application.  Must be an integer of the form a.b.c.d.  The number of
+      levels has a limit of 4 but there can be fewer (the others are understood
+      to be zero).
+
+      Architecture [String]: x86_32 or x86_64.  The executable's target
+      architecture.
+
+      StartWrapperPath [String]: Optional.  Path for a wrapper script/executable
+      to use when starting the executable.  This is to accomodate situations
+      where parts of the configuration are made in wrapper scripts to set
+      environment variables before launching the program per se.
+
+      ExecutablePath [String]: Path for the executable.  Can be relative, in
+      which case the path is relative to the config file's location.
+
+      IconPath [String]: Optional.  Path to an icon that can be used to
+      represent the application in a user interface.
+-->
+   <Application
+      Name="Maya"
+      StringVersion="Maya @MAYA_MAJOR_VERSION@"
+      NumericVersion="@MAYA_MAJOR_VERSION@"
+      ExecutablePath="@MAYA_EXECUTABLE@"
+      StartWrapperPath="@MAYA_WRAPPER@"
+      Architecture="x86_64"
+   />
+</SynHubConfig>
