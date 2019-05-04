@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ColorManagement version="1.4">
+    <Parameter name="OCIOConfigFile" value="" />
+    <Parameter name="OCIORulesEnabled" value="false" />
+    <Parameter name="applyPlayblastOutputTransform" value="true" />
+    <Parameter name="isApplyOutputTransformEnabled" value="false" />
+    <Parameter name="isCMEnabled" value="false" />
+    <Parameter name="isOCIOEnabled" value="false" />
+    <Parameter name="outputTransform" value="sRGB gamma" />
+    <Parameter name="playblastOutputTransform" value="sRGB gamma" />
+    <Parameter name="renderingSpace" value="scene-linear Rec 709/sRGB" />
+    <Parameter name="userRules" value='&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&lt;rules version=&quot;1.0&quot;&gt;&#x09;&lt;default colorSpace=&quot;sRGB&quot;/&gt;&lt;/rules&gt;' />
+    <Parameter name="userTransformPath" value="~/maya/synColor/Shared/" />
+    <Parameter name="viewTransform" value="sRGB gamma" />
+</ColorManagement>
