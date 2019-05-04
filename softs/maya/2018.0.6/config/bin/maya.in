@@ -1,0 +1,2 @@
+#!/bin/bash
+maya@MAYA_MAJOR_VERSION@ "$@"
