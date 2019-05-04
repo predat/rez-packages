@@ -31,10 +31,7 @@ configure_file(config/License.env.in License.env @ONLY)
 configure_file(config/bin/maya.in bin/maya @ONLY)
 configure_file(config/bin/register_maya.in bin/register_maya @ONLY)
 
-
-set(url_maya
-     ${CMAKE_CURRENT_SOURCE_DIR}/archives/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
-
+set(url http://up.autodesk.com/${MAYA_MAJOR_VERSION}/MAYA/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
 
 set(build_cmd ${CMAKE_CURRENT_SOURCE_DIR}/extract.sh  ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${MAYA_MAJOR_VERSION} )
 
@@ -48,7 +45,7 @@ endif()
 
 ExternalProject_add(
     maya
-    URL ${url_maya}
+    URL ${url}
     URL_MD5 b38ff7140f6142618a8141af34f8e923
     PREFIX maya
     CONFIGURE_COMMAND ""
