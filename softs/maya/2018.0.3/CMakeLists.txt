@@ -21,8 +21,10 @@ endif()
 
 
 set(syncfg_file Maya${MAYA_MAJOR_VERSION}.${MAYA_MAJOR_VERSION}.${MAYA_PATCH_VERSION}.64.syncfg)
-set(MAYA_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/maya/bin/maya.bin)
-set(MAYA_WRAPPER ${CMAKE_INSTALL_PREFIX}/maya/bin/maya${MAYA_MAJOR_VERSION})
+set(MAYA_EXECUTABLE ${CMAKE_INSTALL_PREFIX}/maya/bin/maya.bin)  # use in config/synergy.syncfg.in
+set(MAYA_WRAPPER ${CMAKE_INSTALL_PREFIX}/maya/bin/maya${MAYA_MAJOR_VERSION})  # use in config/synergy.syncfg.in
+set(url http://up.autodesk.com/${MAYA_MAJOR_VERSION}/MAYA/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
+set(build_cmd ${CMAKE_CURRENT_SOURCE_DIR}/extract.sh  ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${MAYA_MAJOR_VERSION} )
 
 
 configure_file(config/synergy.syncfg.in ${syncfg_file} @ONLY)
@@ -30,12 +32,6 @@ configure_file(config/AdlmThinClientCustomEnv.xml.in AdlmThinClientCustomEnv.xml
 configure_file(config/License.env.in License.env @ONLY)
 configure_file(config/bin/maya.in bin/maya @ONLY)
 configure_file(config/bin/register_maya.in bin/register_maya @ONLY)
-
-
-set(url_maya http://up.autodesk.com/${MAYA_MAJOR_VERSION}/MAYA/Autodesk_Maya_${MAYA_MAJOR_VERSION}_${MAYA_PATCH_VERSION}_Update_Linux${arch_maya}.tgz)
-
-
-set(build_cmd ${CMAKE_CURRENT_SOURCE_DIR}/extract.sh  ${CMAKE_CURRENT_BINARY_DIR} ${CMAKE_CURRENT_SOURCE_DIR} ${MAYA_MAJOR_VERSION} )
 
 
 if(${REZ_BUILD_INSTALL})
@@ -47,7 +43,7 @@ endif()
 
 ExternalProject_add(
     maya
-    URL ${url_maya}
+    URL ${url}
     URL_MD5 95057072b6ad6248a69013d8a6836f3a
     PREFIX maya
     CONFIGURE_COMMAND ""
