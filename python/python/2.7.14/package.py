@@ -2,26 +2,22 @@
 
 from rez.utils.lint_helper import env, building, scope  # make linter happy
 
-
 name = "python"
-
 version = "2.7.14"
-
-authors = [
-    "Guido van Rossum"
-]
-
-description = \
-    """
-    The Python programming language.
-    """
+authors = ["Guido van Rossum"]
+description = """The Python programming language."""
 
 build_requires = [
     # "gcc-4.8.2"
 ]
 
+# build_command = 'export'
+
 variants = [
-    ["platform-linux", "arch-x86_64"]
+    ["platform-linux", "build-release"],
+    ["platform-linux", "build-debug"],
+    ["platform-osx", "build-release"],
+    ["platform-osx", "build-debug"],
 ]
 
 tools = [
@@ -42,7 +38,11 @@ uuid = "repository.python"
 
 def commands():
     env.PATH.prepend("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib")
+
+    if system.platform == 'osx':
+        env.DYLD_LIBRARY_PATH.append("{root}/lib")
+    elif system.platform == 'linux':
+        env.LD_LIBRARY_PATH.append("{root}/lib")
 
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
