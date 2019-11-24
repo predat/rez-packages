@@ -22,7 +22,4 @@ ExternalProject_add(
     BUILD_IN_SOURCE 0
 )
 
-install(
-    FILES cmake/zlib.cmake
-    DESTINATION cmake
-)
+install(CODE "message(STATUS Running Phony install)")

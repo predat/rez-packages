@@ -9,11 +9,10 @@ version = '1.2.11'
 
 authors = ['fredrik.brannbacka']
 
-variants = [["platform-linux", "arch-x86_64"]]
+variants = [["platform-linux"]]
 
 def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
 
     if building:
-        env.ZLIB_ROOT.set("{root}")
-        env.CMAKE_MODULE_PATH.append("{root}/cmake")
+        env.CMAKE_PREFIX_PATH.append("{root}")
