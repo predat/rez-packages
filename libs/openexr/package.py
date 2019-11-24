@@ -1,18 +1,22 @@
 # -*- coding: utf-8 -*-
-from rez.utils.lint_helper import env, building
-
 
 name = "openexr"
 
-version = "2.2.0"
+version = "2.4.0"
 
 description = \
-    """
-    OpenEXR
-    """
+"""
+OpenEXR
+"""
 
 build_requires = [
     # 'cmake-3',
+]
+
+private_build_requires = [
+    'gcc-6.3.1',
+    'ilmbase-2.4.0',
+    'boost-1.70',
 ]
 
 requires = [
@@ -20,9 +24,9 @@ requires = [
     #'numpy'
 ]
 
-variants = [["platform-linux", "arch-x86_64"]]
+variants = [["platform-linux"]]
 
-uuid = "repository.openexr"
+uuid = "repository.%s" % name
 
 
 def commands():
@@ -31,3 +35,4 @@ def commands():
 
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")
+        env.PKG_CONFIG_PATH.append("{root}/lib/pkgconfig")
