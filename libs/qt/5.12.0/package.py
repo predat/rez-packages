@@ -5,15 +5,15 @@ from rez.utils.lint_helper import env, building
 
 name = "qt"
 
-version = "5.8.0"
+version = "5.12.7"
 
 authors = [""]
 
 description = ""
 
-variants = [
-    ["platform-linux", "arch-x86_64"]
-]
+variants = [["platform-linux"]]
+
+private_build_requires = ['gcc-6.3.1']
 
 uuid = "repository.qt"
 
