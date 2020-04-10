@@ -21,7 +21,7 @@ ExternalProject_add(
     URL ${url_jpeg}
     PREFIX jpeg
     UPDATE_COMMAND autoreconf -ivf
-    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --disable-static --enable-shared
+    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --enable-static --enable-shared
     INSTALL_COMMAND "${install_cmd}"
     ALWAYS 1
     BUILD_IN_SOURCE 1
