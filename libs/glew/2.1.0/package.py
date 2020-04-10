@@ -9,11 +9,13 @@ version = '2.1.0'
 
 authors = ['fredrik.brannbacka']
 
-variants = [["platform-linux", "arch-x86_64"]]
+variants = [["platform-linux"]]
+
+private_build_requires = ['gcc-6.3.1']
 
 
 def commands():
-    env.LD_LIBRARY_PATH.prepend("{root}/lib64")
+    env.LD_LIBRARY_PATH.prepend("{root}/lib")
 
     if building:
         env.CMAKE_MODULE_PATH.append("{root}/cmake")

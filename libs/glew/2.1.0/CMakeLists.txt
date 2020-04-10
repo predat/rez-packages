@@ -4,8 +4,8 @@ include(RezBuild)
 include(ExternalProject)
 
 
-set(glew_version ${GLEW_VERSION})
-set(url_glew https://downloads.sourceforge.net/project/glew/glew/${glew_version}/glew-${glew_version}.tgz)
+set(version ${GLEW_VERSION})
+set(url https://downloads.sourceforge.net/project/glew/glew/${version}/glew-${version}.tgz)
 
 
 if(${REZ_BUILD_INSTALL})
@@ -17,8 +17,9 @@ endif()
 
 ExternalProject_add(
     glew
-    URL ${url_glew}
+    URL ${url}
     PREFIX glew
+    PATCH_COMMAND sh -c "patch -p1 < ${CMAKE_SOURCE_DIR}/glew-lib.patch"
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND "${install_cmd}"
