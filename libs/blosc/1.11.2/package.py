@@ -12,15 +12,9 @@ description = \
     that can be faster than `memcpy()`.
     """
 
-requires = [
-]
+private_build_requires = ['gcc-6.3.1']
 
-build_requires = [
-]
-
-variants = [
-    ["platform-linux", "arch-x86_64"],
-]
+variants = [["platform-linux"]]
 
 uuid = "repository.blosc"
 
