@@ -3,8 +3,8 @@ CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
 include(RezBuild)
 include(ExternalProject)
 
-set(png_version ${PNG_VERSION})
-set(url_png http://downloads.sourceforge.net/project/libpng/libpng16/older-releases/${png_version}/libpng-${png_version}.tar.gz)
+set(version ${PNG_VERSION})
+set(url https://download.sourceforge.net/libpng/libpng-${version}.tar.gz)
 
 if(${REZ_BUILD_INSTALL})
     set(install_cmd make install ${make_args})
@@ -14,9 +14,12 @@ endif()
 
 ExternalProject_add(
     png
-    URL ${url_png}
+    URL ${url}
     PREFIX png
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX} -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+    CMAKE_ARGS
+    -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+    -DCMAKE_POSITION_INDEPENDENT_CODE=ON
+    -DCMAKE_INSTALL_LIBDIR=lib
     INSTALL_COMMAND "${install_cmd}"
     BUILD_IN_SOURCE 0
 )
