@@ -2,7 +2,7 @@
 
 name = "pyilmbase"
 
-version = "2.4.0"
+version = "2.4.1"
 
 description = \
     """
@@ -11,7 +11,7 @@ description = \
 private_build_requires = [
     'gcc-6.3.1',
     'ilmbase-2.4',
-    'boost-1.70'
+    'boost-1.70',
 ]
 
 requires = [
@@ -20,7 +20,7 @@ requires = [
 
 variants = [
     ["platform-linux", "python-2.7"],
-    #["platform-linux", "python-3.7"]
+    ["platform-linux", "python-3.7"]
 ]
 
 uuid = "repository.%s" % name
@@ -29,7 +29,9 @@ uuid = "repository.%s" % name
 def commands():
     env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
-    env.PYTHONPATH.append("{root}/lib/python2.7/site-packages")
+    env.PYTHONPATH.append('{root}/lib/python%s.%s/site-packages' % (
+        env.REZ_PYTHON_MAJOR_VERSION,
+        env.REZ_PYTHON_MINOR_VERSION))
 
     if building:
         env.CMAKE_PREFIX_PATH.append("{root}")

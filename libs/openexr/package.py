@@ -2,7 +2,7 @@
 
 name = "openexr"
 
-version = "2.4.0"
+version = "2.4.1"
 
 description = \
 """
@@ -15,7 +15,7 @@ build_requires = [
 
 private_build_requires = [
     'gcc-6.3.1',
-    'ilmbase-2.4.0',
+    'ilmbase-2.4.1',
     'boost-1.70',
 ]
 
