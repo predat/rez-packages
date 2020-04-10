@@ -11,9 +11,7 @@ description = \
     """
     """
 
-variants = [
-    ["platform-linux"]
-]
+variants = [["platform-linux"]]
 
 private_build_requires = [
     'gcc-6.3.1',
