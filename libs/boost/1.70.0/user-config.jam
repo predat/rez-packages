@@ -1,0 +1,1 @@
+using mpi : /usr/lib64/openmpi/bin/mpic++ ;
