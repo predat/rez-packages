@@ -9,7 +9,9 @@ version = '3.2.1'
 
 authors = ['']
 
-variants = [["platform-linux", "arch-x86_64"]]
+variants = [["platform-linux"]]
+
+private_build_requires = ['gcc-6.3.1']
 
 uuid = "repository.glfw"
 
