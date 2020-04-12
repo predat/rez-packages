@@ -4,6 +4,10 @@ include(RezBuild)
 include(ExternalProject)
 
 
+set(name $ENV{REZ_BUILD_PROJECT_NAME})
+set(version $ENV{REZ_BUILD_PROJECT_VERSION})
+set(url https://github.com/${name}/${name}/archive/${version}.tar.gz)
+
 
 if(${REZ_BUILD_INSTALL})
     set(install_cmd make install ${make_args})
@@ -13,10 +17,11 @@ endif()
 
 
 ExternalProject_add(
-    alembic
-    URL https://github.com/alembic/alembic/archive/1.7.12.tar.gz
-    PREFIX alembic
-    CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
+    ${name}
+    URL ${url}
+    PREFIX ${name}
+    CMAKE_ARGS
+    -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
     -DUSE_HDF5=ON
     -DHDF5_ROOT=$ENV{REZ_HDF5_ROOT}
     -DILMBASE_ROOT=$ENV{REZ_ILMBASE_ROOT}

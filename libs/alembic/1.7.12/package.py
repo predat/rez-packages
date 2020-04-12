@@ -11,10 +11,14 @@ description = \
     """
     """
 
-variants = [["platform-linux"]]
+variants = [
+    ["platform-linux","python-2.7"],
+    ["platform-linux","python-3.7"],
+]
 
 private_build_requires = [
     'gcc-6.3.1',
+    'cmake-3',
     'hdf5-1.10',
     'ilmbase-2.4',
     'boost-1.70'
@@ -26,7 +30,7 @@ requires = [
 
 tools = []
 
-uuid = "repository.alembic"
+uuid = "repository.%s" % name
 
 
 def commands():
