@@ -5,9 +5,10 @@ include(RezRepository)
 include(ExternalProject)
 
 
-set(version $ENV{REZ_BUILD_PROJECT_VERSION})
 set(name $ENV{REZ_BUILD_PROJECT_NAME})
-set(url https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-${version}/src/hdf5-${version}.tar.bz2)
+set(version $ENV{REZ_BUILD_PROJECT_VERSION})
+set(short_version ${HDF5_MAJOR_VERSION}.${HDF5_MINOR_VERSION})
+set(url https://support.hdfgroup.org/ftp/HDF5/releases/${name}-${short_version}/${name}-${version}/src/${name}-${version}.tar.bz2)
 set(make_args -j$ENV{REZ_BUILD_THREAD_COUNT} VERBOSE=1)
 
 
