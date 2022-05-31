@@ -1,3 +1,4 @@
+# Taken from OSS-Pipeline and adjusted for 2018.U6 from https://github.com/OSS-Pipeline/rez-tbb
 # -*- coding: utf-8 -*-
 
 name = "tbb"
