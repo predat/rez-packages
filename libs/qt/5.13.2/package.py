@@ -13,7 +13,7 @@ description = ""
 
 variants = [["platform-linux"]]
 
-private_build_requires = ['gcc-6.3.1']
+private_build_requires = ['gcc']
 
 uuid = "repository.qt"
 

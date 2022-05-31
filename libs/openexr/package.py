@@ -14,7 +14,7 @@ build_requires = [
 ]
 
 private_build_requires = [
-    'gcc-6.3.1',
+    'gcc',
     'ilmbase-2.4.1',
     'boost-1.70',
 ]

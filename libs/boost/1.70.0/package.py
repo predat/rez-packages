@@ -11,7 +11,9 @@ description = \
     Peer-reviewed portable C++ source libraries.
     """
 
-private_build_requires = ["gcc"]
+private_build_requires = [
+    "gcc-6+"
+]
 
 variants = [
     ["platform-linux", "python-2.7"],

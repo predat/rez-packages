@@ -11,7 +11,7 @@ Utility libraries from ILM used by OpenEXR.
 
 build_requires = []
 
-private_build_requires = ["gcc-6.3.1"]
+private_build_requires = ["gcc"]
 
 variants = [["platform-linux"]]
 
