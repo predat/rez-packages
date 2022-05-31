@@ -11,11 +11,11 @@ description = \
     Peer-reviewed portable C++ source libraries.
     """
 
-private_build_requires = ["gcc-6.3.1"]
+private_build_requires = ["gcc"]
 
 variants = [
     ["platform-linux", "python-2.7"],
-    ["platform-linux", "python-3.7"],
+    ["platform-linux", "python-3.6"],
 ]
 
 uuid = "repository.boost"

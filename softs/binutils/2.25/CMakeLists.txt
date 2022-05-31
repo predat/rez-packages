@@ -27,5 +27,7 @@ ExternalProject_add(
     CONFIGURE_COMMAND ./configure -prefix=${CMAKE_INSTALL_PREFIX} --disable-nls --disable-werror
     INSTALL_COMMAND "${install_cmd}"
     BUILD_IN_SOURCE 1
-    BUILD_COMMAND make ${make_args}
+    BUILD_COMMAND VERBOSE=1 make -j $ENV{REZ_BUILD_THREAD_COUNT}
 )
+
+install(CODE "message(STATUS Running Phony install)")
