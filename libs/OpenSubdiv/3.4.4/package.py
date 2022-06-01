@@ -1,4 +1,4 @@
-#Taken from OSS-Pipeline and adjusted from 3.4.3 from https://github.com/OSS-Pipeline/rez-opensubdiv
+# Taken from OSS-Pipeline from https://github.com/OSS-Pipeline/rez-opensubdiv
 
 name = "opensubdiv"
 
@@ -20,13 +20,12 @@ requires = [
     "gcc-6+",
     "glfw-3+",
     "ptex-2.1.28+",
-    "python-2.7+<3",
     "tbb-2017.U6+",
     "zlib-1.2+"
 ]
 
 variants = [
-    ["platform-linux"]
+    ["platform-linux", "python-3"]
 ]
 
 tools = [
@@ -62,4 +61,3 @@ def commands():
     env.OPENSUBDIV_BINARY_PATH.set("{root}/bin")
     env.OPENSUBDIV_INCLUDE_PATH.set("{root}/include")
     env.OPENSUBDIV_LIBRARY_PATH.set("{root}/lib")
-
