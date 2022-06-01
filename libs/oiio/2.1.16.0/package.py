@@ -17,7 +17,7 @@ description = \
 
 requires = [
     "boost-1.61+",
-    "cmake-3+",
+    "cmake-3.12+",
     "gcc-6+",
     "glew-2+",
     "ilmbase-2.2+<2.4",
@@ -64,3 +64,5 @@ def commands():
     env.OIIO_BINARY_PATH.set("{root}/bin")
     env.OIIO_INCLUDE_PATH.set("{root}/include")
     env.OIIO_LIBRARY_PATH.set("{root}/lib64")
+    if building:
+        env.CMAKE_MODULE_PATH.append('{root}')
