@@ -1,38 +1,40 @@
-CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
+CMAKE_MINIMUM_REQUIRED(VERSION 3.0)
 
 include(RezBuild)
 include(RezRepository)
 include(ExternalProject)
-include(ProcessorCount)
-ProcessorCount(ncpus)
 
+# Python
+rez_set_archive(
+    PYTHON_URL python/Python-${REZ_BUILD_PROJECT_VERSION}.tgz
+    https://www.python.org/ftp/python/${REZ_BUILD_PROJECT_VERSION}/Python-${REZ_BUILD_PROJECT_VERSION}.tgz
+)
 
-set(python_version $ENV{REZ_BUILD_PROJECT_VERSION})
+# The environment variable REZ_TMP_PATH is meant to point to a location such as "/tmp/rez".
+set(EXTRACT_DIR $ENV{REZ_TMP_PATH}/python/${REZ_BUILD_PROJECT_VERSION})
+set(BUILD_DIR ${EXTRACT_DIR}/build)
 
-set(url_python https://www.python.org/ftp/python/${python_version}/Python-${python_version}.tgz)
-
-
-if(${REZ_BUILD_INSTALL})
-    set(install_cmd make install ${make_args})
-else()
-    set(install_cmd "")
-endif()
-
-
-ExternalProject_add(
-    python
-    URL ${url_python}
+# We configure/build/install Python through the ExternalProject_Add macro,
+# using three different shell scripts for each of these steps.
+# If necessary, it is possible to skip one of these steps by replacing the command
+# by "", an empty string.
+ExternalProject_Add(
+    REZ_PYTHON
+    URL ${PYTHON_URL}
     PREFIX python
+    SOURCE_DIR ${EXTRACT_DIR}
+    PATCH_COMMAND ""
     UPDATE_COMMAND ""
-    CONFIGURE_COMMAND ./configure --prefix=${CMAKE_INSTALL_PREFIX} --enable-shared --enable-ipv6 --enable-unicode=ucs4
-    INSTALL_COMMAND "${install_cmd}"
-    BUILD_IN_SOURCE 1
-    BUILD_COMMAND make -j ${ncpus}
+    CONFIGURE_COMMAND bash ${CMAKE_SOURCE_DIR}/configure.sh ${EXTRACT_DIR} ${BUILD_DIR}
+    BUILD_COMMAND bash ${CMAKE_SOURCE_DIR}/build.sh ${BUILD_DIR}
+    INSTALL_COMMAND bash ${CMAKE_SOURCE_DIR}/install.sh ${BUILD_DIR}
 )
 
-
-rez_install_files(
-    cmake/python.cmake
-    DESTINATION .
+# We use a bogus CMake "install" step in order to be able to properly finish
+# and get out of the CMake script.
+install(
+    CODE
+    "execute_process(
+        COMMAND echo \"\n[CMAKE] Python-${REZ_BUILD_PROJECT_VERSION} PACKAGE SETUP FINISHED!\n\"
+    )"
 )
-

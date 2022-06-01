@@ -1,16 +1,9 @@
-# -*- coding: utf-8 -*-
-
-from rez.utils.lint_helper import env, building, scope  # make linter happy
-
+# Based and improved from https://github.com/piratecrew/rez-python
+# Then taken from OSS-Pipeline from https://github.com/OSS-Pipeline/rez-python
 
 name = "python"
 
-@early()
-def _version():
-    import os
-    return os.path.basename(os.getcwd())
-
-version = _version()
+version = "3.6.4"
 
 authors = [
     "Guido van Rossum"
@@ -21,8 +14,9 @@ description = \
     The Python programming language.
     """
 
-build_requires = [
-    # "gcc-4.8.2"
+requires = [
+    "cmake-3+",
+    "gcc-6+"
 ]
 
 variants = [
@@ -32,20 +26,32 @@ variants = [
 tools = [
     "2to3",
     "idle",
+    "pip",
+    "pip3.7",
+    "pip3",
     "pydoc",
+    "python-config",
     "python",
-    "python3",
     "python3-config",
+    "python3.7-config",
+    "python3.7",
+    "python3",
+    "smtpd.py"
 ]
 
-uuid = "repository.python"
+build_system = "cmake"
 
+with scope("config") as config:
+    config.build_thread_count = "logical_cores"
+
+uuid = "python-{version}".format(version=str(version))
 
 def commands():
-    env.CMAKE_MODULE_PATH.append("{root}/cmake")
     env.PATH.prepend("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib")
+    env.LD_LIBRARY_PATH.prepend("{root}/lib")
+    env.PKG_CONFIG_PATH.prepend("{root}/lib/pkgconfig")
 
-    if building:
-        env.PYTHON_INCLUDE_DIR = "{root}/include/python3.6"
-        env.PYTHON_LIBRARIES = "{root}/lib/python3.6/config/libpython3.6.a"
+    # Helper environment variables.
+    env.PYTHON_BINARY_PATH.set("{root}/bin")
+    env.PYTHON_INCLUDE_PATH.set("{root}/include")
+    env.PYTHON_LIBRARY_PATH.set("{root}/lib")
