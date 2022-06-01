@@ -45,3 +45,9 @@ def commands():
     env.TBB_BINARY_PATH.set("{root}/bin")
     env.TBB_INCLUDE_PATH.set("{root}/include")
     env.TBB_LIBRARY_PATH.set("{root}/lib/" + str(env.TBB_TARGET_ARCH) + "/gcc4.7")
+
+    env.TBB_BINARY_PATH.set("{root}/bin")
+    env.TBB_INCLUDE_DIRS.set("{root}/include")
+    env.TBB_LIBRARIES.set("{root}/lib/" + str(env.TBB_TARGET_ARCH) + "/gcc4.7")
+
+    # FIXME: THESE ENV VARIABLES DON'T ACTUALLY WORK
