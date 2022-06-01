@@ -55,3 +55,5 @@ def commands():
     env.PYTHON_BINARY_PATH.set("{root}/bin")
     env.PYTHON_INCLUDE_PATH.set("{root}/include")
     env.PYTHON_LIBRARY_PATH.set("{root}/lib")
+
+    env.PYTHONPATH.prepend("{root}")
