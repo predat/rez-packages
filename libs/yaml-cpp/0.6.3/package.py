@@ -2,7 +2,7 @@
 
 name = "yaml_cpp"
 
-version = "0.6.0"
+version = "0.6.3"
 
 authors = [
     "Jesse Beder"
@@ -35,12 +35,12 @@ def commands():
     env.PKG_CONFIG_PATH.prepend("{root}/lib/pkgconfig")
 
     # Helper environment variables.
-    env.YAMLCPP_INCLUDE_PATH.set("{root}/include/yaml-cpp")
+    env.YAMLCPP_INCLUDE_PATH.set("{root}/include")
     env.YAMLCPP_LIBRARY_PATH.set("{root}/lib")
 
     env.YAML_CPP_LIBRARIES.set("{root}/lib")
-    env.YAML_CPP_INCLUDE_DIRS.set("{root}/include/yaml-cpp")
+    env.YAML_CPP_INCLUDE_DIRS.set("{root}/include")
 
     # Helper environment variables.
-    env.OCIO_INCLUDE_PATH.prepend("{root}/include/yaml-cpp")
+    env.OCIO_INCLUDE_PATH.prepend("{root}/include")
     env.OCIO_LIBRARY_PATH.prepend("{root}/lib")
