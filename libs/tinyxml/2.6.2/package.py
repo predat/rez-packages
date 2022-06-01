@@ -32,5 +32,5 @@ def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
 
     # Helper environment variables.
-    env.OCIO_INCLUDE_PATH.set("{root}/include")
-    env.OCIO_LIBRARY_PATH.set("{root}/lib")
+    env.OCIO_INCLUDE_PATH.prepend("{root}/include")
+    env.OCIO_LIBRARY_PATH.prepend("{root}/lib")
