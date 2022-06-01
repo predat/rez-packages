@@ -58,11 +58,14 @@ uuid = "oiio-{version}".format(version=str(version))
 def commands():
     env.PATH.prepend("{root}/bin")
     env.LD_LIBRARY_PATH.prepend("{root}/lib64")
+    env.LD_LIBRARY_PATH.prepend("{root}/lib")
     env.PYTHONPATH.prepend("{root}/lib64/python" + str(env.REZ_PYTHON_MAJOR_VERSION) + "." + str(env.REZ_PYTHON_MINOR_VERSION) + "/site-packages")
+    env.PYTHONPATH.prepend("{root}/lib/python" + str(env.REZ_PYTHON_MAJOR_VERSION) + "." + str(env.REZ_PYTHON_MINOR_VERSION) + "/site-packages")
 
     # Helper environment variables.
     env.OIIO_BINARY_PATH.set("{root}/bin")
     env.OIIO_INCLUDE_PATH.set("{root}/include")
     env.OIIO_LIBRARY_PATH.set("{root}/lib64")
+    env.OIIO_LIBRARY_PATH.set("{root}/lib")
     if building:
         env.CMAKE_MODULE_PATH.append('{root}')
