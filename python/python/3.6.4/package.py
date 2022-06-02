@@ -27,14 +27,14 @@ tools = [
     "2to3",
     "idle",
     "pip",
-    "pip3.7",
+    "pip3.6",
     "pip3",
     "pydoc",
     "python-config",
     "python",
     "python3-config",
-    "python3.7-config",
-    "python3.7",
+    "python3.6-config",
+    "python3.6",
     "python3",
     "smtpd.py"
 ]
@@ -57,3 +57,13 @@ def commands():
     env.PYTHON_LIBRARY_PATH.set("{root}/lib")
 
     env.PYTHONPATH.prepend("{root}")
+
+    # these are the builtin modules for this python executable. If we don't
+    # include these, some python behavior can be incorrect.
+    #  import os
+    #  import os.path
+    #
+    #  path = os.path.join(this.root, "python")  # noqa
+    #  for dirname in os.listdir(path):
+        #  path_ = os.path.join(path, dirname)
+        #  env.PYTHONPATH.append(path_)
