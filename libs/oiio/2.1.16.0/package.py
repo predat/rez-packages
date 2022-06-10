@@ -16,6 +16,7 @@ description = \
     """
 
 requires = [
+    "platform-linux",
     "boost-1.61+",
     "cmake-3.12+",
     "gcc-6+",
@@ -29,14 +30,14 @@ requires = [
     "png-1.6+",
     "pugixml-1+",
     "pybind11-2.2+",
-    "python-3",
     "tbb-2017.U6+",
     "tiff-4+",
     "zlib-1.2+"
 ]
 
 variants = [
-    ["platform-linux"]
+    ["python-2.7"],
+    ["python-3.6"]
 ]
 
 tools = [
