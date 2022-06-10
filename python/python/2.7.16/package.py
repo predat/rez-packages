@@ -1,9 +1,8 @@
 # Based and improved from https://github.com/piratecrew/rez-python
-# Then taken from OSS-Pipeline from https://github.com/OSS-Pipeline/rez-python
 
 name = "python"
 
-version = "3.6.4"
+version = "2.7.16"
 
 authors = [
     "Guido van Rossum"
@@ -27,15 +26,15 @@ tools = [
     "2to3",
     "idle",
     "pip",
-    "pip3.6",
-    "pip3",
+    "pip2.7",
+    "pip2",
     "pydoc",
     "python-config",
     "python",
-    "python3-config",
-    "python3.6-config",
-    "python3.6",
-    "python3",
+    "python2-config",
+    "python2.7-config",
+    "python2.7",
+    "python2",
     "smtpd.py"
 ]
 
@@ -53,19 +52,7 @@ def commands():
 
     # Helper environment variables.
     env.PYTHON_BINARY_PATH.set("{root}/bin")
-    env.PYTHON_INCLUDE_PATH.set("{root}/include/python3.6m")
+    env.PYTHON_INCLUDE_PATH.set("{root}/include/python2.7")
     env.PYTHON_LIBRARY_PATH.set("{root}/lib")
 
-    env.PYTHON_INCLUDE_DIR = "{root}/include/python3.6m"
-
     env.PYTHONPATH.prepend("{root}")
-
-    # these are the builtin modules for this python executable. If we don't
-    # include these, some python behavior can be incorrect.
-    #  import os
-    #  import os.path
-    #
-    #  path = os.path.join(this.root, "python")  # noqa
-    #  for dirname in os.listdir(path):
-        #  path_ = os.path.join(path, dirname)
-        #  env.PYTHONPATH.append(path_)
