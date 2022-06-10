@@ -16,7 +16,8 @@ requires = [
 ]
 
 variants = [
-    ["platform-linux", "python-3.6.4"]
+    ["platform-linux", "python-2.7"],
+    ["platform-linux", "python-3.6"]
 ]
 
 tools = ["f2py"]
@@ -38,3 +39,7 @@ def commands():
     env.NUMPY_BINARY_PATH.set("{root}/bin")
     env.NUMPY_INCLUDE_PATH.set("{root}/numpy/core/include")
     env.NUMPY_LIBRARY_PATH.set("{root}/numpy/core/lib")
+
+    env.Python_NumPy_INCLUDE_DIR.set("{root}/numpy/core/include")
+    env.Python_NumPy_INCLUDE_DIRS.set("{root}/numpy/core/include")
+    env.Python_NumPy_VERSION.set(version)
