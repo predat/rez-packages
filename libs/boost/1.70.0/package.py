@@ -39,6 +39,8 @@ uuid = "boost-{version}".format(version=str(version))
 def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
 
+    env.CMAKE_PREFIX_PATH.prepend("{root}")
+
     # Helper environment variables.
     env.BOOST_INCLUDE_PATH.set("{root}/include")
     env.BOOST_LIBRARY_PATH.set("{root}/lib")

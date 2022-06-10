@@ -43,7 +43,7 @@ ${EXTRACT_PATH}/bootstrap.sh \
 # Configure user-config.jam for the write python folder
 touch ${HOME}/user-config.jam
 echo -n "echo using python : ${REZ_PYTHON_VERSION} : ${PYTHON_BINARY_PATH} : ${PYTHON_INCLUDE_PATH} : ${PYTHON_LIBRARY_PATH} ; > ${HOME}/user-config.jam"
-echo "using python : ${REZ_PYTHON_VERSION} : ${PYTHON_BINARY_PATH} : ${PYTHON_INCLUDE_PATH} : ${PYTHON_LIBRARY_PATH} ;" > ${HOME}/user-config.jam
+echo "using python : ${REZ_PYTHON_VERSION} : ${PYTHON_BINARY_PATH} : ${PYTHON_INCLUDE_PATH} : ${PYTHON_LIBRARY_PATH} ;" >> ${HOME}/user-config.jam
 
 echo -e "\n"
 echo -e "[CONFIGURE] Finished configuring Boost-${BOOST_VERSION}!"

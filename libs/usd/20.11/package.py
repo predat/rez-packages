@@ -70,3 +70,5 @@ def commands():
     env.USD_BINARY_PATH.set("{root}/bin")
     env.USD_INCLUDE_PATH.set("{root}/include")
     env.USD_LIBRARY_PATH.set("{root}/lib")
+
+    env.PXR_USD_LOCATION.set("{root}")
