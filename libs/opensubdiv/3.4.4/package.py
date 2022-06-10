@@ -15,6 +15,7 @@ description = \
     """
 
 requires = [
+    "platform-linux",
     "cmake-3+",
     "doxygen-1.8+",
     "gcc-6+",
@@ -25,7 +26,8 @@ requires = [
 ]
 
 variants = [
-    ["platform-linux", "python-3"]
+    ["python-2.7"],
+    ["python-3.6"],
 ]
 
 tools = [
