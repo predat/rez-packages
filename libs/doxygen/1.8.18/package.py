@@ -16,6 +16,7 @@ description = \
     """
 
 requires = [
+    "platform-linux",
     "bison-3+",
     "cmake-3+",
     "flex-2+",
@@ -23,8 +24,8 @@ requires = [
 ]
 
 variants = [
-    #  ["platform-linux", "python-2.7+<3"],
-    ["platform-linux", "python-3"]
+    ["python-2.7"],
+    ["python-3.6"]
 ]
 
 tools = [
