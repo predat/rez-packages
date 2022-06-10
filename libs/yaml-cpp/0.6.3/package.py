@@ -14,13 +14,15 @@ description = \
     """
 
 requires = [
+    "platform-linux",
     "cmake-3+",
     "gcc-6+",
-    "python-3"
+    "boost-1.61+"
 ]
 
 variants = [
-    ["platform-linux"]
+    ["python-2.7"],
+    ["python-3.6"]
 ]
 
 build_system = "cmake"
