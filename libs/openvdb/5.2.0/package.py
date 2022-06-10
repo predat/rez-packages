@@ -20,6 +20,7 @@ description = \
     """
 
 requires = [
+    "platform-linux",
     "blosc-1.5+",
     "boost-1.6+",
     "cmake-3+",
@@ -27,13 +28,13 @@ requires = [
     "glfw-3+",
     "ilmbase-2.2.1+<2.4",
     "openexr-2.2.1+<2.4",
-    "python-3",
     "tbb-2017.U6+",
     "zlib-1.2+"
 ]
 
 variants = [
-    ["platform-linux"]
+    #  ["python-2.7"],
+    ["python-3.6"]
 ]
 
 tools = [
