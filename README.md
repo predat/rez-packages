@@ -1,4 +1,3 @@
-
 Overview
 ========
 
@@ -10,23 +9,6 @@ rez package. See the following [Quick Start Guide](https://github.com/nerdvegas/
 Please note that this project repository is for reference only. You should copy
 them into your own repo - at that point you can set the correct versions, put a
 requirement on your operating system of choice, and so on.
-
-These installer packages make heavy use of the 'ExternalProject_add' CMake macro.
-You can modify calls to this macro in the CMakeLists.txt to do things such as
-apply your own patches. You would include these patches in your own package
-repository so that you retain a change history of them.
-
-Once you have these installer packages in your own repo (or repos) you will be
-able to rez-build and rez-release them. You can keep them all within a single
-repo, or split them out into separate repos, the choice is yours and both will
-work.
-
-The following environment variables are used by some packages:
-
-`REZ_REPO_PAYLOAD_DIR`: Path to where package downloads (such as tgz files) are
-	stored. Source disappears online and security measures often mean it is
-	difficult to install from URL within a studio, so we opt to install from
-	already downloaded source, rather than downloading as part of the install.
 
 
 Quick Start Guide
