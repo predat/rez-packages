@@ -6,7 +6,7 @@ set -e
 EXTRACT_PATH=$1
 BUILD_PATH=$2
 INSTALL_PATH=${REZ_BUILD_INSTALL_PATH}
-IMATH_VERSION=${REZ_BUILD_PROJECT_VERSION}
+PYSTRING_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
 # We print the arguments passed to the Bash script.
 echo -e "\n"
@@ -18,11 +18,11 @@ echo -e "\n"
 echo -e "[CONFIGURE][ARGS] EXTRACT PATH: ${EXTRACT_PATH}"
 echo -e "[CONFIGURE][ARGS] BUILD PATH: ${BUILD_PATH}"
 echo -e "[CONFIGURE][ARGS] INSTALL PATH: ${INSTALL_PATH}"
-echo -e "[CONFIGURE][ARGS] IMATH VERSION: ${IMATH_VERSION}"
+echo -e "[CONFIGURE][ARGS] PYTSTRING VERSION: ${PYSTRING_VERSION}"
 
 # We check if the arguments variables we need are correctly set.
 # If not, we abort the process.
-if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${IMATH_VERSION} ]]; then
+if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${PYSTRING_VERSION} ]]; then
     echo -e "\n"
     echo -e "[CONFIGURE][ARGS] One or more of the argument variables are empty. Aborting..."
     echo -e "\n"
@@ -30,9 +30,9 @@ if [[ -z ${EXTRACT_PATH} || -z ${BUILD_PATH} || -z ${INSTALL_PATH} || -z ${IMATH
     exit 1
 fi
 
-# We run the configuration script of imath.
+# We run the configuration script of pystring.
 echo -e "\n"
-echo -e "[CONFIGURE] Running the configuration script from imath-${IMATH_VERSION}..."
+echo -e "[CONFIGURE] Running the configuration script from pystring-${PYSTRING_VERSION}..."
 echo -e "\n"
 
 mkdir -p ${BUILD_PATH}
@@ -44,5 +44,13 @@ cmake ${EXTRACT_PATH} \
     -DCMAKE_CXX_FLAGS="-fPIC"
 
 echo -e "\n"
-echo -e "[CONFIGURE] Finished configuring imath-${IMATH_VERSION}!"
+echo -e "[CONFIGURE] Creating directory ${install_path}/include/pystring"
+echo -e "[CONFIGURE] Copying file ${EXTRACT_PATH}/pystring.h to ${INSTALL_PATH}/include/pystring/pystring.h"
+echo -e "\n"
+
+mkdir -p ${INSTALL_PATH}/include/pystring
+cp ${EXTRACT_PATH}/pystring.h ${INSTALL_PATH}/include/pystring/pystring.h
+
+echo -e "\n"
+echo -e "[CONFIGURE] Finished configuring pystring-${PYSTRING_VERSION}!"
 echo -e "\n"

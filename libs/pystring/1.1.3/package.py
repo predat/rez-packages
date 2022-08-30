@@ -33,3 +33,4 @@ def commands():
     env.LD_LIBRARY_PATH.prepend("{root}/lib")
 
     env.PYSTRING_LIBRARY_PATH.set("{root}/lib")
+    env.PYSTRING_INCLUDE_PATH.set("{root}/include")

@@ -4,7 +4,7 @@
 set -e
 
 BUILD_PATH=$1
-PYSTRING_VERSION=${REZ_BUILD_PROJECT_VERSION}
+OCIO_VERSION=${REZ_BUILD_PROJECT_VERSION}
 
 # We print the arguments passed to the Bash script.
 echo -e "\n"
@@ -14,11 +14,11 @@ echo -e "==============="
 echo -e "\n"
 
 echo -e "[INSTALL][ARGS] BUILD PATH: ${BUILD_PATH}"
-echo -e "[INSTALL][ARGS] PYSTRING VERSION: ${PYSTRING_VERSION}"
+echo -e "[INSTALL][ARGS] OCIO VERSION: ${OCIO_VERSION}"
 
 # We check if the arguments variables we need are correctly set.
 # If not, we abort the process.
-if [[ -z ${BUILD_PATH} || -z ${PYSTRING_VERSION} ]]; then
+if [[ -z ${BUILD_PATH} || -z ${OCIO_VERSION} ]]; then
     echo -e "\n"
     echo -e "[INSTALL][ARGS] One or more of the argument variables are empty. Aborting..."
     echo -e "\n"
@@ -26,9 +26,9 @@ if [[ -z ${BUILD_PATH} || -z ${PYSTRING_VERSION} ]]; then
     exit 1
 fi
 
-# We install pystring.
+# We install OCIO.
 echo -e "\n"
-echo -e "[INSTALL] Installing pystring-${PYSTRING_VERSION}..."
+echo -e "[INSTALL] Installing OCIO-${OCIO_VERSION}..."
 echo -e "\n"
 
 cd ${BUILD_PATH}
@@ -38,5 +38,5 @@ make \
     install
 
 echo -e "\n"
-echo -e "[INSTALL] Finished installing pystring-${PYSTRING_VERSION}!"
+echo -e "[INSTALL] Finished installing OCIO-${OCIO_VERSION}!"
 echo -e "\n"
