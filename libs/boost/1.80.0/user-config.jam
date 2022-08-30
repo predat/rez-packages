@@ -1,0 +1,2 @@
+using python : 3.1 : /usr/bin/python3 : /usr/include/python3.1 : /usr/lib ;
+using python : 3.1 : /usr/bin/python3 : /usr/include/python3.1 : /usr/lib ;
