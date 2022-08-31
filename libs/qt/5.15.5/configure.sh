@@ -49,7 +49,6 @@ ${EXTRACT_PATH}/configure \
     -qt-freetype \
     -qt-harfbuzz \
     -qt-pcre \
-    -qt-xcb \
     -xkbcommon \
     -evdev \
     -verbose
