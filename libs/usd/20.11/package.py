@@ -14,7 +14,7 @@ description = \
 
 requires = [
     "platform-linux",
-    "boost-1.61+",
+    "boost-1.61+<1.70",
     "cmake-3+",
     "gcc-6+",
     "glew-2+",

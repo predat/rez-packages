@@ -34,7 +34,7 @@ echo -e "\n"
 cd ${BUILD_PATH}
 
 make \
-    -j${REZ_BUILD_THREAD_COUNT} \
+    -j1 \
     install
 
 echo -e "\n"
