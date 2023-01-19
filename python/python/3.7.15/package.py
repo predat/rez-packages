@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-name = "pythonStandalone"
+name = "python"
 
 def _version():
     import os
