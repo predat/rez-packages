@@ -2,11 +2,11 @@
 
 name = "ninja"
 
-version = "1.10.0"
+version = "1.11.1"
 
 description = "Ninja is a small build system with a focus on speed"
 
-private_build_requires = ['gcc-6.3.1', 'cmake-3+']
+private_build_requires = ['gcc-9+', 'cmake-3+']
 
 tools = ['ninja']
 
