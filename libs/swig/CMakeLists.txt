@@ -11,7 +11,8 @@ ProcessorCount(ncpus)
 
 set(name $ENV{REZ_BUILD_PROJECT_NAME})
 set(version ${REZ_BUILD_PROJECT_VERSION})
-set(url http://prdownloads.sourceforge.net/${name}/${name}-${version}.tar.gz)
+#set(url http://prdownloads.sourceforge.net/${name}/${name}-${version}.tar.gz)
+set(url https://fossies.org/linux/misc/swig-${version}.tar.gz)
 
 
 if(${REZ_BUILD_INSTALL})
